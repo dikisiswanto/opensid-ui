@@ -46,6 +46,27 @@
     }
   }
 
+  .breadcrumb {
+    @apply overflow-x-auto py-1;
+
+    &>ol {
+      @apply whitespace-nowrap flex items-center;
+
+      & li {
+        @apply flex items-center;
+
+        &+::before {
+          content: '>';
+          @apply mx-2 font-medium;
+        }
+
+        & a {
+          @apply text-primary-100 hover:text-primary-200 hover:underline transition duration-150;
+        }
+      }
+    }
+  }
+
   .btn {
     @apply rounded-lg py-2 px-5 bg-slate-200 inline-block hover:shadow hover:bg-slate-300 transition;
 
@@ -70,10 +91,32 @@
   .container {
     @apply max-w-[1272px] px-3 md:px-5 lg:px-5 mx-auto;
   }
-}
 
-@layer utilities {
+  .text {
+    &-h1 {
+      @apply text-4xl font-bold;
+    }
+    &-h2 {
+      @apply text-3xl font-bold;
+    }
+    &-h3 {
+      @apply text-2xl font-bold;
+    }
+    &-h4 {
+      @apply text-xl font-bold;
+    }
+    &-h5 {
+      @apply text-lg font-bold;
+    }
+    &-h6 {
+      @apply font-bold;
+    }
+  }
+
   .code {
     @apply bg-slate-200 p-3 overflow-auto rounded-lg my-3 max-w-full;
   }
+}
+
+@layer utilities {
 }

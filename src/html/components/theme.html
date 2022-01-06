@@ -9,12 +9,16 @@
     <img src="./assets/img/detailpage.png" alt="Halaman Beranda Tema" class="h-80 w-auto">
   </figure>
   <div class="flex flex-wrap gap-3 my-3">
-    <a href="./home.html" class="btn btn-primary">Demo Tema <i class="fas fa-external-link-alt ml-1 text-sm"></i></a>
-    <a href="#" class="btn btn-accent">Lihat repositori GitHub <i
+    <a href="./home.html" target="_blank" class="btn btn-primary">Demo Tema <i class="fas fa-external-link-alt ml-1 text-sm"></i></a>
+    <a href="https://github.com/dikisiswanto/opensid-ui" class="btn btn-accent" target="_blank">Lihat repositori GitHub <i
         class="fas fa-external-link-alt ml-1 text-sm"></i></a>
   </div>
 
+  {% set colors = ['slate', 'gray', 'zinc', 'neutral', 'stone', 'red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'] -%}
+  {% set brightness = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'] -%}
+
   <h3 id="colors" class="text-xl font-bold pt-8 pb-3">Warna</h3>
+  <p class="py-2 font-bold">Warna Utama</p>
   <div class="group inline-flex w-full">
     <div class="w-16 h-16 bg-primary-100"></div>
     <div class="w-16 h-16 bg-primary-200"></div>
@@ -23,16 +27,42 @@
     <div class="w-16 h-16 bg-accent-100"></div>
     <div class="w-16 h-16 bg-accent-200"></div>
   </div>
+  <p class="text-primary-100 py-1">Text primary 100</p>
+  <p class="text-primary-200 py-1">Text primary 200</p>
+  <p class="text-secondary-100 py-1">Text secondary 100</p>
+  <p class="text-secondary-200 py-1">Text secondary 200</p>
+  <p class="text-accent-100 py-1">Text accent 100</p>
+  <p class="text-accent-200 py-1 mb-5">Text accent 200</p>
+  {% for color in colors -%}
+    <p class="py-2 text-{{color}}-600 font-bold">{{ color }}</p>
+    <div class="grid grid-cols-10">
+      {% for b in brightness -%}
+        <div class="h-16 bg-{{color}}-{{b}} {{"text-white" if b > 400}} p-2 text-xs lg:text-base">{{b}} <span class="text-{{color}}-{{b}}">i</span></div>
+      {%- endfor %}
+    </div>
+  {%- endfor %}
   <pre class="code">
-&lt;div class=&quot;w-16 h-16 bg-primary-100&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;w-16 h-16 bg-primary-200&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;w-16 h-16 bg-secondary-100&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;w-16 h-16 bg-secondary-200&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;w-16 h-16 bg-accent-100&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;w-16 h-16 bg-accent-200&quot;&gt;&lt;/div&gt;</pre>
+&lt;div class=&quot;bg-primary-100&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;bg-primary-200&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;bg-secondary-100&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;bg-secondary-200&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;bg-accent-100&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;bg-accent-200&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;bg-rose-500&quot;&gt;&lt;/div&gt;</pre>
 
   <h3 id="typography" class="text-xl font-bold pt-8 pb-3">Tipografi</h3>
-  <p>Font utama: Poppins</p>
+  <p class="mb-5">Font utama: Poppins</p>
+  {% for heading in range(1,7) %}
+    <p class="text-h{{heading}} py-1">Heading {{ heading }}</p>
+  {% endfor %}
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+    {% for align in ['left', 'right', 'justify', 'center'] %}
+      <div class="grup">
+        <p class="mt-5 mb-2">Perataan: <b class="bold">{{ align }}</b></p>
+        <p class="text-{{align}} p-5 bg-slate-100 rounded-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas laborum accusamus nihil minima dignissimos voluptatum velit quisquam vitae officiis. Accusamus explicabo deleniti delectus eius nulla praesentium sit, doloremque sequi tempore doloribus autem, maiores blanditiis nostrum enim! Magni?</p>
+      </div>
+    {% endfor %}
+  </div>
   
   <h3 id="customization" class="text-xl font-bold pt-8 pb-3">Kustomisasi</h3>
   <p>Kustomisasi dapat dilakukan melalui file <code>custom.css</code></p>
