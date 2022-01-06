@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>OpenSID-UI-alpha</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+</head>
+
+<body class="font-primary">
+  <header class="container py-3 flex items-center bg-slate-50 sticky top-0">
+    <h1 class="text-3xl font-bold text-primary-100">OpenSID<span class="text-secondary-100">UI</span><label class="badge text-xs align-super">alpha</label></h1>
+  </header>
+  <section class="text-slate-600 flex flex-col lg:flex-row gap-x-5 bg-slate-50 min-h-screen relative">
+    <aside class="lg:w-1/4 bg-white shadow lg:px-5 px-3 py-5 flex-shrink-0 lg:h-screen overflow-y-auto lg:sticky top-0">
+      <h2 class="font-lg text-primary-200 font-bold pb-3">Tema</h2>
+      <ul>
+        <li>
+          <a href="./index.html#about" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i
+        class="fas fa-info-circle mr-1 text-secondary-100"></i> Tentang</a>
+        </li>
+        <li>
+          <a href="./index.html#colors" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i
+        class="fas fa-palette mr-1 text-secondary-100"></i> Warna</a>
+        </li>
+        <li>
+          <a href="./index.html#typography" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i
+        class="fas fa-font mr-1 text-secondary-100"></i> Tipografi</a>
+        </li>
+        <li>
+          <a href="./index.html#customization" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i
+        class="fas fa-mouse-pointer mr-1 text-secondary-100"></i> Kustomisasi</a>
+        </li>
+      </ul>
+      <h2 class="font-lg text-primary-200 font-bold pt-5 pb-3">Komponen</h2>
+      <nav>
+        <ul>
+
+          <li><a href="./index.html#alert" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i class="fas fa-folder-open mr-1 text-secondary-100"></i> Alert</a></li>
+
+          <li><a href="./index.html#badge" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i class="fas fa-folder-open mr-1 text-secondary-100"></i> Badge</a></li>
+
+          <li><a href="./index.html#button" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i class="fas fa-folder-open mr-1 text-secondary-100"></i> Button</a></li>
+
+        </ul>
+      </nav>
+    </aside>
+    <main class="bg-white shadow lg:p-5 p-3 w-full">
+
+      <h3 class="text-xl font-bold py-3" id="about">Tentang OpenSID-UI</h3>
+      <p class="py-1">OpenSID-UI adalah tampilan antarmuka yang digunakan pada halaman modul web OpenSID, khususnya pada tema bawaan rilis. Laman ini adalah dokumentasi dari komponen-komponen yang sudah dibuat.</p>
+      <p class="py-1">Dibangun di atas Tailwindcss versi 3</p>
+
+      <figure role="image" class="my-5 inline-block px-5">
+        <img src="./assets/img/homepage.png" alt="Halaman Beranda Tema" class="h-80 w-auto">
+      </figure>
+      <figure role="image" class="my-5 inline-block px-5">
+        <img src="./assets/img/detailpage.png" alt="Halaman Beranda Tema" class="h-80 w-auto">
+      </figure>
+      <div class="flex flex-wrap gap-3 my-3">
+        <a href="./home.html" class="btn btn-primary">Demo Tema <i class="fas fa-external-link-alt ml-1 text-sm"></i></a>
+        <a href="#" class="btn btn-accent">Lihat repositori GitHub <i
+        class="fas fa-external-link-alt ml-1 text-sm"></i></a>
+      </div>
+
+      <h3 id="colors" class="text-xl font-bold pt-8 pb-3">Warna</h3>
+      <div class="group inline-flex w-full">
+        <div class="w-16 h-16 bg-primary-100"></div>
+        <div class="w-16 h-16 bg-primary-200"></div>
+        <div class="w-16 h-16 bg-secondary-100"></div>
+        <div class="w-16 h-16 bg-secondary-200"></div>
+        <div class="w-16 h-16 bg-accent-100"></div>
+        <div class="w-16 h-16 bg-accent-200"></div>
+      </div>
+      <pre class="code">
+&lt;div class=&quot;w-16 h-16 bg-primary-100&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;w-16 h-16 bg-primary-200&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;w-16 h-16 bg-secondary-100&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;w-16 h-16 bg-secondary-200&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;w-16 h-16 bg-accent-100&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;w-16 h-16 bg-accent-200&quot;&gt;&lt;/div&gt;</pre>
+
+      <h3 id="typography" class="text-xl font-bold pt-8 pb-3">Tipografi</h3>
+      <p>Font utama: Poppins</p>
+
+      <h3 id="customization" class="text-xl font-bold pt-8 pb-3">Kustomisasi</h3>
+      <p>Kustomisasi dapat dilakukan melalui file <code>custom.css</code></p>
+      <pre class="code">
+:root {
+  --primary-base-color: #09ABCF;
+  --primary-darken-color: #007D98;
+  --secondary-base-color: #F4B740;
+  --secondary-darken-color: #946200;
+  --accent-base-color: #00BA88;
+  --accent-darken-color: #00966D;
+}</pre>
+      <h3 id="alert" class="text-xl font-bold pt-8 pb-3">Alert</h3>
+      <div class="space-y-2">
+        <div class="alert">
+          <div class="flex-1">
+            <i class="fas fa-info-circle mr-2"></i>
+            <label>Lorem ipsum dolor sit amet, consectetur adip!</label>
+          </div>
+        </div>
+        <div class="alert alert-warning">
+          <div class="flex-1">
+            <i class="fas fa-exclamation-triangle mr-2"></i>
+            <label>Lorem ipsum dolor sit amet, consectetur adip!</label>
+          </div>
+        </div>
+        <div class="alert alert-error">
+          <div class="flex-1">
+            <i class="fas fa-ban mr-2"></i>
+            <label>Lorem ipsum dolor sit amet, consectetur 1adip!</label>
+          </div>
+        </div>
+        <div class="alert alert-success">
+          <div class="flex-1">
+            <i class="fas fa-check mr-2"></i>
+            <label>Lorem ipsum dolor sit amet, consectetur adip!</label>
+          </div>
+        </div>
+      </div>
+      <div class="overflow-none">
+        <pre class="code">
+  &lt;div class="alert"&gt;
+    &lt;div class="flex-1"&gt;
+      &lt;i class="fas fa-info-circle mr-2"&gt;&lt;/i&gt;
+      &lt;label&gt;Lorem ipsum dolor sit amet, consectetur adip!&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="alert alert-warning"&gt;
+    &lt;div class="flex-1"&gt;
+      &lt;i class="fas fa-exclamation-triangle mr-2"&gt;&lt;/i&gt;
+      &lt;label&gt;Lorem ipsum dolor sit amet, consectetur adip!&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="alert alert-error"&gt;
+    &lt;div class="flex-1"&gt;
+      &lt;i class="fas fa-ban mr-2"&gt;&lt;/i&gt;
+      &lt;label&gt;Lorem ipsum dolor sit amet, consectetur 1adip!&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="alert alert-success"&gt;
+    &lt;div class="flex-1"&gt;
+      &lt;i class="fas fa-check mr-2"&gt;&lt;/i&gt;
+      &lt;label&gt;Lorem ipsum dolor sit amet, consectetur adip!&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</pre>
+      </div>
+      <h3 id="badge" class="text-xl font-bold pt-8 pb-3">Alert</h3>
+      <div class="inline-flex items-end flex-wrap gap-3 w-full my-1">
+        <div class="badge">badge info</div>
+        <div class="badge text-sm">badge info</div>
+        <div class="badge text-base">badge info</div>
+      </div>
+      <div class="inline-flex items-end flex-wrap gap-3 w-full my-1">
+        <div class="badge badge-primary">badge primary</div>
+        <div class="badge badge-primary text-sm">badge primary</div>
+        <div class="badge badge-primary text-base">badge primary</div>
+      </div>
+      <div class="inline-flex items-end flex-wrap gap-3 w-full my-1">
+        <div class="badge badge-secondary">badge secondary</div>
+        <div class="badge badge-secondary text-sm">badge secondary</div>
+        <div class="badge badge-secondary text-base">badge secondary</div>
+      </div>
+      <div class="inline-flex items-end flex-wrap gap-3 w-full my-1">
+        <div class="badge badge-accent">badge accent</div>
+        <div class="badge badge-accent text-sm">badge accent</div>
+        <div class="badge badge-accent text-base">badge accent</div>
+      </div>
+      <pre class="code">
+&lt;div class="inline-flex items-end flex-wrap gap-3 w-full my-1"&gt;
+  &lt;div class="badge"&gt;badge info&lt;/div&gt;
+  &lt;div class="badge text-sm"&gt;badge info&lt;/div&gt;
+  &lt;div class="badge text-base"&gt;badge info&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="inline-flex items-end flex-wrap gap-3 w-full my-1"&gt;
+  &lt;div class="badge badge-primary"&gt;badge primary&lt;/div&gt;
+  &lt;div class="badge badge-primary text-sm"&gt;badge primary&lt;/div&gt;
+  &lt;div class="badge badge-primary text-base"&gt;badge primary&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="inline-flex items-end flex-wrap gap-3 w-full my-1"&gt;
+  &lt;div class="badge badge-secondary"&gt;badge secondary&lt;/div&gt;
+  &lt;div class="badge badge-secondary text-sm"&gt;badge secondary&lt;/div&gt;
+  &lt;div class="badge badge-secondary text-base"&gt;badge secondary&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="inline-flex items-end flex-wrap gap-3 w-full my-1"&gt;
+  &lt;div class="badge badge-accent"&gt;badge accent&lt;/div&gt;
+  &lt;div class="badge badge-accent text-sm"&gt;badge accent&lt;/div&gt;
+  &lt;div class="badge badge-accent text-base"&gt;badge accent&lt;/div&gt;
+&lt;/div&gt;</pre>
+      <h3 id="button" class="text-xl font-bold pt-8 pb-3">Button</h3>
+      <div class="gap-3 inline-flex items-end my-1 flex-wrap">
+        <button class="btn py-4 px-8">Plain Button</button>
+        <button class="btn py-3 px-8">Plain Button</button>
+        <button class="btn">Plain Button</button>
+      </div>
+      <div class="gap-3 inline-flex items-end my-1 flex-wrap">
+        <button class="btn btn-primary py-4 px-8">Primary Button</button>
+        <button class="btn btn-primary py-3 px-8">Primary Button</button>
+        <button class="btn btn-primary">Primary Button</button>
+      </div>
+      <div class="gap-3 inline-flex items-end my-1 flex-wrap">
+        <button class="btn btn-secondary py-4 px-8">Secondary Button</button>
+        <button class="btn btn-secondary py-3 px-8">Secondary Button</button>
+        <button class="btn btn-secondary">Secondary Button</button>
+      </div>
+      <div class="gap-3 inline-flex items-end my-1 flex-wrap">
+        <button class="btn btn-accent py-4 px-8">Accent Button</button>
+        <button class="btn btn-accent py-3 px-8">Accent Button</button>
+        <button class="btn btn-accent">Accent Button</button>
+      </div>
+      <div class="gap-3 inline-flex items-end my-1 flex-wrap">
+        <button class="btn btn-primary py-4 px-8" disabled>Disabled Button</button>
+        <button class="btn btn-primary py-3 px-8" disabled>Disabled Button</button>
+        <button class="btn btn-primary" disabled>Disabled Button</button>
+      </div>
+      <div class="overflow-none">
+        <pre class="code">
+  &lt;div class="gap-3 inline-flex items-end my-1 flex-wrap"&gt;
+    &lt;button class="btn py-4 px-8"&gt;Plain Button&lt;/button&gt;
+    &lt;button class="btn py-3 px-8"&gt;Plain Button&lt;/button&gt;
+    &lt;button class="btn"&gt;Plain Button&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="gap-3 inline-flex items-end my-1 flex-wrap"&gt;
+    &lt;button class="btn btn-primary py-4 px-8"&gt;Primary Button&lt;/button&gt;
+    &lt;button class="btn btn-primary py-3 px-8"&gt;Primary Button&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;Primary Button&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="gap-3 inline-flex items-end my-1 flex-wrap"&gt;
+    &lt;button class="btn btn-secondary py-4 px-8"&gt;Secondary Button&lt;/button&gt;
+    &lt;button class="btn btn-secondary py-3 px-8"&gt;Secondary Button&lt;/button&gt;
+    &lt;button class="btn btn-secondary"&gt;Secondary Button&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="gap-3 inline-flex items-end my-1 flex-wrap"&gt;
+    &lt;button class="btn btn-accent py-4 px-8"&gt;Accent Button&lt;/button&gt;
+    &lt;button class="btn btn-accent py-3 px-8"&gt;Accent Button&lt;/button&gt;
+    &lt;button class="btn btn-accent"&gt;Accent Button&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="gap-3 inline-flex items-end my-1 flex-wrap"&gt;
+    &lt;button class="btn btn-primary py-4 px-8" disabled&gt;Disabled Button&lt;/button&gt;
+    &lt;button class="btn btn-primary py-3 px-8" disabled&gt;Disabled Button&lt;/button&gt;
+    &lt;button class="btn btn-primary" disabled&gt;Disabled Button&lt;/button&gt;
+  &lt;/div&gt;</pre>
+      </div>
+
+    </main>
+  </section>
+
+  <script src="./assets/js/script.min.js"></script>
+</body>
+
+</html>
