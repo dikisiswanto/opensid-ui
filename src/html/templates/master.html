@@ -6,10 +6,11 @@
     {% include "templates/meta.html" %}
   {% endblock %}
   {% block style -%}
+    {% include "partials/source_css.html" -%}
     <link rel="stylesheet" href="./assets/css/style.min.css">
   {%- endblock %}
 </head>
-<body>
+<body class="font-primary">
   {% block body -%}
     {% block header -%}
       {% include "partials/header.html" -%}

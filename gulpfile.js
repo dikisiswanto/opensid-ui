@@ -106,7 +106,6 @@ gulp.task('html:build', (done) => {
 
 // compile styles
 gulp.task('css:build', () => gulp.src(path.src.css) // get main.scss
-  .pipe(plumber()) // for bug tracking
   .pipe(postcss()) // pcss -> css
   .pipe(rename({
     basename: 'style',
@@ -188,15 +187,19 @@ gulp.task('cache:clear', () => {
 });
 
 // assembly
-gulp.task('build',
-  gulp.series('clean:build',
+gulp.task(
+  'build',
+  gulp.series(
+    'clean:build',
     gulp.parallel(
       'html:build',
       'css:build',
       'js:build',
       'fonts:build',
       'image:build',
-    )));
+    ),
+  ),
+);
 
 // launching tasks when files change
 gulp.task('watch', () => {

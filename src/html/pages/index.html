@@ -1,9 +1,47 @@
 {% set title = 'Nunjucks + Tailwind Starter Page' -%}
 {% extends "templates/master.html" -%}
 
+{% set components = [
+  'alert',
+  'badge',
+  'button'
+  ] 
+-%}
+
 {% block content -%}
-  <section class="container max-w-[1024px] mx-auto px-5 flex min-h-screen flex-col justify-center text-center gap-2">
-    <h1 class="font-bold text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-500 leading-snug">Tailwindcss <span class="text-3xl">x</span> Nunjucks</h1>
-    <p>You can start editing the page by modifying <code class="bg-gray-200 py-1 px-2 rounded">src/html/pages/index.html</code> or add new pages on the folder</p>
-  </section>
+<section class="text-slate-600 flex flex-col lg:flex-row gap-x-5 bg-slate-50 min-h-screen relative">
+  <aside class="lg:w-1/4 bg-white shadow lg:px-5 px-3 py-5 flex-shrink-0 lg:h-screen overflow-y-auto lg:sticky top-0">
+    <h2 class="font-lg text-primary-200 font-bold pb-3">Tema</h2>
+    <ul>
+      <li>
+        <a href="./index.html#about" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i
+        class="fas fa-info-circle mr-1 text-secondary-100"></i> Tentang</a></li>
+      <li>
+        <a href="./index.html#colors" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i
+        class="fas fa-palette mr-1 text-secondary-100"></i> Warna</a></li>
+      <li>
+        <a href="./index.html#typography" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i
+        class="fas fa-font mr-1 text-secondary-100"></i> Tipografi</a></li>
+      <li>
+        <a href="./index.html#customization" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i
+        class="fas fa-mouse-pointer mr-1 text-secondary-100"></i> Kustomisasi</a></li>
+    </ul>
+    <h2 class="font-lg text-primary-200 font-bold pt-5 pb-3">Komponen</h2>
+    <nav>
+      <ul>
+        {% for component in components %}
+          <li><a href="./index.html#{{component}}" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i class="fas fa-folder-open mr-1 text-secondary-100"></i> {{ component | capitalize }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+  <main class="bg-white shadow lg:p-5 p-3 w-full">
+    
+    {% include "components/theme.html" -%}
+    {% for component in components %}
+      {% include ["components/", component ,".html"] | join -%}
+    {% endfor %}
+
+  </main>
+</section>
 {%- endblock %}

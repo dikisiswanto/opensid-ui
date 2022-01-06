@@ -1,3 +1,79 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --primary-base-color: #008BA9;
+    --primary-darken-color: #006A82;
+    --secondary-base-color: #D08E0D;
+    --secondary-darken-color: #946200;
+    --accent-base-color: #00BA88;
+    --accent-darken-color: #00966D;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .alert {
+    @apply rounded-lg py-3 px-5 bg-slate-100 text-gray-600;
+
+    &-warning {
+      @apply bg-orange-100 text-orange-600;
+    }
+    &-error {
+      @apply bg-red-100 text-red-600;
+    }
+    &-success {
+      @apply bg-green-100 text-green-600;
+    }
+  }
+
+  .badge {
+    @apply text-slate-500 text-xs ml-1 px-2 border border-slate-500 rounded-full font-light;
+
+    &-primary {
+      @apply text-primary-100 border-primary-100;
+    }
+    &-secondary {
+      @apply text-secondary-100 border-secondary-100;
+    }
+    &-accent {
+      @apply text-accent-100 border-accent-100;
+    }
+  }
+
+  .btn {
+    @apply rounded-lg py-2 px-5 bg-slate-200 inline-block hover:shadow hover:bg-slate-300 transition;
+
+    &-primary {
+      @apply bg-primary-100 text-white hover:bg-primary-200;
+    }
+    &-secondary {
+      @apply bg-secondary-100 text-white hover:bg-secondary-200;
+    }
+    &-accent {
+      @apply bg-accent-100 text-white hover:bg-accent-200;
+    }
+    &[disabled] {
+      @apply opacity-70 bg-opacity-70 cursor-not-allowed;
+    }
+  }
+
+  .card {
+    @apply bg-white shadow-sm rounded-lg py-3;
+  }
+
+  .container {
+    @apply max-w-[1272px] px-3 md:px-5 lg:px-5 mx-auto;
+  }
+}
+
+@layer utilities {
+  .code {
+    @apply bg-slate-200 p-3 overflow-auto rounded-lg my-3 max-w-full;
+  }
+}
