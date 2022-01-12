@@ -24,7 +24,7 @@
           <img src="./assets/img/gallery-3.jpg" alt="Lorem ipsum dolor" class=" lg:h-[350px] h-40 w-full object-cover object-center">
         </figure>
         <div class="absolute bg-black bg-opacity-60 bottom-0 left-0 right-0 text-white group">
-          <a href="" class="font-medium text-h5 block py-4 px-5 group-hover:py-5 transition-all duration-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus?</a>
+          <a href="" class="font-bold text-h5 block py-4 px-5 group-hover:py-5 transition-all duration-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus?</a>
         </div>
       </div>
       {% set posts = [
@@ -58,13 +58,13 @@
         }
         ] %}
       {% for post in posts %}   
-        <div class="bg-white shadow rounded-lg p-5 border flex gap-5">
-          <figure class="h-24 w-36 overflow-hidden flex-shrink-0 hidden lg:block">
-            <img src="./assets/img/{{post.image}}" alt="{{ post.title }}" class="h-24 w-30 object-cover object-center">
+        <div class="bg-white shadow rounded-lg p-5 border flex gap-3 lg:gap-5">
+          <figure class="h-10 w-12 lg:h-24 lg:w-36 overflow-hidden flex-shrink-0">
+            <img src="./assets/img/{{post.image}}" alt="{{ post.title }}" class="h-10 w-12 lg:h-24 lg:w-36 object-cover object-center">
           </figure>
           <div class="flex flex-col justify-between gap-3">
             <a href="#" class="text-h5 hover:text-primary-100">{{ post.title }}</a>
-            <ul class="inline-flex gap-x-5 gap-y-3 text-sm text-gray-500 flex-wrap">
+            <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
               <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> {{ post.date }}</li>
               <li><i class="fas fa-user mr-1 text-primary-100"></i> {{ post.author }}</li>
               <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> {{ post.tag }}</li>
@@ -72,6 +72,7 @@
           </div>
         </div> 
       {% endfor %}
+      {% include "partials/pagination.html" %}
     </main>
   </div>
 {%- endblock %}

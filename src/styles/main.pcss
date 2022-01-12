@@ -117,6 +117,26 @@
     }
   }
 
+  .form {
+    &-input {
+      @apply bg-slate-50 rounded-lg h-10 px-2 block w-full transition duration-200 border border-gray-300 focus:border-primary-100 focus:outline-none;
+
+      &[disabled] {
+        @apply bg-gray-200 cursor-not-allowed;
+      }
+    }
+    &-textarea {
+      @apply bg-slate-50 rounded-lg h-auto py-2 px-2 block w-full transition-all duration-200 border border-gray-300 focus:border-primary-100 focus:outline-none;
+    }
+    &-radio {
+      @apply h-3 w-3 ring-2 ring-gray-300 ring-offset-2 appearance-none rounded-full cursor-pointer transition-all;
+
+      &:checked {
+        @apply bg-primary-100;
+      }
+    }
+  }
+
   .code {
     @apply bg-slate-200 p-3 overflow-auto rounded-lg my-3 max-w-full;
   }
