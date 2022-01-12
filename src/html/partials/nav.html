@@ -1,29 +1,9 @@
-{% set menu_list = [
-  {
-    'name': 'Profil',
-    'submenu': ['Sejarah Desa', 'Info Umum Desa', 'Status Desa', 'Peta Desa']
-  },
-  {
-    'name': 'Pemerintah Desa',
-    'submenu': ['Visi Misi', 'Data Perangkat', 'SOTK', 'Badan Permusyawaratan Desa', 'RT/RW']
-  },
-  {
-    'name': 'Data Desa',
-    'submenu': ['Data Umur', 'Data Jenis Kelamin', 'Data Agama', 'Data Pendidikan', 'Statistik Pekerjaan']
-  },
-  {
-    'name': 'Regulasi',
-    'submenu': ['Produk Hukum', 'Informasi Publik']
-  },
-  {
-    'name': 'Lapak',
-    'submenu': []
-  }
-  ] %}
-<nav class="bg-primary-100 text-white">
+{% from "templates/menu_items.html" import menu_list -%}
+
+<nav class="bg-primary-100 text-white hidden lg:block" role="navigation">
   <ul>
     <li class="inline-block">
-      <a href="#"  class="inline-block py-3 px-4 hover:bg-secondary-100"><i class="fa fa-home"></i></a>
+      <a href="#"  class="inline-block py-3 px-4 hover:bg-primary-200"><i class="fa fa-home"></i></a>
     </li>
     {% for menu in menu_list %}
       <li
@@ -33,7 +13,7 @@
         class="inline-block relative"
       >
         <a href="#" 
-          class="p-3 inline-block hover:bg-secondary-100"
+          class="p-3 inline-block hover:bg-primary-200"
           @mouseover="dropdown = true"
           @mouseleave="dropdown = false">
           {{ menu.name }}
@@ -47,7 +27,7 @@
             @mouseover="dropdown = true"
             @mouseleave="dropdown = false">
             {% for submenu in menu.submenu %}
-              <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">{{ submenu }}</a></li>
+              <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">{{ submenu }}</a></li>
             {% endfor %}
           </ul>
         {%- endif %}

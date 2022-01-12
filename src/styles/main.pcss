@@ -15,6 +15,10 @@
   html {
     @apply scroll-smooth;
   }
+
+  body {
+    @apply text-sm lg:text-base;
+  }
 }
 
 @layer components {
@@ -94,22 +98,22 @@
 
   .text {
     &-h1 {
-      @apply text-4xl font-bold;
+      @apply text-3xl lg:text-4xl font-bold;
     }
     &-h2 {
-      @apply text-3xl font-bold;
+      @apply text-2xl lg:text-3xl font-bold;
     }
     &-h3 {
-      @apply text-2xl font-bold;
+      @apply text-xl lg:text-2xl font-bold;
     }
     &-h4 {
-      @apply text-xl font-bold;
+      @apply text-lg lg:text-xl font-bold;
     }
     &-h5 {
-      @apply text-lg font-bold;
+      @apply text-base lg:text-lg font-bold;
     }
     &-h6 {
-      @apply font-bold;
+      @apply text-sm lg:text-base font-bold;
     }
   }
 

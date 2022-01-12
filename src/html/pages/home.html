@@ -2,7 +2,76 @@
 {% extends "templates/master.html" -%}
 
 {% block content -%}
-  <div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5">
-    <section class="slider h-[400px] rounded-lg bg-gray-300 w-2/3"></section>
+  <div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5 text-gray-600">
+    <main class="lg:w-2/3 space-y-5">
+      {% include "partials/slider.html" -%}
+      <!-- <div class="owl-carousel space-x-5" data-itemsnumber="2">
+        <div class="flex flex-col gap-3">
+          <a href="" class="bg-primary-100 text-white w-full block py-3 px-5 rounded-lg">Statistik Pendidikan</a>
+          <a href="" class="bg-primary-100 text-white w-full block py-3 px-5 rounded-lg">Statistik Pendidikan</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href="" class="bg-primary-100 text-white w-full block py-3 px-5 rounded-lg">Statistik Pendidikan</a>
+          <a href="" class="bg-primary-100 text-white w-full block py-3 px-5 rounded-lg">Statistik Pendidikan</a>
+        </div>
+      </div> -->
+      <div class="flex justify-between items-center">
+        <h3 class="text-h4 text-primary-200">Artikel Terkini</h3>
+        <a href="" class="text-sm hover:text-primary-100">Indeks <i class="fas fa-chevron-right ml-1"></i></a>
+      </div>
+      <div class="lg:h-[350px] h-40 overflow-hidden rounded-lg relative">
+        <figure class="lg:h-[350px] h-40">
+          <img src="./assets/img/gallery-3.jpg" alt="Lorem ipsum dolor" class=" lg:h-[350px] h-40 w-full object-cover object-center">
+        </figure>
+        <div class="absolute bg-black bg-opacity-60 bottom-0 left-0 right-0 text-white group">
+          <a href="" class="font-medium text-h5 block py-4 px-5 group-hover:py-5 transition-all duration-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus?</a>
+        </div>
+      </div>
+      {% set posts = [
+        {
+          title: 'Polres Luwu Utara Siapkan 3 Pos Pengamanan Nataru, Ini Lokasinya',
+          image: 'post-1.jpg',
+          author: 'John Doe',
+          date: '20 Desember 2021',
+          tag: 'Berita Desa'
+        },
+        {
+          title: '15 Desa di Luwu Utara Jadi Lokasi Program Perlindungan Anak Sektor Kakao',
+          image: 'gallery-3.jpg',
+          author: 'John Doe',
+          date: '09 Oktober 2021',
+          tag: 'Berita Desa'
+        },
+        {
+          title: 'Kepala Desa Terpilih Periode 2021-2027 Luwu Utara Resmi Dilantik, Indah: Waktunya Bekerja',
+          image: 'gallery-1.jpg',
+          author: 'John Doe',
+          date: '20 September 2021',
+          tag: 'Berita Desa'
+        },
+        {
+          title: 'KPK Rilis Hasil Survei Penilaian Integritas, Luwu Utara Tertinggi di Sulsel',
+          image: 'post-4.jpg',
+          author: 'John Doe',
+          date: '16 September 2021',
+          tag: 'Berita Desa'
+        }
+        ] %}
+      {% for post in posts %}   
+        <div class="bg-white shadow rounded-lg p-5 border flex gap-5">
+          <figure class="h-24 w-36 overflow-hidden flex-shrink-0 hidden lg:block">
+            <img src="./assets/img/{{post.image}}" alt="{{ post.title }}" class="h-24 w-30 object-cover object-center">
+          </figure>
+          <div class="flex flex-col justify-between gap-3">
+            <a href="#" class="text-h5 hover:text-primary-100">{{ post.title }}</a>
+            <ul class="inline-flex gap-x-5 gap-y-3 text-sm text-gray-500 flex-wrap">
+              <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> {{ post.date }}</li>
+              <li><i class="fas fa-user mr-1 text-primary-100"></i> {{ post.author }}</li>
+              <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> {{ post.tag }}</li>
+            </ul>
+          </div>
+        </div> 
+      {% endfor %}
+    </main>
   </div>
 {%- endblock %}

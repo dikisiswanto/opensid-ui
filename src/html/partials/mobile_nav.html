@@ -1,0 +1,33 @@
+{% from "templates/menu_items.html" import menu_list -%}
+
+<nav class="bg-primary-100 text-white lg:hidden block" x-data="{menuOpen: false}">
+  <button type="button" class="w-full block text-center uppercase p-3" x-on:click="menuOpen = !menuOpen" ><i class="fas mr-1" :class="{'fa-bars':!menuOpen, 'fa-times': menuOpen}"></i> Menu</button>
+  <ul x-show="menuOpen" x-transition class="divide-y divide-primary-200">
+    {% for menu in menu_list %}
+      <li
+        {% if menu.submenu | length -%}
+          x-data="{dropdown:false}"
+        {%- endif %}
+        class="block relative"
+      >
+        <a href="#!" 
+          class="p-3 block hover:bg-secondary-100"
+          @click="dropdown = !dropdown">
+          {{ menu.name }}
+          {% if menu.submenu | length %}<i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>{% endif %}
+        </a>
+        {% if menu.submenu | length -%}
+          <ul
+            class="divide-y divide-primary-200"
+            :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}"
+            x-transition.opacity
+            @click="dropdown = !dropdown">
+            {% for submenu in menu.submenu %}
+              <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">{{ submenu }}</a></li>
+            {% endfor %}
+          </ul>
+        {%- endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
