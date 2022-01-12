@@ -10,127 +10,237 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 
-<body class="font-primary">
+<body class="font-primary bg-gray-100">
   <div class="container md:px-4 lg:px-5">
     <header style="background-image: url('./assets/img/bg1.jpg');" class="bg-center bg-cover bg-no-repeat relative text-white">
       <div class="absolute bg-gray-800 bg-opacity-60 top-0 left-0 right-0 h-full">
       </div>
-      <section class="z-10 relative py-3 px-5">
-        <div class="flex justify-between items-center">
-          <ul class="space-x-3 hidden lg:block w-full text-sm">
-            <li class="inline-block">Berita Desa</li>
-            <li class="inline-block">Program Kerja</li>
-            <li class="inline-block">Panduan Layanan</li>
-          </ul>
-          <div class="flex gap-3 flex-wrap justify-end w-full">
-            <a href="#" class="btn btn-primary text-sm">Layanan Mandiri <i class="fa fa-external-link-alt ml-1"></i></a>
-            <a href="#" class="btn btn-accent text-sm">Login Admin <i class="fa fa-external-link-alt ml-1"></i></a>
+      <section x-data="{catMenu: false}">
+        <button type="button" class="lg:hidden inline-block py-3 px-5 z-10 relative" @click="catMenu = !catMenu">
+          <i class="fa fa-list fa-lg"></i>
+        </button>
+
+        <div x-show="catMenu" x-on:click="catMenu = false" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50 z-30"></div>
+
+        <section class="lg:py-3 px-3 lg:block transform transition-transform duration-300 lg:visible z-40" :class="{'bg-white text-gray-700 w-3/4 shadow fixed top-0 left-0 h-screen block inset-0 overflow-y-auto opacity-100 visible': catMenu, 'bg-white lg:bg-transparent fixed lg:relative -translate-x-full h-screen lg:h-auto lg:translate-x-0 opacity-0 lg:opacity-100':!catMenu}" x-transitionx-on:click.stop x-trap.noscroll.inert="catMenu">
+
+          <h5 class="text-h5 pt-5 pb-3 px-3 lg:hidden">Menu Kategori</h5>
+          <div class="flex lg:flex-row flex-col justify-between items-center relative z-10">
+
+            <ul class="w-full text-sm">
+              <li class="lg:inline-block"><a href="" class="block lg:inline-block py-2 px-3 hover:underline hover:decoration-yellow-500 hover:decoration-2 hover:underline-offset-4">Berita
+                  Desa</a></li>
+              <li class="lg:inline-block"><a href="" class="block lg:inline-block py-2 px-3 hover:underline hover:decoration-yellow-500 hover:decoration-2 hover:underline-offset-4">Program
+                  Kerja</a></li>
+              <li class="lg:inline-block"><a href="" class="block lg:inline-block py-2 px-3 hover:underline hover:decoration-yellow-500 hover:decoration-2 hover:underline-offset-4">Panduan
+                  Layanan</a></li>
+            </ul>
+
+            <div class="flex flex-col lg:flex-row gap-3 mt-5 lg:mt-0 flex-wrap lg:justify-end w-full px-3">
+              <a href="#" class="btn btn-primary text-sm w-full lg:w-auto text-center">Layanan Mandiri <i class="fa fa-external-link-alt ml-1"></i></a>
+              <a href="#" class="btn btn-accent text-sm w-full lg:w-auto text-center">Login Admin <i class="fa fa-external-link-alt ml-1"></i></a>
+            </div>
           </div>
-        </div>
+        </section>
+
       </section>
-      <section class="relative z-10 text-center space-y-2 mt-3">
+      <section class="relative z-10 text-center space-y-2 mt-3 px-3 lg:px-5">
         <figure>
           <img src="./assets/img/luwu-utara.png" alt="Logo Luwu Utara" class="h-16 mx-auto pb-2">
         </figure>
         <h1 class="text-h2">Desa Sukaraya</h1>
         <p>Kec. Bone-Bone, Kab. Luwu Utara, Provinsi Sulawesi Selatan</p>
-        <div class="grid grid-cols-3 gap-30 w-1/4 mx-auto shadow pt-3 pb-1">
+        <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4" class="block w-10/12 lg:w-1/4 mx-auto">
+          <div class="grid grid-flow-col gap-3 shadow-lg pt-2">
 
-          <div class="h-20 w-20 bg-slate-200"></div>
+            <a href="" class="block w-32 h-20" title="Album Galeri 1">
+              <img src="./assets/img/gallery-1.jpg" alt="Gallery 1" class="w-32 h-20 object-cover">
+            </a>
 
-          <div class="h-20 w-20 bg-slate-200"></div>
+            <a href="" class="block w-32 h-20" title="Album Galeri 2">
+              <img src="./assets/img/gallery-2.jpg" alt="Gallery 2" class="w-32 h-20 object-cover">
+            </a>
 
-          <div class="h-20 w-20 bg-slate-200"></div>
+            <a href="" class="block w-32 h-20" title="Album Galeri 3">
+              <img src="./assets/img/gallery-3.jpg" alt="Gallery 3" class="w-32 h-20 object-cover">
+            </a>
 
-        </div>
+          </div>
+        </marquee>
       </section>
-      <marquee onmouseover="this.stop();" onmouseout="this.start();" class="block bg-white bg-opacity-40 py-2 text-xs text-white mt-6 mb-0">Selamat datang di website resmi Pemerintah Desa Sukaraya, Kecamatan-Bone-Bone, Kabupaten Luwu Utara. Informasi dan data desa dapat diakses melalui menu yang tersedia</marquee>
+      <marquee onmouseover="this.stop();" onmouseout="this.start();" class="block bg-white bg-opacity-40 py-1.5 text-xs text-white mt-6 mb-0">Selamat datang di website resmi Pemerintah Desa Sukaraya, Kecamatan-Bone-Bone, Kabupaten Luwu Utara. Informasi dan data desa dapat diakses melalui menu yang tersedia</marquee>
     </header>
-
-    <nav class="bg-primary-100 text-white">
+    <nav class="bg-primary-100 text-white hidden lg:block" role="navigation">
       <ul>
         <li class="inline-block">
-          <a href="#" class="inline-block py-3 px-4 hover:bg-secondary-100"><i class="fa fa-home"></i></a>
+          <a href="#" class="inline-block py-3 px-4 hover:bg-primary-200"><i class="fa fa-home"></i></a>
         </li>
 
         <li x-data="{dropdown:false}" class="inline-block relative">
-          <a href="#" class="p-3 inline-block hover:bg-secondary-100" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+          <a href="#" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
             Profil
             <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
           </a>
           <ul class="absolute top-full w-64 bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" :class="{'opacity-0 invisible z-[-10] scale-y-50': !dropdown, 'opacity-100 visible z-30 scale-y-100': dropdown}" x-transition @mouseover="dropdown = true" @mouseleave="dropdown = false">
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Sejarah Desa</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Sejarah Desa</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Info Umum Desa</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Info Umum Desa</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Status Desa</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Status Desa</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Peta Desa</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Peta Desa</a></li>
 
           </ul>
         </li>
 
         <li x-data="{dropdown:false}" class="inline-block relative">
-          <a href="#" class="p-3 inline-block hover:bg-secondary-100" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+          <a href="#" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
             Pemerintah Desa
             <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
           </a>
           <ul class="absolute top-full w-64 bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" :class="{'opacity-0 invisible z-[-10] scale-y-50': !dropdown, 'opacity-100 visible z-30 scale-y-100': dropdown}" x-transition @mouseover="dropdown = true" @mouseleave="dropdown = false">
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Visi Misi</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Visi Misi</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Data Perangkat</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Data Perangkat</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">SOTK</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">SOTK</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Badan Permusyawaratan Desa</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Badan Permusyawaratan Desa</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">RT/RW</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">RT/RW</a></li>
 
           </ul>
         </li>
 
         <li x-data="{dropdown:false}" class="inline-block relative">
-          <a href="#" class="p-3 inline-block hover:bg-secondary-100" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+          <a href="#" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
             Data Desa
             <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
           </a>
           <ul class="absolute top-full w-64 bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" :class="{'opacity-0 invisible z-[-10] scale-y-50': !dropdown, 'opacity-100 visible z-30 scale-y-100': dropdown}" x-transition @mouseover="dropdown = true" @mouseleave="dropdown = false">
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Data Umur</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Data Umur</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Data Jenis Kelamin</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Data Jenis Kelamin</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Data Agama</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Data Agama</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Data Pendidikan</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Data Pendidikan</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Statistik Pekerjaan</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Statistik Pekerjaan</a></li>
 
           </ul>
         </li>
 
         <li x-data="{dropdown:false}" class="inline-block relative">
-          <a href="#" class="p-3 inline-block hover:bg-secondary-100" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+          <a href="#" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
             Regulasi
             <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
           </a>
           <ul class="absolute top-full w-64 bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" :class="{'opacity-0 invisible z-[-10] scale-y-50': !dropdown, 'opacity-100 visible z-30 scale-y-100': dropdown}" x-transition @mouseover="dropdown = true" @mouseleave="dropdown = false">
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Produk Hukum</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Produk Hukum</a></li>
 
-            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-secondary-100 hover:text-white">Informasi Publik</a></li>
+            <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Informasi Publik</a></li>
 
           </ul>
         </li>
 
         <li class="inline-block relative">
-          <a href="#" class="p-3 inline-block hover:bg-secondary-100" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+          <a href="#" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            Lapak
+
+          </a>
+
+        </li>
+
+      </ul>
+    </nav>
+    <nav class="bg-primary-100 text-white lg:hidden block" x-data="{menuOpen: false}">
+      <button type="button" class="w-full block text-center uppercase p-3" x-on:click="menuOpen = !menuOpen"><i class="fas mr-1" :class="{'fa-bars':!menuOpen, 'fa-times': menuOpen}"></i> Menu</button>
+      <ul x-show="menuOpen" x-transition class="divide-y divide-primary-200">
+
+        <li x-data="{dropdown:false}" class="block relative">
+          <a href="#!" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Profil
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Sejarah Desa</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Info Umum Desa</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Status Desa</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Peta Desa</a></li>
+
+          </ul>
+        </li>
+
+        <li x-data="{dropdown:false}" class="block relative">
+          <a href="#!" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Pemerintah Desa
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Visi Misi</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Perangkat</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">SOTK</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Badan Permusyawaratan Desa</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">RT/RW</a></li>
+
+          </ul>
+        </li>
+
+        <li x-data="{dropdown:false}" class="block relative">
+          <a href="#!" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Data Desa
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Umur</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Jenis Kelamin</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Agama</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Pendidikan</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Statistik Pekerjaan</a></li>
+
+          </ul>
+        </li>
+
+        <li x-data="{dropdown:false}" class="block relative">
+          <a href="#!" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Regulasi
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Produk Hukum</a></li>
+
+            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Informasi Publik</a></li>
+
+          </ul>
+        </li>
+
+        <li class="block relative">
+          <a href="#!" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
             Lapak
 
           </a>
@@ -140,11 +250,109 @@
       </ul>
     </nav>
   </div>
-  <div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5">
-    <section class="slider h-[400px] rounded-lg bg-gray-300 w-2/3"></section>
+  <div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5 text-gray-600">
+    <main class="lg:w-2/3 space-y-5">
+      <section class="owl-carousel rounded-lg h-48 lg:h-[400px] overflow-hidden">
+
+        <figure class="h-48 lg:h-[400px] bg-gray-300">
+          <img src="assets/img/gallery-1.jpg" alt="Gallery 1" class="w-full h-48 lg:h-[400px] object-cover object-center">
+        </figure>
+
+        <figure class="h-48 lg:h-[400px] bg-gray-300">
+          <img src="assets/img/gallery-2.jpg" alt="Gallery 2" class="w-full h-48 lg:h-[400px] object-cover object-center">
+        </figure>
+
+        <figure class="h-48 lg:h-[400px] bg-gray-300">
+          <img src="assets/img/gallery-3.jpg" alt="Gallery 3" class="w-full h-48 lg:h-[400px] object-cover object-center">
+        </figure>
+
+      </section>
+      <!-- <div class="owl-carousel space-x-5" data-itemsnumber="2">
+        <div class="flex flex-col gap-3">
+          <a href="" class="bg-primary-100 text-white w-full block py-3 px-5 rounded-lg">Statistik Pendidikan</a>
+          <a href="" class="bg-primary-100 text-white w-full block py-3 px-5 rounded-lg">Statistik Pendidikan</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href="" class="bg-primary-100 text-white w-full block py-3 px-5 rounded-lg">Statistik Pendidikan</a>
+          <a href="" class="bg-primary-100 text-white w-full block py-3 px-5 rounded-lg">Statistik Pendidikan</a>
+        </div>
+      </div> -->
+      <div class="flex justify-between items-center">
+        <h3 class="text-h4 text-primary-200">Artikel Terkini</h3>
+        <a href="" class="text-sm hover:text-primary-100">Indeks <i class="fas fa-chevron-right ml-1"></i></a>
+      </div>
+      <div class="lg:h-[350px] h-40 overflow-hidden rounded-lg relative">
+        <figure class="lg:h-[350px] h-40">
+          <img src="./assets/img/gallery-3.jpg" alt="Lorem ipsum dolor" class=" lg:h-[350px] h-40 w-full object-cover object-center">
+        </figure>
+        <div class="absolute bg-black bg-opacity-60 bottom-0 left-0 right-0 text-white group">
+          <a href="" class="font-medium text-h5 block py-4 px-5 group-hover:py-5 transition-all duration-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus?</a>
+        </div>
+      </div>
+
+
+      <div class="bg-white shadow rounded-lg p-5 border flex gap-5">
+        <figure class="h-24 w-36 overflow-hidden flex-shrink-0 hidden lg:block">
+          <img src="./assets/img/post-1.jpg" alt="Polres Luwu Utara Siapkan 3 Pos Pengamanan Nataru, Ini Lokasinya" class="h-24 w-30 object-cover object-center">
+        </figure>
+        <div class="flex flex-col justify-between gap-3">
+          <a href="#" class="text-h5 hover:text-primary-100">Polres Luwu Utara Siapkan 3 Pos Pengamanan Nataru, Ini Lokasinya</a>
+          <ul class="inline-flex gap-x-5 gap-y-3 text-sm text-gray-500 flex-wrap">
+            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 20 Desember 2021</li>
+            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
+            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white shadow rounded-lg p-5 border flex gap-5">
+        <figure class="h-24 w-36 overflow-hidden flex-shrink-0 hidden lg:block">
+          <img src="./assets/img/gallery-3.jpg" alt="15 Desa di Luwu Utara Jadi Lokasi Program Perlindungan Anak Sektor Kakao" class="h-24 w-30 object-cover object-center">
+        </figure>
+        <div class="flex flex-col justify-between gap-3">
+          <a href="#" class="text-h5 hover:text-primary-100">15 Desa di Luwu Utara Jadi Lokasi Program Perlindungan Anak Sektor Kakao</a>
+          <ul class="inline-flex gap-x-5 gap-y-3 text-sm text-gray-500 flex-wrap">
+            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 09 Oktober 2021</li>
+            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
+            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white shadow rounded-lg p-5 border flex gap-5">
+        <figure class="h-24 w-36 overflow-hidden flex-shrink-0 hidden lg:block">
+          <img src="./assets/img/gallery-1.jpg" alt="Kepala Desa Terpilih Periode 2021-2027 Luwu Utara Resmi Dilantik, Indah: Waktunya Bekerja" class="h-24 w-30 object-cover object-center">
+        </figure>
+        <div class="flex flex-col justify-between gap-3">
+          <a href="#" class="text-h5 hover:text-primary-100">Kepala Desa Terpilih Periode 2021-2027 Luwu Utara Resmi Dilantik, Indah: Waktunya Bekerja</a>
+          <ul class="inline-flex gap-x-5 gap-y-3 text-sm text-gray-500 flex-wrap">
+            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 20 September 2021</li>
+            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
+            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white shadow rounded-lg p-5 border flex gap-5">
+        <figure class="h-24 w-36 overflow-hidden flex-shrink-0 hidden lg:block">
+          <img src="./assets/img/post-4.jpg" alt="KPK Rilis Hasil Survei Penilaian Integritas, Luwu Utara Tertinggi di Sulsel" class="h-24 w-30 object-cover object-center">
+        </figure>
+        <div class="flex flex-col justify-between gap-3">
+          <a href="#" class="text-h5 hover:text-primary-100">KPK Rilis Hasil Survei Penilaian Integritas, Luwu Utara Tertinggi di Sulsel</a>
+          <ul class="inline-flex gap-x-5 gap-y-3 text-sm text-gray-500 flex-wrap">
+            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 16 September 2021</li>
+            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
+            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
+          </ul>
+        </div>
+      </div>
+
+    </main>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="./assets/js/script.min.js"></script>
 </body>
 
