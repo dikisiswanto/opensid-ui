@@ -60,6 +60,10 @@
                 class="fas fa-folder-open mr-1 text-secondary-100"></i> Button</a>
           </li>
           <li>
+            <a href="./index.html#form" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i
+                class="fas fa-folder-open mr-1 text-secondary-100"></i> Form</a>
+          </li>
+          <li>
             <a href="./index.html#modal" class="py-2 rounded-lg px-3 hover:bg-slate-50 block"><i
                 class="fas fa-folder-open mr-1 text-secondary-100"></i> Modal</a>
           </li>
@@ -640,6 +644,87 @@
     &lt;button class="btn btn-primary" disabled&gt;Disabled Button&lt;/button&gt;
   &lt;/div&gt;</pre>
       </div>
+      <h3 id="form" class="text-xl font-bold pt-8 pb-3">Form</h3>
+
+      <form action="" class="space-y-3">
+        <div class="space-y-1">
+          <label for="" class="block text-sm">Username</label>
+          <input type="text" class="form-input" placeholder="@username">
+        </div>
+        <div class="space-y-1">
+          <label for="" class="block text-sm">Password</label>
+          <input type="password" class="form-input" placeholder="*********">
+        </div>
+        <div class="space-y-1">
+          <label for="" class="block text-sm">Disabled form</label>
+          <input type="text" class="form-input" placeholder="This form is not allowed" disabled>
+        </div>
+        <div class="space-y-1">
+          <label for="" class="block text-sm">Comments</label>
+          <textarea name="" id="" cols="30" rows="3" class="form-textarea"></textarea>
+        </div>
+        <div class="space-y-1">
+          <label for="" class="block text-sm">Choose your identity</label>
+          <select name="" id="" class="form-input">
+            <option value="">---Select---</option>
+            <option value="1">ID Card</option>
+            <option value="2">Passport</option>
+            <option value="3">Driving Licence</option>
+          </select>
+        </div>
+        <div class="space-y-1">
+          <label class="block text-sm">Gender</label>
+          <label class="inline-flex items-center gap-3 mr-3 cursor-pointer">
+            <input type="radio" name="gender" id="" value="1" class="form-radio">
+            <span>Male</span>
+          </label>
+          <label class="inline-flex items-center gap-3 mr-3 cursor-pointer">
+            <input type="radio" name="gender" id="" value="2" class="form-radio">
+            <span>Female</span>
+          </label>
+        </div>
+      </form>
+
+      <pre class="code">
+&lt;form action=&quot;&quot; class=&quot;space-y-3&quot;&gt;
+  &lt;div class=&quot;space-y-1&quot;&gt;
+    &lt;label for=&quot;&quot; class=&quot;block text-sm&quot;&gt;Username&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-input&quot; placeholder=&quot;@username&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;space-y-1&quot;&gt;
+    &lt;label for=&quot;&quot; class=&quot;block text-sm&quot;&gt;Password&lt;/label&gt;
+    &lt;input type=&quot;password&quot; class=&quot;form-input&quot; placeholder=&quot;*********&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;space-y-1&quot;&gt;
+    &lt;label for=&quot;&quot; class=&quot;block text-sm&quot;&gt;Disabled form&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-input&quot; placeholder=&quot;This form is not allowed&quot; disabled&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;space-y-1&quot;&gt;
+    &lt;label for=&quot;&quot; class=&quot;block text-sm&quot;&gt;Comments&lt;/label&gt;
+    &lt;textarea name=&quot;&quot; id=&quot;&quot; cols=&quot;30&quot; rows=&quot;3&quot; class=&quot;form-textarea&quot;&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;space-y-1&quot;&gt;
+    &lt;label for=&quot;&quot; class=&quot;block text-sm&quot;&gt;Choose your identity&lt;/label&gt;
+    &lt;select name=&quot;&quot; id=&quot;&quot; class=&quot;form-input&quot;&gt;
+      &lt;option value=&quot;&quot;&gt;---Select---&lt;/option&gt;
+      &lt;option value=&quot;1&quot;&gt;ID Card&lt;/option&gt;
+      &lt;option value=&quot;2&quot;&gt;Passport&lt;/option&gt;
+      &lt;option value=&quot;3&quot;&gt;Driving Licence&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;space-y-1&quot;&gt;
+    &lt;label class=&quot;block text-sm&quot;&gt;Gender&lt;/label&gt;
+    &lt;label class=&quot;inline-flex items-center gap-3 mr-3 cursor-pointer&quot;&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;gender&quot; id=&quot;&quot; value=&quot;1&quot; class=&quot;form-radio&quot;&gt;
+      &lt;span&gt;Male&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class=&quot;inline-flex items-center gap-3 mr-3 cursor-pointer&quot;&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;gender&quot; id=&quot;&quot; value=&quot;2&quot; class=&quot;form-radio&quot;&gt;
+      &lt;span&gt;Female&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
       <h3 id="modal" class="text-xl font-bold pt-8 pb-3">Modal</h3>
 
       <div x-data="{ open: false }">
