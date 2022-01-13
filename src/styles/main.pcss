@@ -137,6 +137,14 @@
     }
   }
 
+  .bg-sidebar {
+    @apply relative;
+
+    &:before {
+      @apply content-[''] absolute top-0 left-0 w-full h-full bg-secondary-100 opacity-[0.18];
+    }
+  }
+
   .code {
     @apply bg-slate-200 p-3 overflow-auto rounded-lg my-3 max-w-full;
   }
