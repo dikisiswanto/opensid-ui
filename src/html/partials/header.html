@@ -4,11 +4,13 @@
     </div>
     {% include "partials/secondary_nav.html" %}
     <section class="relative z-10 text-center space-y-2 mt-3 px-3 lg:px-5">
-      <figure>
-        <img src="./assets/img/luwu-utara.png" alt="Logo Luwu Utara" class="h-16 mx-auto pb-2">
-      </figure>
-      <h1 class="text-h2">Desa Sukaraya</h1>
-      <p>Kec. Bone-Bone, Kab. Luwu Utara, Provinsi Sulawesi Selatan</p>
+      <a href="./home.html">
+        <figure>
+          <img src="./assets/img/luwu-utara.png" alt="Logo Luwu Utara" class="h-16 mx-auto pb-2">
+        </figure>
+        <h1 class="text-h2">Desa Sukaraya</h1>
+        <p>Kec. Bone-Bone, Kab. Luwu Utara, Provinsi Sulawesi Selatan</p>
+      </a>
       <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4" class="block w-10/12 lg:w-1/4 mx-auto">
         <div class="grid grid-flow-col gap-3 shadow-lg pt-2">
           {% for i in range(0,3) -%}
