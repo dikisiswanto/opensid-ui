@@ -16,6 +16,13 @@
 </head>
 
 <body class="font-primary bg-gray-100">
+  <div x-data="{loading: true, onLoading() {setTimeout(() => {this.loading = false}, 1500)}}" x-init="onLoading()">
+    <div class="fixed bg-white left-0 top-0 w-screen h-screen z-50 flex justify-center items-center" x-show="loading">
+      <div class="spinner-grow inline-block w-8 h-8 bg-primary-100 rounded-full opacity-0" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
   <div class="container md:px-4 lg:px-5">
     <header style="background-image: url('./assets/img/bg1.jpg');" class="bg-center bg-cover bg-no-repeat relative text-white">
       <div class="absolute bg-gray-800 bg-opacity-60 top-0 left-0 right-0 h-full">
@@ -50,11 +57,13 @@
 
       </section>
       <section class="relative z-10 text-center space-y-2 mt-3 px-3 lg:px-5">
-        <figure>
-          <img src="./assets/img/luwu-utara.png" alt="Logo Luwu Utara" class="h-16 mx-auto pb-2">
-        </figure>
-        <h1 class="text-h2">Desa Sukaraya</h1>
-        <p>Kec. Bone-Bone, Kab. Luwu Utara, Provinsi Sulawesi Selatan</p>
+        <a href="./home.html">
+          <figure>
+            <img src="./assets/img/luwu-utara.png" alt="Logo Luwu Utara" class="h-16 mx-auto pb-2">
+          </figure>
+          <h1 class="text-h2">Desa Sukaraya</h1>
+          <p>Kec. Bone-Bone, Kab. Luwu Utara, Provinsi Sulawesi Selatan</p>
+        </a>
         <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4" class="block w-10/12 lg:w-1/4 mx-auto">
           <div class="grid grid-flow-col gap-3 shadow-lg pt-2">
             <a href="" class="block w-32 h-20" title="Album Galeri 1">
@@ -194,16 +203,16 @@
   </div>
   <div class="sharethis-sticky-share-buttons"></div>
   <div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5 gap-3 lg:gap-5 justify-between text-gray-600">
-    <main class="lg:w-2/3 space-y-1 bg-white rounded-lg px-3 py-2 lg:py-4 lg:px-5 shadow">
+    <main class="lg:w-2/3 space-y-1 bg-white rounded-lg px-4 py-2 lg:py-4 lg:px-5 shadow">
       <div class="breadcrumb">
         <ol>
-          <li><a href="#">Beranda</a></li>
-          <li>Artikel</li>
+          <li><a href="./home.html">Beranda</a></li>
+          <li><a href="#">Berita Desa</a></li>
         </ol>
       </div>
-      <article>
+      <article class="content">
         <h2 class="text-h2">6 Alasan Mengapa Anda Harus Berkunjung Ke Luwu Utara</h2>
-        <span class="inline-flex flex-wrap gap-x-3 gap-y-2 text-sm py-2 text-accent-200">
+        <span class="inline-flex flex-wrap gap-x-3 gap-y-2 text-xs lg:text-sm py-2 text-accent-200">
           <span>John Doe <i class="fas fa-check text-xs bg-accent-100 h-4 w-4 inline-flex items-center justify-center rounded-full text-white"></i></span>
         <span class="before:content-['-'] before:pr-3 before:inline-block">02 Oktober 2020</span>
         <span class="before:content-['-'] before:pr-3 before:inline-block">Dibaca 1.678 kali</span>
@@ -229,6 +238,84 @@
           <p>Jangan bingung kalau mau datang ke Luwu Utara. Karena fasilitas transportasi banyak dan lengkap. Baik akses udara maupun darat. Jika Anda sudah sampai di Kabupaten Luwu Utara pun tak perlu khawatir untuk menggunakan transportasinya. Karena banyak pilihan jenis transportasi seperti angkutan umum, becak, dan juga ojek. (ikp/hms)</p>
         </div>
       </article>
+
+      <section class="fixed bottom-0 lg:top-1/2 left-0 transform transition-all duration-300 right-0 lg:right-auto z-30 lg:-translate-y-1/2" x-data="{
+    stickyShare: false,
+    onScroll() { 
+      this.stickyShare = window.scrollY > document.querySelector('.content').getBoundingClientRect().top + 150 && window.scrollY + 200 < document.querySelector('footer').getBoundingClientRect().bottom * 3 }
+  }" @scroll.window="onScroll()" :class="{'invisible opacity-0 translate-y-full lg:-translate-y-1/2 lg:-translate-x-full': !stickyShare, 'visible opacity-100 translate-y-0 lg:translate-x-0 lg:-translate-y-1/2': stickyShare}">
+        <ul class="bg-white lg:bg-transparent py-3 px-3 lg:pl-0 rounded-tr-lg rounded-br-lg text-center lg:text-left">
+          <li class="inline-block lg:block"><a href="" class="w-10 hover:relative hover:w-16 transition-all duration-300 h-10 bg-blue-700 text-white text-lg inline-flex items-center justify-center"><i class="fab fa-facebook-f"></i></a></li>
+          <li class="inline-block lg:block"><a href="" class="w-10 hover:relative hover:w-16 transition-all duration-300 h-10 bg-blue-400 text-white text-lg inline-flex items-center justify-center"><i class="fab fa-twitter"></i></a></li>
+          <li class="inline-block lg:block"><a href="" class="w-10 hover:relative hover:w-16 transition-all duration-300 h-10 bg-green-500 text-white text-lg inline-flex items-center justify-center"><i class="fab fa-whatsapp"></i></a></li>
+          <li class="inline-block lg:block"><a href="" class="w-10 hover:relative hover:w-16 transition-all duration-300 h-10 bg-blue-600 text-white text-lg inline-flex items-center justify-center"><i class="fab fa-telegram"></i></a></li>
+          <li class="inline-block lg:block"><a href="" class="w-10 hover:relative hover:w-16 transition-all duration-300 h-10 bg-red-500 text-white text-lg inline-flex items-center justify-center"><i class="fab fa-pinterest"></i></a></li>
+          <li class="inline-block lg:block"><a href="" class="w-10 hover:relative hover:w-16 transition-all duration-300 h-10 bg-blue-500 text-white text-lg inline-flex items-center justify-center"><i class="fab fa-facebook-messenger"></i></a></li>
+        </ul>
+      </section>
+      <div class="divide-y py-3">
+        <h5 class="text-h6 py-2">Semua Komentar</h5>
+        <div class="flex gap-x-3 py-4">
+          <div class="h-10 lg:h-12 lg:w-12 w-10 inline-flex items-center justify-center bg-gray-200 rounded-full flex-shrink-0 text-secondary-100"><i class="fa fa-comments text-lg"></i></div>
+          <div class="space-y-2">
+            <blockquote class="italic">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, sed?</blockquote>
+            <div class="space-y-1 space-x-3 text-xs lg:text-sm">
+              <span><i class="fa fa-user mr-1 text-accent-100"></i> Lionel Messi</span>
+              <span><i class="fa fa-calendar-alt mr-1 text-accent-100"></i> 20 Oktober 2021 19:56</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-x-3 py-4">
+          <div class="h-10 lg:h-12 lg:w-12 w-10 inline-flex items-center justify-center bg-gray-200 rounded-full flex-shrink-0 text-secondary-100"><i class="fa fa-comments text-lg"></i></div>
+          <div class="space-y-2">
+            <blockquote class="italic">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, sed?</blockquote>
+            <div class="space-y-1 space-x-3 text-xs lg:text-sm">
+              <span><i class="fa fa-user mr-1 text-accent-100"></i> Lionel Messi</span>
+              <span><i class="fa fa-calendar-alt mr-1 text-accent-100"></i> 20 Oktober 2021 19:56</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-x-3 py-4">
+          <div class="h-10 lg:h-12 lg:w-12 w-10 inline-flex items-center justify-center bg-gray-200 rounded-full flex-shrink-0 text-secondary-100"><i class="fa fa-comments text-lg"></i></div>
+          <div class="space-y-2">
+            <blockquote class="italic">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, sed?</blockquote>
+            <div class="space-y-1 space-x-3 text-xs lg:text-sm">
+              <span><i class="fa fa-user mr-1 text-accent-100"></i> Lionel Messi</span>
+              <span><i class="fa fa-calendar-alt mr-1 text-accent-100"></i> 20 Oktober 2021 19:56</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form action="" class="space-y-4 pt-5 pb-4">
+        <h5 class="text-h6">Beri Komentar</h5>
+        <div class="alert alert-info text-sm text-primary-100">Komentar baru terbit setelah disetujui oleh admin</div>
+        <div class="space-y-2">
+          <label for="komentar" class="text-xs lg:text-sm">Komentar</label>
+          <textarea name="" id="" cols="30" rows="4" class="form-textarea"></textarea>
+        </div>
+        <div class="grid grid-flow-col auto-cols gap-3">
+          <div class="space-y-2">
+            <label for="nama" class="text-xs lg:text-sm">Nama Lengkap <span class="text-red-500">*</span></label>
+            <input type="text" class="form-input" id="nama">
+          </div>
+          <div class="space-y-2">
+            <label for="email" class="text-xs lg:text-sm">Email</label>
+            <input type="text" class="form-input">
+          </div>
+          <div class="space-y-2">
+            <label for="no_hp" class="text-xs lg:text-sm">No. HP <span class="text-red-500">*</span></label>
+            <input type="text" class="form-input">
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="group">
+            <img src="./assets/img/captcha.jpg" alt="" class="w-48 h-auto">
+            <a href="#!" class="underline underline-offset-2 decoration-secondary-100 decoration-2 text-xs">[Ganti gambar]</a>
+          </div>
+          <input type="text" class="form-input" placeholder="Masukkan kode di samping">
+        </div>
+        <button class="btn btn-primary">Kirim Komentar<i class="fas fa-paper-plane"></i></button>
+      </form>
     </main>
     <div class="lg:w-1/3">
       <aside class="space-y-5">
@@ -257,7 +344,7 @@
       </aside>
     </div>
   </div>
-  <footer class="container mx-auto lg:px-5 px-3 pt-5">
+  <footer class="container mx-auto lg:px-5 px-3 pt-5 footer">
     <div class="bg-zinc-700 text-white py-5 px-5 rounded-t-xl text-sm flex flex-col gap-3 lg:flex-row justify-between items-center text-center lg:text-left">
       <span class="space-y-2">
       <p>Hak cipta situs &copy; 2022 - Desa Sukaraya</p>

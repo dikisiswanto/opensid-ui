@@ -16,6 +16,13 @@
 </head>
 
 <body class="font-primary bg-gray-100">
+  <div x-data="{loading: true, onLoading() {setTimeout(() => {this.loading = false}, 1500)}}" x-init="onLoading()">
+    <div class="fixed bg-white left-0 top-0 w-screen h-screen z-50 flex justify-center items-center" x-show="loading">
+      <div class="spinner-grow inline-block w-8 h-8 bg-primary-100 rounded-full opacity-0" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
   <div class="container md:px-4 lg:px-5">
     <header style="background-image: url('./assets/img/bg1.jpg');" class="bg-center bg-cover bg-no-repeat relative text-white">
       <div class="absolute bg-gray-800 bg-opacity-60 top-0 left-0 right-0 h-full">
@@ -50,11 +57,13 @@
 
       </section>
       <section class="relative z-10 text-center space-y-2 mt-3 px-3 lg:px-5">
-        <figure>
-          <img src="./assets/img/luwu-utara.png" alt="Logo Luwu Utara" class="h-16 mx-auto pb-2">
-        </figure>
-        <h1 class="text-h2">Desa Sukaraya</h1>
-        <p>Kec. Bone-Bone, Kab. Luwu Utara, Provinsi Sulawesi Selatan</p>
+        <a href="./home.html">
+          <figure>
+            <img src="./assets/img/luwu-utara.png" alt="Logo Luwu Utara" class="h-16 mx-auto pb-2">
+          </figure>
+          <h1 class="text-h2">Desa Sukaraya</h1>
+          <p>Kec. Bone-Bone, Kab. Luwu Utara, Provinsi Sulawesi Selatan</p>
+        </a>
         <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4" class="block w-10/12 lg:w-1/4 mx-auto">
           <div class="grid grid-flow-col gap-3 shadow-lg pt-2">
             <a href="" class="block w-32 h-20" title="Album Galeri 1">
@@ -196,15 +205,15 @@
     <main class="lg:w-2/3 space-y-5">
       <section class="owl-carousel rounded-lg h-48 lg:h-[400px] overflow-hidden">
 
-        <figure class="h-48 lg:h-[400px] bg-gray-300">
+        <figure class="h-48 lg:h-[400px] w-full bg-gray-300">
           <img src="assets/img/gallery-2.jpg" alt="Gallery 2" class="w-full h-48 lg:h-[400px] object-cover object-center">
         </figure>
 
-        <figure class="h-48 lg:h-[400px] bg-gray-300">
+        <figure class="h-48 lg:h-[400px] w-full bg-gray-300">
           <img src="assets/img/gallery-3.jpg" alt="Gallery 3" class="w-full h-48 lg:h-[400px] object-cover object-center">
         </figure>
 
-        <figure class="h-48 lg:h-[400px] bg-gray-300">
+        <figure class="h-48 lg:h-[400px] w-full bg-gray-300">
           <img src="assets/img/gallery-1.jpg" alt="Gallery 1" class="w-full h-48 lg:h-[400px] object-cover object-center">
         </figure>
 
@@ -320,7 +329,7 @@
       </aside>
     </div>
   </div>
-  <footer class="container mx-auto lg:px-5 px-3 pt-5">
+  <footer class="container mx-auto lg:px-5 px-3 pt-5 footer">
     <div class="bg-zinc-700 text-white py-5 px-5 rounded-t-xl text-sm flex flex-col gap-3 lg:flex-row justify-between items-center text-center lg:text-left">
       <span class="space-y-2">
       <p>Hak cipta situs &copy; 2022 - Desa Sukaraya</p>
