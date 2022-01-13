@@ -3,7 +3,7 @@
 <nav class="bg-primary-100 text-white lg:hidden block" x-data="{menuOpen: false}">
   <button type="button" class="w-full block text-center uppercase p-3" x-on:click="menuOpen = !menuOpen" ><i class="fas mr-1" :class="{'fa-bars':!menuOpen, 'fa-times': menuOpen}"></i> Menu</button>
   <ul x-show="menuOpen" x-transition class="divide-y divide-primary-200">
-    {% for menu in menu_list %}
+    {% for menu in menu_list -%}
       <li
         {% if menu.submenu | length -%}
           x-data="{dropdown:false}"
@@ -22,12 +22,12 @@
             :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}"
             x-transition.opacity
             @click="dropdown = !dropdown">
-            {% for submenu in menu.submenu %}
+            {% for submenu in menu.submenu -%}
               <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">{{ submenu }}</a></li>
-            {% endfor %}
+            {%- endfor %}
           </ul>
         {%- endif %}
       </li>
-    {% endfor %}
+    {%- endfor %}
   </ul>
 </nav>

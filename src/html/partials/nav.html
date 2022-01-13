@@ -5,7 +5,7 @@
     <li class="inline-block">
       <a href="./home.html"  class="inline-block py-3 px-4 hover:bg-primary-200"><i class="fa fa-home"></i></a>
     </li>
-    {% for menu in menu_list %}
+    {% for menu in menu_list -%}
       <li
         {% if menu.submenu | length -%}
           x-data="{dropdown:false}"
@@ -26,12 +26,12 @@
             x-transition
             @mouseover="dropdown = true"
             @mouseleave="dropdown = false">
-            {% for submenu in menu.submenu %}
+            {% for submenu in menu.submenu -%}
               <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">{{ submenu }}</a></li>
-            {% endfor %}
+            {%- endfor %}
           </ul>
         {%- endif %}
       </li>
-    {% endfor %}
+    {%- endfor %}
   </ul>
 </nav>
