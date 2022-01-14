@@ -1,0 +1,25 @@
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-5 container px-3 lg:px-5">
+  {% for item in ['Pelaksanaan', 'Pendapatan', 'Pembiayaan'] %}  
+    <div class="shadow bg-white rounded-lg overflow-hidden">
+      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 {{ item }}</h3>
+      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
+        {% for i in range(0,3) -%}
+        {% set percent = [16, 56, 78, 85, 90, 28, 46, 67] | random -%}
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+            <span>{{ percent }}%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: {{ percent }}%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+            <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

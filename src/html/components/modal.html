@@ -1,0 +1,110 @@
+<h3 id="modal" class="text-xl font-bold pt-8 pb-3">Modal</h3>
+
+<div x-data="{ open: false }">
+  <!-- Button -->
+  <button 
+    x-on:click="open = true"
+    type="button"
+    class="btn btn-primary">
+    Buka Modal
+  </button>
+
+  <!-- Modal -->
+  <div 
+    x-show="open"
+    x-on:keydown.escape.prevent.stop="open = false"
+    role="dialog" aria-modal="true"
+    x-id="['modal-title']"
+    :aria-labelledby="$id('modal-title')"
+    class="fixed inset-0 overflow-y-auto">
+    <!-- Overlay -->
+    <div 
+      x-show="open"
+      x-transition.opacity
+      class="fixed inset-0 bg-black bg-opacity-50"></div>
+
+    <!-- Panel -->
+    <div x-show="open" x-transition x-on:click="open = false"
+      class="relative min-h-screen flex items-center justify-center">
+      <div x-on:click.stop x-trap.noscroll.inert="open"
+        class="relative max-w-2xl w-full 
+        bg-white rounded-lg shadow py-6 px-8 overflow-y-auto">
+        <!-- Title -->
+        <h2 class="text-h3" :id="$id('modal-title')">Konfirmasi</h2>
+        <!-- Content -->
+        <p class="mt-2 text-gray-600">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          At debitis quibusdam recusandae possimus non,
+          facilis eligendi omnis porro?</p>
+        <!-- Buttons -->
+        <div class="mt-8 flex space-x-2">
+          <button type="button"
+            x-on:click="open = false"
+            class="btn btn-primary">
+            Konfirmasi
+          </button>
+          <button type="button"
+            x-on:click="open = false"
+            class="btn bg-red-500 text-white hover:bg-red-700">
+            Batal
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<pre class="code break-words">
+&lt;div x-data=&quot;{ open: false }&quot;&gt;
+  &lt;!-- Button --&gt;
+  &lt;button 
+    x-on:click=&quot;open = true&quot;
+    type=&quot;button&quot;
+    class=&quot;btn btn-primary&quot;&gt;
+    Buka Modal
+  &lt;/button&gt;
+
+  &lt;!-- Modal --&gt;
+  &lt;div 
+    x-show=&quot;open&quot;
+    x-on:keydown.escape.prevent.stop=&quot;open = false&quot;
+    role=&quot;dialog&quot; aria-modal=&quot;true&quot;
+    x-id=&quot;[&#39;modal-title&#39;]&quot;
+    :aria-labelledby=&quot;$id(&#39;modal-title&#39;)&quot;
+    class=&quot;fixed inset-0 overflow-y-auto&quot;&gt;
+    &lt;!-- Overlay --&gt;
+    &lt;div 
+      x-show=&quot;open&quot;
+      x-transition.opacity
+      class=&quot;fixed inset-0 bg-black bg-opacity-50&quot;&gt;&lt;/div&gt;
+
+    &lt;!-- Panel --&gt;
+    &lt;div x-show=&quot;open&quot; x-transition x-on:click=&quot;open = false&quot;
+      class=&quot;relative min-h-screen flex items-center justify-center p-4&quot;&gt;
+      &lt;div x-on:click.stop x-trap.noscroll.inert=&quot;open&quot;
+        class=&quot;relative max-w-2xl w-full 
+        bg-white rounded-lg shadow py-6 px-8 overflow-y-auto&quot;&gt;
+        &lt;!-- Title --&gt;
+        &lt;h2 class=&quot;text-h3&quot; :id=&quot;$id(&#39;modal-title&#39;)&quot;&gt;Konfirmasi&lt;/h2&gt;
+        &lt;!-- Content --&gt;
+        &lt;p class=&quot;mt-2 text-gray-600&quot;&gt;
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          At debitis quibusdam recusandae possimus non,
+          facilis eligendi omnis porro?&lt;/p&gt;
+        &lt;!-- Buttons --&gt;
+        &lt;div class=&quot;mt-8 flex space-x-2&quot;&gt;
+          &lt;button type=&quot;button&quot;
+            x-on:click=&quot;open = false&quot;
+            class=&quot;btn btn-primary&quot;&gt;
+            Konfirmasi
+          &lt;/button&gt;
+          &lt;button type=&quot;button&quot;
+            x-on:click=&quot;open = false&quot;
+            class=&quot;btn bg-red-500 text-white hover:bg-red-700&quot;&gt;
+            Batal
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>

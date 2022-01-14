@@ -1,24 +1,181 @@
-<aside class="space-y-5">
+<aside class="space-y-5 sidebar">
   <form action="" role="form" class="relative">
     <i class="fas fa-search absolute top-1/2 left-0 transform -translate-y-1/2 z-10 px-3 text-gray-500"></i>
-    <input type="text"class="form-input px-10 w-full h-12 bg-white relative inline-block" placeholder="Cari...">
+    <input type="text" class="form-input px-10 w-full h-12 bg-white relative inline-block" placeholder="Cari...">
   </form>
   <div class="shadow rounded-lg bg-white overflow-hidden">
-    <div class="bg-sidebar text-secondary-100 bg-opacity-50 px-3 lg:px-5">
-      <h3 class="text-h5 py-2"><i class="fas fa-map mr-1"></i> Peta Desa</h3>
+    <style type="text/css">
+      button.btn {
+        margin-left: 0
+      }
+      #detail tbody {
+        max-width: 100%;
+      }
+      #detail tr {
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+      #detail tr td {
+        padding: 5px 6px;
+        /* word-break: break-all; */
+        border: 1px solid #eee;
+      }
+    </style>
+    <!-- widget Peta Lokasi Kantor Desa -->
+    <div class="box box-primary box-solid">
+      <div class="box-header">
+        <h3 class="box-title">
+          <i class="fa fa-map-marker-alt mr-2"></i>Lokasi Kantor Desa </h3>
+      </div>
+      <div class="box-body">
+        <div id="map_canvas" style="height:200px;" class="mb-4"></div>
+        <button class="btn btn-accent">
+          <a href="https://www.openstreetmap.org/#map=15/-8.483832804795249/116.08523368835449" style="color:#fff;"
+            target="_blank">Buka Peta</a></button>
+        <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#detail">
+          Detail
+        </button>
+          <!-- Modal -->
+          <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+          id="detail" tabindex="-1" aria-labelledby="detailLabel" aria-hidden="true">
+          <div class="modal-dialog relative w-auto pointer-events-none">
+          <div
+          class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+          <div
+            class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+            <h5 class="text-xl font-medium leading-normal text-gray-800" id="detailLabel">Detail Desa</h5>
+            <button type="button"
+              class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+              data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body relative p-4">
+            <table class="max-w-full text-xs lg:text-sm table-auto w-full">
+              <tbody>
+                <tr>
+                  <td>Alamat</td>
+                  <td>:</td>
+                  <td>Jl. Andi Makassau, No. 12, Dusun Sidodadi</td>
+                </tr>
+                <tr>
+                  <td>Desa </td>
+                  <td>:</td>
+                  <td>Sukaraya</td>
+                </tr>
+                <tr>
+                  <td>Kecamatan</td>
+                  <td>:</td>
+                  <td>Bone-Bone</td>
+                </tr>
+                <tr>
+                  <td>Kabupaten</td>
+                  <td>:</td>
+                  <td>Luwu Utara</td>
+                </tr>
+                <tr>
+                  <td>Kodepos</td>
+                  <td>:</td>
+                  <td>92966</td>
+                </tr>
+                <tr>
+                  <td>Telepon</td>
+                  <td>:</td>
+                  <td>0471563410</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>:</td>
+                  <td>pengaduan@sukaraya.luwuutarakab.go.id</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="px-3 lg:px-5 py-4">
-      <img src="./assets/img/peta.png" alt="Peta Desa" class="w-full h-auto">
-      <a href="" class="underline decoration-secondary-100 underline-offset-2 text-primary-200 decoration-2">Buka Peta</a>
-    </div>
+    <script>
+    //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
+        var posisi = [-8.483832804795249,116.08523368835449];
+      var zoom = 14;
+    
+    var lokasi_kantor = L.map('map_canvas').setView(posisi, zoom);
+  
+    //Menampilkan BaseLayers Peta
+    var baseLayers = getBaseLayers(lokasi_kantor, '');
+  
+    L.control.layers(baseLayers, null, {position: 'topright', collapsed: true}).addTo(lokasi_kantor);
+  
+    //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
+        var kantor_desa = L.marker(posisi).addTo(lokasi_kantor);
+    </script>
   </div>
   <div class="shadow rounded-lg bg-white overflow-hidden">
-    <div class="bg-sidebar text-secondary-100 bg-opacity-50 px-3 lg:px-5">
-      <h3 class="text-h5 py-2"><i class="fas fa-chart-bar mr-1"></i> Statistik Penduduk</h3>
-    </div>
-    <div class="px-3 lg:px-5 py-4">
-      <img src="./assets/img/chart.png" alt="Statistik Penduduk Desa" class="w-2/3 mx-auto h-auto">
-      <a href="" class="underline decoration-secondary-100 underline-offset-2 text-primary-200 decoration-2 my-1">Lihat rincian</a>
+    <style type="text/css">
+      .highcharts-xaxis-labels tspan {
+        font-size: 8px
+      }
+    </style>
+    <div class="box box-primary box-solid">
+      <div class="box-header">
+        <h3 class="box-title"><a href="#!"><i class="fas fa-chart-bar"></i>
+            Statistik Desa Sukaraya</a></h3>
+      </div>
+      <div class="box-body">
+        <script type="text/javascript">
+          $(function () {
+            var chart_widget;
+            $(document).ready(function () {
+              // Build the chart
+              chart_widget = new Highcharts.Chart({
+                chart: {
+                  renderTo: 'container_widget',
+                  plotBackgroundColor: null,
+                  plotBorderWidth: null,
+                  plotShadow: false
+                },
+                title: {
+                  text: 'Jumlah Penduduk'
+                },
+                yAxis: {
+                  title: {
+                    text: 'Jumlah'
+                  }
+                },
+                xAxis: {
+                  categories: [
+                    ['46 <br> LAKI-LAKI'],
+                    ['51 <br> PEREMPUAN'],
+                    ['97 <br> TOTAL'],
+                  ]
+                },
+                legend: {
+                  enabled: false
+                },
+                plotOptions: {
+                  series: {
+                    colorByPoint: true
+                  },
+                  column: {
+                    pointPadding: 0,
+                    borderWidth: 0
+                  }
+                },
+                series: [{
+                  type: 'column',
+                  name: 'Populasi',
+                  data: [
+                    ['LAKI-LAKI', 46],
+                    ['PEREMPUAN', 51],
+                    ['TOTAL', 97],
+                  ]
+                }]
+              });
+            });
+          });
+        </script>
+        <div id="container_widget"></div>
+      </div>
     </div>
   </div>
 </aside>

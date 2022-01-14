@@ -9,6 +9,7 @@
     {% include "partials/source_css.html" -%}
     <link rel="stylesheet" href="./assets/css/style.min.css">
   {%- endblock %}
+  {% include "partials/source_js.html" -%}
 </head>
 <body class="font-primary bg-gray-100">
   {% include "partials/loading.html" -%}
@@ -17,12 +18,12 @@
       {% include "partials/header.html" -%}
     {%- endblock %}
     {% block content -%}{%- endblock %}
+    {% include "partials/apbdesa.html" -%}
     {% block footer -%}
       {% include "partials/footer.html" -%}
     {%- endblock %}
   {%- endblock %}
   {% block scripts -%}
-    {% include "partials/source_js.html" -%}
     <script src="./assets/js/script.min.js"></script>
   {%- endblock %}
 </body>

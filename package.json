@@ -48,6 +48,6 @@
   },
   "dependencies": {
     "tailwindcss": "^3.0.9",
-    "tw-elements": "^1.0.0-alpha6"
+    "tw-elements": "^1.0.0-alpha7"
   }
 }

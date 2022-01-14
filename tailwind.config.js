@@ -1,6 +1,6 @@
 module.exports = {
   // mode: 'jit',
-  content: ['./build/*.html'],
+  content: ['./build/*.html', './build/**/**/*.js'],
   // darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -27,6 +27,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    // eslint-disable-next-line global-require
     require('tw-elements/dist/plugin'),
   ],
 };
