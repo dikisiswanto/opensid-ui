@@ -2,22 +2,46 @@
 <html lang="en">
 
 <head>
-  <title>Halaman Beranda</title>
+  <title>Halaman Detail Artikel</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/datatables@1.10.18/media/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.0.1/mapbox-gl.min.css">
   <link rel="stylesheet" href="./assets/css/style.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/highcharts@8.1.0/highcharts.js"></script>
+  <script src="https://unpkg.com/highcharts@8.1.0/highcharts-3d.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://unpkg.com/datatables@1.10.18/media/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.6.0/leaflet-providers.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.0.1/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl-leaflet/0.0.14/leaflet-mapbox-gl.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.carousel.js"></script>
+  <script src="https://preview.silirdev.com/assets/js/peta.js"></script>
+  <script type="text/javascript">
+    var csrfParam = 'sidcsrf';
+    var getCsrfToken = () => document.cookie.match(new RegExp(csrfParam + '=(\\w+)'))[1]
+  </script>
+  <script src="https://preview.silirdev.com/assets/js/anti-csrf.js"></script>
 </head>
 
 <body class="font-primary bg-gray-100">
   <div x-data="{loading: true, onLoading() {setTimeout(() => {this.loading = false}, 1500)}}" x-init="onLoading()">
-    <div class="fixed bg-white left-0 top-0 w-screen h-screen z-50 flex justify-center items-center" x-show="loading">
+    <div class="fixed bg-white left-0 top-0 w-screen h-screen z-[9999] flex justify-center items-center" x-show="loading">
       <div class="spinner-grow inline-block w-8 h-8 bg-primary-100 rounded-full opacity-0" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
@@ -28,11 +52,11 @@
       <div class="absolute bg-gray-800 bg-opacity-60 top-0 left-0 right-0 h-full">
       </div>
       <section x-data="{catMenu: false}">
-        <button type="button" class="lg:hidden inline-block py-3 px-5 z-10 relative" @click="catMenu = !catMenu">
+        <button type="button" class="lg:hidden inline-block py-4 px-6 z-10 relative" @click="catMenu = !catMenu">
           <i class="fa fa-list fa-lg"></i>
         </button>
 
-        <div x-show="catMenu" x-on:click="catMenu = false" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50 z-30"></div>
+        <div x-show="catMenu" x-on:click="catMenu = false" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50 z-30 backdrop-blur-sm"></div>
 
         <section class="lg:py-3 px-3 lg:block transform transition-transform duration-300 lg:visible z-40" :class="{'bg-white text-gray-700 w-3/4 shadow fixed top-0 left-0 h-screen block inset-0 overflow-y-auto opacity-100 visible': catMenu, 'bg-white lg:bg-transparent fixed lg:relative -translate-x-full h-screen lg:h-auto lg:translate-x-0 opacity-0 lg:opacity-100':!catMenu}" x-transitionx-on:click.stop x-trap.noscroll.inert="catMenu">
 
@@ -76,7 +100,7 @@
           </div>
         </marquee>
       </section>
-      <marquee onmouseover="this.stop();" onmouseout="this.start();" class="block bg-white bg-opacity-40 py-1.5 text-xs text-white mt-6 mb-0">Selamat datang di website resmi Pemerintah Desa Sukaraya, Kecamatan-Bone-Bone, Kabupaten Luwu Utara. Informasi dan data desa dapat diakses melalui menu yang tersedia</marquee>
+      <marquee onmouseover="this.stop();" onmouseout="this.start();" class="block bg-white bg-opacity-20 py-1.5 text-xs text-white mt-6 mb-0 z-20 relative">Selamat datang di website resmi Pemerintah Desa Sukaraya, Kecamatan-Bone-Bone, Kabupaten Luwu Utara. Informasi dan data desa dapat diakses melalui menu yang tersedia</marquee>
     </header>
     <nav class="bg-primary-100 text-white hidden lg:block" role="navigation">
       <ul>
@@ -149,10 +173,10 @@
             <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
           </a>
           <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Sejarah Desa</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Info Umum Desa</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Status Desa</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Peta Desa</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Sejarah Desa</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Info Umum Desa</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Status Desa</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Peta Desa</a></li>
           </ul>
         </li>
         <li x-data="{dropdown:false}" class="block relative">
@@ -161,11 +185,11 @@
             <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
           </a>
           <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Visi Misi</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Perangkat</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">SOTK</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Badan Permusyawaratan Desa</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">RT/RW</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Visi Misi</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Perangkat</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">SOTK</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Badan Permusyawaratan Desa</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">RT/RW</a></li>
           </ul>
         </li>
         <li x-data="{dropdown:false}" class="block relative">
@@ -174,11 +198,11 @@
             <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
           </a>
           <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Umur</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Jenis Kelamin</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Agama</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Pendidikan</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Statistik Pekerjaan</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Umur</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Jenis Kelamin</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Agama</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Pendidikan</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Statistik Pekerjaan</a></li>
           </ul>
         </li>
         <li x-data="{dropdown:false}" class="block relative">
@@ -187,8 +211,8 @@
             <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
           </a>
           <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Produk Hukum</a></li>
-            <li><a href="#!" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Informasi Publik</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Produk Hukum</a></li>
+            <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Informasi Publik</a></li>
           </ul>
         </li>
         <li class="block relative">
@@ -316,33 +340,399 @@
         </div>
         <button class="btn btn-primary">Kirim Komentar<i class="fas fa-paper-plane"></i></button>
       </form>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item border-t-0 border-l-0 border-r-0 rounded-none bg-white border border-gray-200">
+          <h2 class="accordion-header mb-0" id="flush-headingOne">
+            <button class="accordion-button
+            relative
+            flex
+            items-center
+            w-full
+            py-4
+            px-5
+            text-base text-gray-800 text-left
+            bg-white
+            border-0
+            rounded-none
+            transition
+            focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Accordion Item #1
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse border-0 collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body py-4 px-5">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+          </div>
+        </div>
+        <div class="accordion-item border-l-0 border-r-0 rounded-none bg-white border border-gray-200">
+          <h2 class="accordion-header mb-0" id="flush-headingTwo">
+            <button class="accordion-button
+            collapsed
+            relative
+            flex
+            items-center
+            w-full
+            py-4
+            px-5
+            text-base text-gray-800 text-left
+            bg-white
+            border-0
+            rounded-none
+            transition
+            focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Accordion Item #2
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse border-0 collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body py-4 px-5">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+          </div>
+        </div>
+        <div class="accordion-item border-l-0 border-r-0 border-b-0 rounded-none bg-white border border-gray-200">
+          <h2 class="accordion-header mb-0" id="flush-headingThree">
+            <button class="accordion-button
+            collapsed
+            relative
+            flex
+            items-center
+            w-full
+            py-4
+            px-5
+            text-base text-gray-800 text-left
+            bg-white
+            border-0
+            rounded-none
+            transition
+            focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Accordion Item #3
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body py-4 px-5">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          </div>
+        </div>
+      </div>
     </main>
     <div class="lg:w-1/3">
-      <aside class="space-y-5">
+      <aside class="space-y-5 sidebar">
         <form action="" role="form" class="relative">
           <i class="fas fa-search absolute top-1/2 left-0 transform -translate-y-1/2 z-10 px-3 text-gray-500"></i>
           <input type="text" class="form-input px-10 w-full h-12 bg-white relative inline-block" placeholder="Cari...">
         </form>
         <div class="shadow rounded-lg bg-white overflow-hidden">
-          <div class="bg-sidebar text-secondary-100 bg-opacity-50 px-3 lg:px-5">
-            <h3 class="text-h5 py-2"><i class="fas fa-map mr-1"></i> Peta Desa</h3>
+          <style type="text/css">
+            button.btn {
+              margin-left: 0
+            }
+
+            #detail tbody {
+              max-width: 100%;
+            }
+
+            #detail tr {
+              word-break: break-all;
+              word-wrap: break-word;
+            }
+
+            #detail tr td {
+              padding: 5px 6px;
+              /* word-break: break-all; */
+              border: 1px solid #eee;
+            }
+          </style>
+          <!-- widget Peta Lokasi Kantor Desa -->
+          <div class="box box-primary box-solid">
+            <div class="box-header">
+              <h3 class="box-title">
+                <i class="fa fa-map-marker-alt mr-2"></i>Lokasi Kantor Desa
+              </h3>
+            </div>
+            <div class="box-body">
+              <div id="map_canvas" style="height:200px;" class="mb-4"></div>
+              <button class="btn btn-accent">
+                <a href="https://www.openstreetmap.org/#map=15/-8.483832804795249/116.08523368835449" style="color:#fff;" target="_blank">Buka Peta</a></button>
+              <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#detail">
+                Detail
+              </button>
+              <!-- Modal -->
+              <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="detail" tabindex="-1" aria-labelledby="detailLabel" aria-hidden="true">
+                <div class="modal-dialog relative w-auto pointer-events-none">
+                  <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+                    <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                      <h5 class="text-xl font-medium leading-normal text-gray-800" id="detailLabel">Detail Desa</h5>
+                      <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body relative p-4">
+                      <table class="max-w-full text-xs lg:text-sm table-auto w-full">
+                        <tbody>
+                          <tr>
+                            <td>Alamat</td>
+                            <td>:</td>
+                            <td>Jl. Andi Makassau, No. 12, Dusun Sidodadi</td>
+                          </tr>
+                          <tr>
+                            <td>Desa </td>
+                            <td>:</td>
+                            <td>Sukaraya</td>
+                          </tr>
+                          <tr>
+                            <td>Kecamatan</td>
+                            <td>:</td>
+                            <td>Bone-Bone</td>
+                          </tr>
+                          <tr>
+                            <td>Kabupaten</td>
+                            <td>:</td>
+                            <td>Luwu Utara</td>
+                          </tr>
+                          <tr>
+                            <td>Kodepos</td>
+                            <td>:</td>
+                            <td>92966</td>
+                          </tr>
+                          <tr>
+                            <td>Telepon</td>
+                            <td>:</td>
+                            <td>0471563410</td>
+                          </tr>
+                          <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td>pengaduan@sukaraya.luwuutarakab.go.id</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="px-3 lg:px-5 py-4">
-            <img src="./assets/img/peta.png" alt="Peta Desa" class="w-full h-auto">
-            <a href="" class="underline decoration-secondary-100 underline-offset-2 text-primary-200 decoration-2">Buka Peta</a>
-          </div>
+          <script>
+            //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
+            var posisi = [-8.483832804795249, 116.08523368835449];
+            var zoom = 14;
+
+            var lokasi_kantor = L.map('map_canvas').setView(posisi, zoom);
+
+            //Menampilkan BaseLayers Peta
+            var baseLayers = getBaseLayers(lokasi_kantor, '');
+
+            L.control.layers(baseLayers, null, {
+              position: 'topright',
+              collapsed: true
+            }).addTo(lokasi_kantor);
+
+            //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
+            var kantor_desa = L.marker(posisi).addTo(lokasi_kantor);
+          </script>
         </div>
         <div class="shadow rounded-lg bg-white overflow-hidden">
-          <div class="bg-sidebar text-secondary-100 bg-opacity-50 px-3 lg:px-5">
-            <h3 class="text-h5 py-2"><i class="fas fa-chart-bar mr-1"></i> Statistik Penduduk</h3>
-          </div>
-          <div class="px-3 lg:px-5 py-4">
-            <img src="./assets/img/chart.png" alt="Statistik Penduduk Desa" class="w-2/3 mx-auto h-auto">
-            <a href="" class="underline decoration-secondary-100 underline-offset-2 text-primary-200 decoration-2 my-1">Lihat rincian</a>
+          <style type="text/css">
+            .highcharts-xaxis-labels tspan {
+              font-size: 8px
+            }
+          </style>
+          <div class="box box-primary box-solid">
+            <div class="box-header">
+              <h3 class="box-title"><a href="#!"><i class="fas fa-chart-bar"></i>
+                  Statistik Desa Sukaraya</a></h3>
+            </div>
+            <div class="box-body">
+              <script type="text/javascript">
+                $(function() {
+                  var chart_widget;
+                  $(document).ready(function() {
+                    // Build the chart
+                    chart_widget = new Highcharts.Chart({
+                      chart: {
+                        renderTo: 'container_widget',
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false
+                      },
+                      title: {
+                        text: 'Jumlah Penduduk'
+                      },
+                      yAxis: {
+                        title: {
+                          text: 'Jumlah'
+                        }
+                      },
+                      xAxis: {
+                        categories: [
+                          ['46 <br> LAKI-LAKI'],
+                          ['51 <br> PEREMPUAN'],
+                          ['97 <br> TOTAL'],
+                        ]
+                      },
+                      legend: {
+                        enabled: false
+                      },
+                      plotOptions: {
+                        series: {
+                          colorByPoint: true
+                        },
+                        column: {
+                          pointPadding: 0,
+                          borderWidth: 0
+                        }
+                      },
+                      series: [{
+                        type: 'column',
+                        name: 'Populasi',
+                        data: [
+                          ['LAKI-LAKI', 46],
+                          ['PEREMPUAN', 51],
+                          ['TOTAL', 97],
+                        ]
+                      }]
+                    });
+                  });
+                });
+              </script>
+              <div id="container_widget"></div>
+            </div>
           </div>
         </div>
       </aside>
     </div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 container px-3 lg:px-5">
+
+    <div class="shadow bg-white rounded-lg overflow-hidden">
+      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 Pelaksanaan</h3>
+      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>56%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>56%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>16%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 16%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow bg-white rounded-lg overflow-hidden">
+      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 Pendapatan</h3>
+      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>56%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>56%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>46%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 46%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow bg-white rounded-lg overflow-hidden">
+      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 Pembiayaan</h3>
+      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>85%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>28%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 28%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>78%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 78%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
   </div>
   <footer class="container mx-auto lg:px-5 px-3 pt-5 footer">
     <div class="bg-zinc-700 text-white py-5 px-5 rounded-t-xl text-sm flex flex-col gap-3 lg:flex-row justify-between items-center text-center lg:text-left">
@@ -359,9 +749,6 @@
       </ul>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="./assets/js/script.min.js"></script>
 </body>
 
