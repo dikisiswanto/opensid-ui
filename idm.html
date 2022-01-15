@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Halaman Produk Hukum</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/datatables@1.10.18/media/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.0.1/mapbox-gl.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.0/css/ionicons.min.css">
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/highcharts@8.1.0/highcharts.js"></script>
+  <script src="https://unpkg.com/highcharts@8.1.0/highcharts-3d.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://unpkg.com/datatables@1.10.18/media/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.6.0/leaflet-providers.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.0.1/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl-leaflet/0.0.14/leaflet-mapbox-gl.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.carousel.js"></script>
+  <script src="https://preview.silirdev.com/assets/js/peta.js"></script>
+  <script type="text/javascript">
+    var csrfParam = 'sidcsrf';
+    var getCsrfToken = () => document.cookie.match(new RegExp(csrfParam + '=(\\w+)'))[1]
+  </script>
+  <script src="https://preview.silirdev.com/assets/js/anti-csrf.js"></script>
+  <script>
+    const BASE_URL = 'https://preview.silirdev.com/';
+  </script>
+</head>
+
+<body class="font-primary bg-gray-100">
+  <div x-data="{loading: true, onLoading() {setTimeout(() => {this.loading = false}, 1500)}}" x-init="onLoading()">
+    <div class="fixed bg-white left-0 top-0 w-screen h-screen z-[9999] flex justify-center items-center" x-show="loading">
+      <div class="spinner-grow inline-block w-8 h-8 bg-primary-100 rounded-full opacity-0 mb-5" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <div class="container md:px-4 lg:px-5">
+    <header style="background-image: url('./assets/img/bg1.jpg');" class="bg-center bg-cover bg-no-repeat relative text-white">
+      <div class="absolute bg-gray-800 bg-opacity-60 top-0 left-0 right-0 h-full">
+      </div>
+      <section x-data="{catMenu: false}">
+        <button type="button" class="lg:hidden inline-block py-4 px-6 z-10 relative" @click="catMenu = !catMenu">
+          <i class="fa fa-list fa-lg"></i>
+        </button>
+
+        <div x-show="catMenu" x-on:click="catMenu = false" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50 z-30 backdrop-blur-sm"></div>
+
+        <section class="lg:py-3 px-3 lg:block transform transition-transform duration-300 lg:visible z-40" :class="{'bg-white text-gray-700 w-3/4 shadow fixed top-0 left-0 h-screen block inset-0 overflow-y-auto opacity-100 visible': catMenu, 'bg-white lg:bg-transparent fixed lg:relative -translate-x-full h-screen lg:h-auto lg:translate-x-0 opacity-0 lg:opacity-100':!catMenu}" x-transitionx-on:click.stop x-trap.noscroll.inert="catMenu">
+
+          <h5 class="text-h5 pt-5 pb-3 px-3 lg:hidden">Menu Kategori</h5>
+          <div class="flex lg:flex-row flex-col justify-between items-center relative z-10">
+
+            <ul class="w-full text-sm">
+              <li class="lg:inline-block"><a href="" class="block lg:inline-block py-2 px-3 hover:underline hover:decoration-yellow-500 hover:decoration-2 hover:underline-offset-4">Berita
+                  Desa</a></li>
+              <li class="lg:inline-block"><a href="" class="block lg:inline-block py-2 px-3 hover:underline hover:decoration-yellow-500 hover:decoration-2 hover:underline-offset-4">Program
+                  Kerja</a></li>
+              <li class="lg:inline-block"><a href="" class="block lg:inline-block py-2 px-3 hover:underline hover:decoration-yellow-500 hover:decoration-2 hover:underline-offset-4">Panduan
+                  Layanan</a></li>
+            </ul>
+
+            <div class="flex flex-col lg:flex-row gap-3 mt-5 lg:mt-0 flex-wrap lg:justify-end w-full px-3">
+              <a href="#" class="btn btn-primary text-sm w-full lg:w-auto text-center">Layanan Mandiri <i class="fa fa-external-link-alt ml-1"></i></a>
+              <a href="#" class="btn btn-accent text-sm w-full lg:w-auto text-center">Login Admin <i class="fa fa-external-link-alt ml-1"></i></a>
+            </div>
+          </div>
+        </section>
+
+      </section>
+      <section class="relative z-10 text-center space-y-2 mt-3 px-3 lg:px-5">
+        <a href="./home.html">
+          <figure>
+            <img src="./assets/img/luwu-utara.png" alt="Logo Luwu Utara" class="h-16 mx-auto pb-2">
+          </figure>
+          <h1 class="text-h2">Desa Sukaraya</h1>
+          <p>Kec. Bone-Bone, Kab. Luwu Utara, Provinsi Sulawesi Selatan</p>
+        </a>
+        <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4" class="block w-10/12 lg:w-1/4 mx-auto">
+          <div class="grid grid-flow-col gap-3 shadow-lg pt-2">
+            <a href="" class="block w-32 h-20" title="Album Galeri 1">
+              <img src="./assets/img/gallery-1.jpg" alt="Gallery 1" class="w-32 h-20 object-cover">
+            </a><a href="" class="block w-32 h-20" title="Album Galeri 2">
+              <img src="./assets/img/gallery-2.jpg" alt="Gallery 2" class="w-32 h-20 object-cover">
+            </a><a href="" class="block w-32 h-20" title="Album Galeri 3">
+              <img src="./assets/img/gallery-3.jpg" alt="Gallery 3" class="w-32 h-20 object-cover">
+            </a>
+          </div>
+        </marquee>
+      </section>
+      <marquee onmouseover="this.stop();" onmouseout="this.start();" class="block bg-white bg-opacity-20 py-1.5 text-xs text-white mt-6 mb-0 z-20 relative">Selamat datang di website resmi Pemerintah Desa Sukaraya, Kecamatan-Bone-Bone, Kabupaten Luwu Utara. Informasi dan data desa dapat diakses melalui menu yang tersedia</marquee>
+    </header>
+    <nav class="bg-primary-100 text-white hidden lg:block" role="navigation">
+      <ul>
+        <li class="inline-block">
+          <a href="./home.html" class="inline-block py-3 px-4 hover:bg-primary-200"><i class="fa fa-home"></i></a>
+        </li>
+        <li x-data="{dropdown:false}" class="inline-block relative">
+          <a href="#!" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            Profil
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="absolute top-full w-64 bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" :class="{'opacity-0 invisible z-[-10] scale-y-50': !dropdown, 'opacity-100 visible z-30 scale-y-100': dropdown}" x-transition @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            <li><a href="./post.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Sejarah Desa</a></li>
+            <li><a href="./post.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Info Umum Desa</a></li>
+            <li><a href="./post.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Peta Desa</a></li>
+          </ul>
+        </li>
+        <li x-data="{dropdown:false}" class="inline-block relative">
+          <a href="#!" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            Pemerintah Desa
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="absolute top-full w-64 bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" :class="{'opacity-0 invisible z-[-10] scale-y-50': !dropdown, 'opacity-100 visible z-30 scale-y-100': dropdown}" x-transition @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            <li><a href="./post.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Visi Misi</a></li>
+            <li><a href="./post.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Data Perangkat</a></li>
+            <li><a href="./post.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">SOTK</a></li>
+            <li><a href="./post.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Badan Permusyawaratan Desa</a></li>
+            <li><a href="./post.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">RT/RW</a></li>
+          </ul>
+        </li>
+        <li x-data="{dropdown:false}" class="inline-block relative">
+          <a href="#!" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            Data Desa
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="absolute top-full w-64 bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" :class="{'opacity-0 invisible z-[-10] scale-y-50': !dropdown, 'opacity-100 visible z-30 scale-y-100': dropdown}" x-transition @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            <li><a href="./statistic.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Data Umur</a></li>
+            <li><a href="./statistic.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Data Jenis Kelamin</a></li>
+            <li><a href="./statistic.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Data Agama</a></li>
+            <li><a href="./statistic.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Data Pendidikan</a></li>
+            <li><a href="./statistic.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Statistik Pekerjaan</a></li>
+          </ul>
+        </li>
+        <li x-data="{dropdown:false}" class="inline-block relative">
+          <a href="#!" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            Regulasi
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="absolute top-full w-64 bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" :class="{'opacity-0 invisible z-[-10] scale-y-50': !dropdown, 'opacity-100 visible z-30 scale-y-100': dropdown}" x-transition @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            <li><a href="./public-release.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Produk Hukum</a></li>
+            <li><a href="./public-release.html" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">Informasi Publik</a></li>
+          </ul>
+        </li>
+        <li class="inline-block relative">
+          <a href="./lapak.html" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            Lapak
+
+          </a>
+
+        </li>
+        <li class="inline-block relative">
+          <a href="./archive.html" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            Arsip
+
+          </a>
+
+        </li>
+        <li class="inline-block relative">
+          <a href="./idm.html" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            Status IDM
+
+          </a>
+
+        </li>
+        <li class="inline-block relative">
+          <a href="./pembangunan.html" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            Pembangunan
+
+          </a>
+
+        </li>
+        <li class="inline-block relative">
+          <a href="./galeri.html" class="p-3 inline-block hover:bg-primary-200" @mouseover="dropdown = true" @mouseleave="dropdown = false">
+            Galeri
+
+          </a>
+
+        </li>
+      </ul>
+    </nav>
+    <nav class="bg-primary-100 text-white lg:hidden block" x-data="{menuOpen: false}">
+      <button type="button" class="w-full block text-center uppercase p-3" x-on:click="menuOpen = !menuOpen"><i class="fas mr-1" :class="{'fa-bars':!menuOpen, 'fa-times': menuOpen}"></i> Menu</button>
+      <ul x-show="menuOpen" x-transition class="divide-y divide-primary-200">
+        <li x-data="{dropdown:false}" class="block relative">
+          <a href="#!" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Profil
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
+            <li @click="dropdown = false"><a href="./post.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Sejarah Desa</a></li>
+            <li @click="dropdown = false"><a href="./post.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Info Umum Desa</a></li>
+            <li @click="dropdown = false"><a href="./post.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Peta Desa</a></li>
+          </ul>
+        </li>
+        <li x-data="{dropdown:false}" class="block relative">
+          <a href="#!" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Pemerintah Desa
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
+            <li @click="dropdown = false"><a href="./post.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Visi Misi</a></li>
+            <li @click="dropdown = false"><a href="./post.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Perangkat</a></li>
+            <li @click="dropdown = false"><a href="./post.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">SOTK</a></li>
+            <li @click="dropdown = false"><a href="./post.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Badan Permusyawaratan Desa</a></li>
+            <li @click="dropdown = false"><a href="./post.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">RT/RW</a></li>
+          </ul>
+        </li>
+        <li x-data="{dropdown:false}" class="block relative">
+          <a href="#!" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Data Desa
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
+            <li @click="dropdown = false"><a href="./statistic.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Umur</a></li>
+            <li @click="dropdown = false"><a href="./statistic.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Jenis Kelamin</a></li>
+            <li @click="dropdown = false"><a href="./statistic.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Agama</a></li>
+            <li @click="dropdown = false"><a href="./statistic.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Data Pendidikan</a></li>
+            <li @click="dropdown = false"><a href="./statistic.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Statistik Pekerjaan</a></li>
+          </ul>
+        </li>
+        <li x-data="{dropdown:false}" class="block relative">
+          <a href="#!" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Regulasi
+            <i class="fas fa-chevron-down text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+          </a>
+          <ul class="divide-y divide-primary-200" :class="{'opacity-0 invisible z-[-10] scale-y-75 h-0': !dropdown, 'opacity-100 visible z-30 scale-y-100 h-auto': dropdown}" x-transition.opacity @click="dropdown = !dropdown">
+            <li @click="dropdown = false"><a href="./public-release.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Produk Hukum</a></li>
+            <li @click="dropdown = false"><a href="./public-release.html" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">Informasi Publik</a></li>
+          </ul>
+        </li>
+        <li class="block relative">
+          <a href="./lapak.html" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Lapak
+
+          </a>
+
+        </li>
+        <li class="block relative">
+          <a href="./archive.html" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Arsip
+
+          </a>
+
+        </li>
+        <li class="block relative">
+          <a href="./idm.html" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Status IDM
+
+          </a>
+
+        </li>
+        <li class="block relative">
+          <a href="./pembangunan.html" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Pembangunan
+
+          </a>
+
+        </li>
+        <li class="block relative">
+          <a href="./galeri.html" class="p-3 block hover:bg-secondary-100" @click="dropdown = !dropdown">
+            Galeri
+
+          </a>
+
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5 gap-3 lg:gap-5 justify-between text-gray-600">
+    <main class="w-full space-y-1 bg-white rounded-lg px-4 py-2 lg:py-4 lg:px-5 shadow">
+      <div class="breadcrumb">
+        <ol>
+          <li><a href="./home.html">Beranda</a></li>
+          <li>Indeks Desa Membangun</li>
+        </ol>
+      </div>
+      <article class="content">
+        <h2 class="text-h2">Indeks Desa Membangun</h2>
+        <script type="text/javascript">
+          $(document).ready(function() {
+
+            Highcharts.chart('container', {
+              chart: {
+                type: 'pie',
+                options3d: {
+                  enabled: true,
+                  alpha: 45
+                }
+              },
+              title: {
+                text: 'Indeks Desa Membangun (IDM)'
+              },
+              subtitle: {
+                text: 'SKOR : IKS, IKE, IKL'
+              },
+
+              plotOptions: {
+                series: {
+                  colorByPoint: true
+                },
+                pie: {
+                  allowPointSelect: true,
+                  cursor: 'pointer',
+                  showInLegend: true,
+                  depth: 45,
+                  innerSize: 70,
+                  dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.y:,.2f} / {point.percentage:.1f} %'
+                  }
+                }
+              },
+              series: [{
+                name: 'SKOR',
+                shadow: 1,
+                border: 1,
+                data: [
+                  ['IKS', 0.86285714285714],
+                  ['IKE', 0.56666666666667],
+                  ['IKL', 0.66666666666667]
+                ]
+              }]
+            });
+
+
+          });
+        </script>
+
+        <div class="content py-5">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5 max-w-full">
+
+
+            <div class="rounded overflow-hidden bg-blue-500 relative text-white py-5 px-3 lg:px-4">
+              <div class="flex flex-col">
+                <span class="text-lg lg:text-xl font-bold">0.7783</span>
+                <span class="text-sm">SKOR IDM SAAT INI</span>
+              </div>
+              <div class="icon absolute right-0 mr-5 text-5xl text-gray-500 text-opacity-30 top-1/2 transform -translate-y-1/2">
+                <i class="ion ion-arrow-graph-up-right"></i>
+              </div>
+            </div>
+
+            <div class="rounded overflow-hidden bg-yellow-500 relative text-white py-5 px-3 lg:px-4">
+              <div class="flex flex-col">
+                <span class="text-lg lg:text-xl font-bold">0.7783</span>
+                <span class="text-sm">SKOR IDM SAAT INI</span>
+              </div>
+              <div class="icon absolute right-0 mr-5 text-5xl text-gray-500 text-opacity-30 top-1/2 transform -translate-y-1/2">
+                <i class="ion ion-arrow-graph-up-right"></i>
+              </div>
+            </div>
+
+            <div class="rounded overflow-hidden bg-green-500 relative text-white py-5 px-3 lg:px-4">
+              <div class="flex flex-col">
+                <span class="text-lg lg:text-xl font-bold">0.7783</span>
+                <span class="text-sm">SKOR IDM SAAT INI</span>
+              </div>
+              <div class="icon absolute right-0 mr-5 text-5xl text-gray-500 text-opacity-30 top-1/2 transform -translate-y-1/2">
+                <i class="ion ion-arrow-graph-up-right"></i>
+              </div>
+            </div>
+
+            <div class="rounded overflow-hidden bg-red-500 relative text-white py-5 px-3 lg:px-4">
+              <div class="flex flex-col">
+                <span class="text-lg lg:text-xl font-bold">0.7783</span>
+                <span class="text-sm">SKOR IDM SAAT INI</span>
+              </div>
+              <div class="icon absolute right-0 mr-5 text-5xl text-gray-500 text-opacity-30 top-1/2 transform -translate-y-1/2">
+                <i class="ion ion-arrow-graph-up-right"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex flex-col lg:flex-row pt-5 justify-between">
+            <div class="overflow-auto">
+              <table class="overflow-auto table-striped table text-sm capitalize">
+                <tbody>
+                  <tr>
+                    <td width="30%">PROVINSI</td>
+                    <td width="1">:</td>
+                    <td>KALIMANTAN TENGAH</td>
+                  </tr>
+                  <tr>
+                    <td>KABUPATEN</td>
+                    <td> : </td>
+                    <td>KABUPATEN KOTAWARINGIN BARAT</td>
+                  </tr>
+                  <tr>
+                    <td>KECAMATAN</td>
+                    <td> : </td>
+                    <td>ARUT SELATAN</td>
+                  </tr>
+                  <tr>
+                    <td>DESA</td>
+                    <td> : </td>
+                    <td>NATAI RAYA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figure class="highcharts-figure">
+              <div id="container"></div>
+            </figure>
+          </div>
+
+
+          <div class="table-responsive text-xs">
+            <table class="table table-bordered dataTable table-striped table-hover tabel-daftar">
+              <thead class="bg-gray color-palette">
+                <tr>
+                  <th rowspan="2" class="padat">NO</th>
+                  <th rowspan="2">INDIKATOR IDM</th>
+                  <th rowspan="2">SKOR</th>
+                  <th rowspan="2">KETERANGAN</th>
+                  <th rowspan="2" nowrap="">KEGIATAN YANG DAPAT DILAKUKAN</th>
+                  <th rowspan="2">+NILAI</th>
+                  <th colspan="6" class="text-center">YANG DAPAT MELAKSANAKAN KEGIATAN</th>
+                </tr>
+                <tr>
+                  <th>PUSAT</th>
+                  <th>PROVINSI</th>
+                  <th>KABUPATEN</th>
+                  <th>DESA</th>
+                  <th>CSR</th>
+                  <th>LAINNYA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class=" ">
+                  <td class="text-center">1</td>
+                  <td style="min-width: 150px;">Skor Akses Sarkes</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Waktu tempuh dari ≤ 30 Menit</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>Dinkes, PU</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">2</td>
+                  <td style="min-width: 150px;">Skor Dokter</td>
+                  <td class="padat">0</td>
+                  <td style="min-width: 250px;">Jumlah Dokter Tidak ada</td>
+                  <td>Pengadaan Min 1 org Dokter</td>
+                  <td class="padat">0.00952381</td>
+                  <td></td>
+                  <td></td>
+                  <td>DINKES</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">3</td>
+                  <td style="min-width: 150px;">Skor Bidan </td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah bidan ≥ 1 orang</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>DINKES</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">4</td>
+                  <td style="min-width: 150px;">Skor Nakes Lain</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah tenaga kesehatan lainnya ≥ 5 orang</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>DINKES</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">5</td>
+                  <td style="min-width: 150px;">Skor Tingkat Kepesertaan BPJS</td>
+                  <td class="padat">3</td>
+                  <td style="min-width: 250px;">Jumlah peserta BPJS/jumlah penduduk antara 0,26 s.d 0,5</td>
+                  <td>Fasilitasi kepesertaan BPJS warga Desa hingga &gt; 75%</td>
+                  <td class="padat">0.00380952</td>
+                  <td></td>
+                  <td></td>
+                  <td>DINKES</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">6</td>
+                  <td style="min-width: 150px;">Skor Akses Poskesdes</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jarak tempuh menuju Poskesdes = 500 Meter</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>DINKES</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">7</td>
+                  <td style="min-width: 150px;">Skor Aktivitas Posyandu</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah Posyandu aktif 1 bulan sekali/ Jumlah Posyandu &gt; 0,75
+                  </td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td>DPMD</td>
+                  <td>DPMD, DINKES</td>
+                  <td>DD</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">8</td>
+                  <td style="min-width: 150px;">Skor Akses SD/MI</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jarak tempuh menuju SD atau MI = 3000 Meter</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>DISDIK, PU</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">9</td>
+                  <td style="min-width: 150px;">Skor Akses SMP/MTS</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jarak tempuh menuju SMP atau MTs ≤ 6000 Meter</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>DISDIK, PU</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">10</td>
+                  <td style="min-width: 150px;">Skor Akses SMA/SMK</td>
+                  <td class="padat">4</td>
+                  <td style="min-width: 250px;">Jarak tempuh menuju SMU atau SMK antara 6000,01 s.d 8000 Meter
+                  </td>
+                  <td>Perbaikan Akses</td>
+                  <td class="padat">0.00190476</td>
+                  <td></td>
+                  <td>DISDIK</td>
+                  <td>PU</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">11</td>
+                  <td style="min-width: 150px;">Skor Ketersediaan PAUD</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah PAUD ≥ 1 </td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td>DISDIK</td>
+                  <td>DISDIK</td>
+                  <td>DD</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">12</td>
+                  <td style="min-width: 150px;">Skor Ketersediaan PKBM/ Paket ABC</td>
+                  <td class="padat">1</td>
+                  <td style="min-width: 250px;">Jumlah PKBM atau Paket ABC Tidak ada</td>
+                  <td>Pelaksanaan Kegiatan PKBM/Kejar Paket A B C</td>
+                  <td class="padat">0.00761905</td>
+                  <td></td>
+                  <td></td>
+                  <td>DISDIK</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">13</td>
+                  <td style="min-width: 150px;">Skor Ketersediaan Kursus</td>
+                  <td class="padat">1</td>
+                  <td style="min-width: 250px;">Jumlah Pusat Keterampilan atau Kursus Tidak ada</td>
+                  <td>Pengadaan Tempat Kursus/Pelatihan</td>
+                  <td class="padat">0.00761905</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">14</td>
+                  <td style="min-width: 150px;">Skor Ketersediaan Taman Baca/ Perpus Desa</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Taman Bacaan Masyarakat atau perpustakaan Desa tersedia </td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td>Kemenperpus Arsip</td>
+                  <td>Dinas Perpus</td>
+                  <td>Dinas Perpus</td>
+                  <td>DD</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">15</td>
+                  <td style="min-width: 150px;">Skor Kebiasaan Goryong</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Terdapat Kebiasaan Gotong Royong</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Desa</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">16</td>
+                  <td style="min-width: 150px;">Skor Frekuensi Goryong</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Frekuensi Gotong Royong &gt; 2</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Desa</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">17</td>
+                  <td style="min-width: 150px;">Skor Ketersediaan Ruang Publik</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Ruang Publik terdapat didesa</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>PU</td>
+                  <td>DD</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">18</td>
+                  <td style="min-width: 150px;">Skor Kelompok OR</td>
+                  <td class="padat">1</td>
+                  <td style="min-width: 250px;">Jumlah kelompok kegiatan olahraga ada 1</td>
+                  <td>Penambahan Min 8 Kelp Olahragat</td>
+                  <td class="padat">0.00761905</td>
+                  <td></td>
+                  <td>DISPORA</td>
+                  <td>DISPORA</td>
+                  <td>Karang Taruna</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">19</td>
+                  <td style="min-width: 150px;">Skor Kegiatan OR</td>
+                  <td class="padat">2</td>
+                  <td style="min-width: 250px;">Jumlah kegiatan olahraga 2 s.d 3</td>
+                  <td>Pembangunan Min 6 Lap Olahraga</td>
+                  <td class="padat">0.00571429</td>
+                  <td>Kemepora/ Kemendes</td>
+                  <td>DISPORA</td>
+                  <td>DISPORA</td>
+                  <td>DD</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">20</td>
+                  <td style="min-width: 150px;">Skor Keragaman Agama</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah Jenis Agama di Desa &gt; 1</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Desa</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">21</td>
+                  <td style="min-width: 150px;">Skor Keragaman Bahasa</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah Bahasa yang digunakan sehari-hari &gt; 1</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Desa</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">22</td>
+                  <td style="min-width: 150px;">Skor Keragaman Komunikasi</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Warga Desa terdiri dari Suku &gt; 1</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Desa</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">23</td>
+                  <td style="min-width: 150px;">Skor Poskamling</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Terdapat Pos Keamanan di Desa</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>DD</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">24</td>
+                  <td style="min-width: 150px;">Skor Siskamling</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Terdapat Sistem Keamanan Lingkungan warga di Desa</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Desa</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">25</td>
+                  <td style="min-width: 150px;">Skor Konflik</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Tidak terdapat atau tidak ada Konflik di Desa</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>Kesbangpol</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">26</td>
+                  <td style="min-width: 150px;">Skor PMKS</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah PMKS tidak ada atau 0 </td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>Dinsos</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">27</td>
+                  <td style="min-width: 150px;">Skor SLB</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah Skor SLB = 0 </td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td>DIKNAS</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">28</td>
+                  <td style="min-width: 150px;">Skor Akses Listrik</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">(Jumlah Keluarga Memakai listrik + non Listrik/Jumlah keluarga
+                    memakai listrik) ≥ 0,9 )</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td>ESDM</td>
+                  <td>ESDM</td>
+                  <td></td>
+                  <td>DD</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">29</td>
+                  <td style="min-width: 150px;">Skor Sinyal Tlp</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Sinyal telepon seluler di Desa Kuat</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td>Kominfo</td>
+                  <td>Diskominfo</td>
+                  <td>Diskominfo</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">30</td>
+                  <td style="min-width: 150px;">Skor Internet Kantor Desa</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Terdapat fasilitas internet di kantor Desa </td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td>Kominfo/ Kemendes</td>
+                  <td></td>
+                  <td></td>
+                  <td>Desa</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">31</td>
+                  <td style="min-width: 150px;">Skor Akses Internet Warga</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Terdapat Akses internet warga di Desa</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td>Kominfo</td>
+                  <td>Diskominfo</td>
+                  <td>Diskominfo</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">32</td>
+                  <td style="min-width: 150px;">Skor Akses Jamban</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Warga Desa BAB di Jamban Sendiri</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>DINSOS,DINKES</td>
+                  <td></td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">33</td>
+                  <td style="min-width: 150px;">Skor Sampah</td>
+                  <td class="padat">4</td>
+                  <td style="min-width: 250px;">Warga desa membuang sampah di Lubang atau di Bakar</td>
+                  <td>Pembangunan TPS danTPA Sampah </td>
+                  <td class="padat">0.00190476</td>
+                  <td></td>
+                  <td>DLH</td>
+                  <td>DLH, DKPP</td>
+                  <td>DD</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">34</td>
+                  <td style="min-width: 150px;">Skor Air Minum</td>
+                  <td class="padat">4</td>
+                  <td style="min-width: 250px;">Sumber air minum berasal dari Sumur Bor/pompa, Sumur</td>
+                  <td>Pemasangan PDAM/Air Ledeng Tanpa Meteran</td>
+                  <td class="padat">0.00190476</td>
+                  <td>PAMSIMAS, PU</td>
+                  <td></td>
+                  <td>PU</td>
+                  <td>DD</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">35</td>
+                  <td style="min-width: 150px;">Skor Air Mandi &amp; Cuci</td>
+                  <td class="padat">4</td>
+                  <td style="min-width: 250px;">Sumber air mandi dan cuci berasal dari Sumur Bor/pompa, Sumur
+                  </td>
+                  <td>Pemasangan PDAM/Air Ledeng Tanpa Meteran</td>
+                  <td class="padat">0.00190476</td>
+                  <td>PAMSIMAS, PU</td>
+                  <td></td>
+                  <td>PU</td>
+                  <td>DD</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class="judul ">
+                  <td class="text-center"></td>
+                  <td style="min-width: 150px;">IKS 2020</td>
+                  <td class="padat">0.85142857142857</td>
+                  <td style="min-width: 250px;"></td>
+                  <td></td>
+                  <td class="padat"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">1</td>
+                  <td style="min-width: 150px;">Skor Keragaman Produksi</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah Industri Mikro/ Jumlah KK ≥ 0,004</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td>DISPERINDAKOP UKM</td>
+                  <td>DISPERINDAKOP UKM</td>
+                  <td>DD</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">2</td>
+                  <td style="min-width: 150px;">Skor Pertokoan</td>
+                  <td class="padat">1</td>
+                  <td style="min-width: 250px;">Jarak ke kelompok pertokoan terdekat &gt; 25 KM</td>
+                  <td>Pembangunan Pusat pertokoan melalui kerjasama antar desa/melayani beberapa desa</td>
+                  <td class="padat">0.02222222</td>
+                  <td></td>
+                  <td></td>
+                  <td>DISPERINDAKOP UKM</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">3</td>
+                  <td style="min-width: 150px;">Skor Pasar</td>
+                  <td class="padat">3</td>
+                  <td style="min-width: 250px;">(Total KK/jumlah pasar(permanen)) antara 0,001 s.d 250</td>
+                  <td>Optimalisasi Pasar</td>
+                  <td class="padat">0.01111111</td>
+                  <td>Kemenperind, Kemendes</td>
+                  <td>DISPERINDAKOP UKM</td>
+                  <td>DISPERINDAKOP UKM</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">4</td>
+                  <td style="min-width: 150px;">Skor Toko/ Warung Kelontong</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah Toko dan warung kelontong &gt; 3</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>DD</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">5</td>
+                  <td style="min-width: 150px;">Skor Kedai &amp; Penginapan</td>
+                  <td class="padat">3</td>
+                  <td style="min-width: 250px;">Jumlah Kedai dan Penginapan = 1</td>
+                  <td>Pembangunan 1 Unit Penginapan</td>
+                  <td class="padat">0.01111111</td>
+                  <td></td>
+                  <td>Dinas Pariwisata</td>
+                  <td>Dinas Pariwisata</td>
+                  <td>DD</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">6</td>
+                  <td style="min-width: 150px;">Skor POS &amp; Logistik</td>
+                  <td class="padat">3</td>
+                  <td style="min-width: 250px;">Jumlah pos dan jasa logistik = 1</td>
+                  <td>Pembangunan/Pengadaan Jasa logistik / kantor Pos (Identifikasi yang tidak ada)</td>
+                  <td class="padat">0.01111111</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>BUMDES</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">7</td>
+                  <td style="min-width: 150px;">Skor Bank &amp; BPR</td>
+                  <td class="padat">0</td>
+                  <td style="min-width: 250px;">Jumlah bank dan BPR = 0</td>
+                  <td>Fasilitasi Pembangunan Bank Pemerintah, Swasta &amp;/ BPR</td>
+                  <td class="padat">0.02777778</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">8</td>
+                  <td style="min-width: 150px;">Skor Kredit</td>
+                  <td class="padat">1</td>
+                  <td style="min-width: 250px;">Jumlah fasilitas kredit = 0</td>
+                  <td>Penambahan 4 jenis Fasilitas Kredit (KUR/KKPE/KUK/Kredit lainnya)</td>
+                  <td class="padat">0.02222222</td>
+                  <td></td>
+                  <td></td>
+                  <td>DISPERINDAKOP UKM</td>
+                  <td>BUMDES/ Koperasi</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">9</td>
+                  <td style="min-width: 150px;">Skor Lembaga Ekonomi</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jumlah koperasi aktif dan BUMDESA &gt; 1</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>DISPERINDAKOP UKM</td>
+                  <td>Desa</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">10</td>
+                  <td style="min-width: 150px;">Skor Moda Transportasi Umum</td>
+                  <td class="padat">1</td>
+                  <td style="min-width: 250px;">Transportasi Umum tidak ada</td>
+                  <td>Fasilitasi Pengadaan Transportasi Umum dengan Trayek Tetap</td>
+                  <td class="padat">0.02222222</td>
+                  <td></td>
+                  <td></td>
+                  <td>DISHUB</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">11</td>
+                  <td style="min-width: 150px;">Skor Keterbukaan Wilayah</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jalan di Desa dilalui oleh kendaraan bermotor roda empat atau
+                    lebih Sepanjang Tahun </td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>PU</td>
+                  <td>DD</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">12</td>
+                  <td style="min-width: 150px;">Skor Kualitas Jalan</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Jenis permukaan jalan desa Aspal atau beton</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td></td>
+                  <td>PU</td>
+                  <td>DD</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class="judul ">
+                  <td class="text-center"></td>
+                  <td style="min-width: 150px;">IKE 2020</td>
+                  <td class="padat">0.61666666666667</td>
+                  <td style="min-width: 250px;"></td>
+                  <td></td>
+                  <td class="padat"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">1</td>
+                  <td style="min-width: 150px;">Skor Kualitas Lingkungan</td>
+                  <td class="padat">5</td>
+                  <td style="min-width: 250px;">Pencemaran (air, udara, tanah, limbah disungai) di desa [jumlah
+                    pencemaran/4] = 0</td>
+                  <td>-</td>
+                  <td class="padat">0</td>
+                  <td></td>
+                  <td>DLH</td>
+                  <td>DLH, DINKES</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">2</td>
+                  <td style="min-width: 150px;">Skor Rawan Bencana</td>
+                  <td class="padat">4</td>
+                  <td style="min-width: 250px;">Jenis bencana (longsor, banjir, kebakaran hutan) jenis bencana
+                    di desa = 1</td>
+                  <td>Identifikasi 1 Jenis bencana (longsor, banjir, kebakaran hutan) untuk penanganan
+                    pencegahan</td>
+                  <td class="padat">0.02222222</td>
+                  <td></td>
+                  <td>DISHUT/KPH, BPDB</td>
+                  <td>BPBD</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class=" ">
+                  <td class="text-center">3</td>
+                  <td style="min-width: 150px;">Skor Tanggap Bencana</td>
+                  <td class="padat">4</td>
+                  <td style="min-width: 250px;">Fasilitas mitigasi/tanggap bencana (peringatan dini bencana
+                    alam, peringatan dini tsunami, perlengkapan keselamatan, jalur evakuasi) jumlah fasilitas
+                    mitigasi / tanggap bencana = 2</td>
+                  <td>Pembangunan/Pengadaan 1 Fasilitas Mitigasi Bencana Sesuai karakteristik wilayah (Kebutuhan
+                    sesuai hasil identifikasi kerawanan/potensi bencana)</td>
+                  <td class="padat">0.02222222</td>
+                  <td>BNPB, Kemendes</td>
+                  <td>DISHUT/KPH, BPDB, DINSOS</td>
+                  <td>DPBD, DINSOS</td>
+                  <td>DD</td>
+                  <td>CSR</td>
+                  <td></td>
+                </tr>
+                <tr class="judul ">
+                  <td class="text-center"></td>
+                  <td style="min-width: 150px;">IKL 2020</td>
+                  <td class="padat">0.86666666666667</td>
+                  <td style="min-width: 250px;"></td>
+                  <td></td>
+                  <td class="padat"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="judul ">
+                  <td class="text-center"></td>
+                  <td style="min-width: 150px;">IDM 2020</td>
+                  <td class="padat">0.77825396825397</td>
+                  <td style="min-width: 250px;"></td>
+                  <td></td>
+                  <td class="padat"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="judul ">
+                  <td class="text-center"></td>
+                  <td style="min-width: 150px;">STATUS IDM 2020</td>
+                  <td class="padat">Maju</td>
+                  <td style="min-width: 250px;"></td>
+                  <td></td>
+                  <td class="padat"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>M</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+    </main>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 container px-3 lg:px-5">
+
+    <div class="shadow bg-white rounded-lg overflow-hidden">
+      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 Pelaksanaan</h3>
+      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>46%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 46%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>67%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 67%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>56%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow bg-white rounded-lg overflow-hidden">
+      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 Pendapatan</h3>
+      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>16%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 16%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>85%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>28%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 28%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow bg-white rounded-lg overflow-hidden">
+      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 Pembiayaan</h3>
+      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>56%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>67%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 67%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>90%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 90%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer class="container mx-auto lg:px-5 px-3 pt-5 footer">
+    <div class="bg-zinc-700 text-white py-5 px-5 rounded-t-xl text-sm flex flex-col gap-3 lg:flex-row justify-between items-center text-center lg:text-left">
+      <span class="space-y-2">
+      <p>Hak cipta situs &copy; 2022 - Desa Sukaraya</p>
+      <p><a href="" class="underline decoration-pink-500 underline-offset-1 decoration-2">Tema Lutra</a> - <a href="" class="underline decoration-green-500 underline-offset-1 decoration-2">OpenSID v22.01</a></p>
+    </span>
+      <ul class="space-x-1">
+        <li class="inline-block"><a href="" class="inline-flex items-center justify-center bg-blue-600 h-8 w-8 rounded-full"><i class="fab fa-lg fa-facebook-f"></i></a></li>
+        <li class="inline-block"><a href="" class="inline-flex items-center justify-center bg-blue-400 h-8 w-8 rounded-full"><i class="fab fa-lg fa-twitter"></i></a></li>
+        <li class="inline-block"><a href="" class="inline-flex items-center justify-center bg-blue-500 h-8 w-8 rounded-full"><i class="fab fa-lg fa-telegram"></i></a></li>
+        <li class="inline-block"><a href="" class="inline-flex items-center justify-center bg-green-500 h-8 w-8 rounded-full"><i class="fab fa-lg fa-whatsapp"></i></a></li>
+        <li class="inline-block"><a href="" class="inline-flex items-center justify-center bg-red-500 h-8 w-8 rounded-full"><i class="fab fa-lg fa-youtube"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="./assets/js/script.min.js"></script>
+</body>
+
+</html>

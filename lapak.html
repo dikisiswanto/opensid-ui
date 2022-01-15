@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Halaman Beranda</title>
+  <title>Halaman Lapak</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -284,102 +284,143 @@
     </nav>
   </div>
   <div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5 gap-3 lg:gap-5 justify-between text-gray-600">
-    <main class="lg:w-2/3 space-y-5">
-      <section class="slider relative group transition-all duration-300">
-        <div class="owl-carousel rounded-lg w-full h-48 lg:h-[400px]">
-
-          <figure class="h-48 lg:h-[400px] w-full bg-gray-300">
-            <img src="assets/img/gallery-2.jpg" alt="Gallery 2" class="w-full h-48 lg:h-[400px] object-cover">
-          </figure>
-
-          <figure class="h-48 lg:h-[400px] w-full bg-gray-300">
-            <img src="assets/img/gallery-3.jpg" alt="Gallery 3" class="w-full h-48 lg:h-[400px] object-cover">
-          </figure>
-
-          <figure class="h-48 lg:h-[400px] w-full bg-gray-300">
-            <img src="assets/img/gallery-1.jpg" alt="Gallery 1" class="w-full h-48 lg:h-[400px] object-cover">
-          </figure>
-
-        </div>
-        <div class="slider-nav">
-          <span class="slider-nav-prev px-1 py-2 cursor-pointer transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:bg-primary-100 shadow absolute top-1/2 left-0 transform -translate-y-1/2 z-[99]" title="Sebelumnya"><i class="fas fa-chevron-left text-lg text-white px-3"></i></span>
-          <span class="slider-nav-next px-1 py-2 cursor-pointer transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:bg-primary-100 shadow absolute top-1/2 right-0 transform -translate-y-1/2 z-[99]" title="Selanjutnya"><i class="fas fa-chevron-right text-lg text-white px-3"></i></span>
-        </div>
-      </section>
-      <div class="owl-carousel space-x-5" data-itemsnumber="2">
-        <div class="flex flex-col gap-3 justify-between">
-          <a href="./statistic.html" class="bg-primary-100 hover:bg-primary-200 font-medium text-white w-full inline-flex gap-x-3 py-3 px-5 rounded-lg items-center"><img src="./assets/img/location.png" alt="" class="flex-shrink-0" style="width: 1.5rem; height: 1.5rem;"> <span>Data Wilayah</span></a>
-          <a href="./statistic.html" class="bg-primary-100 hover:bg-primary-200 font-medium text-white w-full inline-flex gap-x-3 py-3 px-5 rounded-lg items-center"><img src="./assets/img/student.png" alt="" class="flex-shrink-0" style="width: 1.5rem; height: 1.5rem;"> <span>Data Pendidikan</span></a>
-        </div>
-        <div class="flex flex-col gap-3 justify-between">
-          <a href="./statistic.html" class="bg-primary-100 hover:bg-primary-200 font-medium text-white w-full inline-flex gap-x-3 py-3 px-5 rounded-lg items-center"><img src="./assets/img/gender.png" alt="" class="flex-shrink-0" style="width: 1.5rem; height: 1.5rem;"> <span>Data Jenis Kelamin</span></a>
-          <a href="./statistic.html" class="bg-primary-100 hover:bg-primary-200 font-medium text-white w-full inline-flex gap-x-3 py-3 px-5 rounded-lg items-center"><img src="./assets/img/employee.png" alt="" class="flex-shrink-0" style="width: 1.5rem; height: 1.5rem;"> <span>Data Pekerjaan</span></a>
-        </div>
+    <main class="w-full space-y-1 bg-white rounded-lg px-4 py-2 lg:py-4 lg:px-5 shadow">
+      <div class="breadcrumb">
+        <ol>
+          <li><a href="./home.html">Beranda</a></li>
+          <li>Lapak</li>
+        </ol>
       </div>
-      <div class="flex justify-between items-center">
-        <h3 class="text-h4 text-primary-200">Artikel Terkini</h3>
-        <a href="./archive.html" class="text-sm hover:text-primary-100">Indeks <i class="fas fa-chevron-right ml-1"></i></a>
-      </div>
-      <div class="lg:h-[350px] h-40 overflow-hidden rounded-lg relative">
-        <figure class="lg:h-[350px] h-40">
-          <img src="./assets/img/gallery-3.jpg" alt="Lorem ipsum dolor" class=" lg:h-[350px] h-40 w-full object-cover object-center">
-        </figure>
-        <div class="absolute bg-black bg-opacity-60 bottom-0 left-0 right-0 text-white group">
-          <a href="./post.html" class="font-bold text-h5 block py-4 px-5 group-hover:py-5 transition-all duration-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus?</a>
+      <article class="content">
+        <h2 class="text-h2"><i class="fa fa-store mr-2 text-primary-100"></i> Lapak Desa</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 py-8">
+          <div class="flex flex-col justify-between space-y-4 this-product">
+            <div class="space-y-3">
+              <div class="owl-carousel">
+                <img src="https://preview.silirdev.com/desa/themes/silir/assets/products/jalkot.jpg" alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+                <img src="https://preview.silirdev.com/desa/themes/silir/assets/products/jalkot.jpg" alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+              </div>
+              <div class="space-y-1/2 text-sm flex flex-col detail">
+                <span class="font-heading font-medium">Jalangkote</span>
+                <s class="text-xs text-red-500">Rp3,000</s>
+                <span class="text-lg font-bold">Rp2,000 <span class="text-xs font-thin">/
+                  pcs</span></span>
+                <p class="text-xs pt-1">
+                  Lorem ipsum dolor sit amet constecture dot mose
+                </p>
+                <span class="pt-2 text-xs font-bold text-gray-600"><i class="fas fa-award mr-1"></i> Bu Yani Saratoga <i
+                  class="fas fa-check text-xs bg-accent-100 h-4 w-4 inline-flex items-center justify-center rounded-full text-white"></i></span>
+              </div>
+            </div>
+            <div class="group flex items-center space-x-1">
+              <a href="" class="btn btn-primary text-xs text-center"><i class="fa fa-shopping-cart mr-1"></i> Beli
+                Sekarang</a>
+              <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal" data-bs-target="#modalLokasi" title="Lokasi" data-lat="-8.167993260200623" data-lng="113.65026835352185" data-zoom="13" data-title="Lokasi"><i class="fas fa-map-marker-alt mr-1"></i>
+                Lokasi</button>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between space-y-4 this-product">
+            <div class="space-y-3">
+              <div class="owl-carousel">
+                <img src="https://preview.silirdev.com/desa/themes/silir/assets/products/keripik_melinjo.jpg" alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+                <img src="https://preview.silirdev.com/desa/themes/silir/assets/products/jalkot.jpg" alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+              </div>
+              <div class="space-y-1/2 text-sm flex flex-col detail">
+                <span class="font-heading font-medium">Emping Melinjo</span>
+                <s class="text-xs text-red-500">Rp22,000</s>
+                <span class="text-lg font-bold">Rp20,000 <span class="text-xs font-thin">/
+                  bungkus</span></span>
+                <p class="text-xs pt-1">
+                  Emping melinjo yang bisa pilih level pedasnya sesuai selera Anda
+                </p>
+                <span class="pt-2 text-xs font-bold text-gray-600"><i class="fas fa-award mr-1"></i> Bu Yani Saratoga <i
+                  class="fas fa-check text-xs bg-accent-100 h-4 w-4 inline-flex items-center justify-center rounded-full text-white"></i></span>
+              </div>
+            </div>
+            <div class="group flex items-center space-x-1">
+              <a href="" class="btn btn-primary text-xs text-center"><i class="fa fa-shopping-cart mr-1"></i> Beli
+                Sekarang</a>
+              <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal" data-bs-target="#modalLokasi" title="Lokasi" data-lat="-8.167993260200623" data-lng="113.65026835352185" data-zoom="13" data-title="Lokasi"><i class="fas fa-map-marker-alt mr-1"></i>
+                Lokasi</button>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between space-y-4 this-product">
+            <div class="space-y-3">
+              <div class="owl-carousel">
+                <img src="https://preview.silirdev.com/desa/themes/silir/assets/products/jalkot.jpg" alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+                <img src="https://preview.silirdev.com/desa/themes/silir/assets/products/keripik_melinjo.jpg" alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+              </div>
+              <div class="space-y-1/2 text-sm flex flex-col detail">
+                <span class="font-heading font-medium">Jalangkote</span>
+                <s class="text-xs text-red-500">Rp3,000</s>
+                <span class="text-lg font-bold">Rp2,000 <span class="text-xs font-thin">/
+                  pcs</span></span>
+                <p class="text-xs pt-1">
+                  Lorem ipsum dolor sit amet constecture dot mose
+                </p>
+                <span class="pt-2 text-xs font-bold text-gray-600"><i class="fas fa-award mr-1"></i> Bu Yani Saratoga <i
+                  class="fas fa-check text-xs bg-accent-100 h-4 w-4 inline-flex items-center justify-center rounded-full text-white"></i></span>
+              </div>
+            </div>
+            <div class="group flex items-center space-x-1">
+              <a href="" class="btn btn-primary text-xs text-center"><i class="fa fa-shopping-cart mr-1"></i> Beli
+                Sekarang</a>
+              <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal" data-bs-target="#modalLokasi" title="Lokasi" data-lat="-8.167993260200623" data-lng="113.65026835352185" data-zoom="13" data-title="Lokasi"><i class="fas fa-map-marker-alt mr-1"></i>
+                Lokasi</button>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between space-y-4 this-product">
+            <div class="space-y-3">
+              <div class="owl-carousel">
+                <img src="https://preview.silirdev.com/desa/themes/silir/assets/products/jalkot.jpg" alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+                <img src="https://preview.silirdev.com/desa/themes/silir/assets/products/jalkot.jpg" alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+              </div>
+              <div class="space-y-1/2 text-sm flex flex-col detail">
+                <span class="font-heading font-medium">Jalangkote</span>
+                <s class="text-xs text-red-500">Rp3,000</s>
+                <span class="text-lg font-bold">Rp2,000 <span class="text-xs font-thin">/
+                  pcs</span></span>
+                <p class="text-xs pt-1">
+                  Lorem ipsum dolor sit amet constecture dot mose
+                </p>
+                <span class="pt-2 text-xs font-bold text-gray-600"><i class="fas fa-award mr-1"></i> Bu Yani Saratoga <i
+                  class="fas fa-check text-xs bg-accent-100 h-4 w-4 inline-flex items-center justify-center rounded-full text-white"></i></span>
+              </div>
+            </div>
+            <div class="group flex items-center space-x-1">
+              <a href="" class="btn btn-primary text-xs text-center"><i class="fa fa-shopping-cart mr-1"></i> Beli
+                Sekarang</a>
+              <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal" data-bs-target="#modalLokasi" title="Lokasi" data-lat="-8.167993260200623" data-lng="113.65026835352185" data-zoom="13" data-title="Lokasi"><i class="fas fa-map-marker-alt mr-1"></i>
+                Lokasi</button>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between space-y-4 this-product">
+            <div class="space-y-3">
+              <div class="owl-carousel">
+                <img src="https://preview.silirdev.com/desa/themes/silir/assets/products/jalkot.jpg" alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+                <img src="https://preview.silirdev.com/desa/themes/silir/assets/products/jalkot.jpg" alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+              </div>
+              <div class="space-y-1/2 text-sm flex flex-col detail">
+                <span class="font-heading font-medium">Jalangkote</span>
+                <s class="text-xs text-red-500">Rp3,000</s>
+                <span class="text-lg font-bold">Rp2,000 <span class="text-xs font-thin">/
+                  pcs</span></span>
+                <p class="text-xs pt-1">
+                  Lorem ipsum dolor sit amet constecture dot mose
+                </p>
+                <span class="pt-2 text-xs font-bold text-gray-600"><i class="fas fa-award mr-1"></i> Bu Yani Saratoga <i
+                  class="fas fa-check text-xs bg-accent-100 h-4 w-4 inline-flex items-center justify-center rounded-full text-white"></i></span>
+              </div>
+            </div>
+            <div class="group flex items-center space-x-1">
+              <a href="" class="btn btn-primary text-xs text-center"><i class="fa fa-shopping-cart mr-1"></i> Beli
+                Sekarang</a>
+              <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal" data-bs-target="#modalLokasi" title="Lokasi" data-lat="-8.167993260200623" data-lng="113.65026835352185" data-zoom="13" data-title="Lokasi"><i class="fas fa-map-marker-alt mr-1"></i>
+                Lokasi</button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="bg-white shadow rounded-lg p-5 border flex gap-3 lg:gap-5">
-        <figure class="h-10 w-12 lg:h-24 lg:w-36 overflow-hidden flex-shrink-0">
-          <img src="./assets/img/post-1.jpg" alt="Polres Luwu Utara Siapkan 3 Pos Pengamanan Nataru, Ini Lokasinya" class="h-10 w-12 lg:h-24 lg:w-36 object-cover object-center">
-        </figure>
-        <div class="flex flex-col justify-between gap-3">
-          <a href="./post.html" class="text-h5 hover:text-primary-100">Polres Luwu Utara Siapkan 3 Pos Pengamanan Nataru, Ini Lokasinya</a>
-          <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
-            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 20 Desember 2021</li>
-            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
-            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
-          </ul>
-        </div>
-      </div>
-      <div class="bg-white shadow rounded-lg p-5 border flex gap-3 lg:gap-5">
-        <figure class="h-10 w-12 lg:h-24 lg:w-36 overflow-hidden flex-shrink-0">
-          <img src="./assets/img/gallery-3.jpg" alt="15 Desa di Luwu Utara Jadi Lokasi Program Perlindungan Anak Sektor Kakao" class="h-10 w-12 lg:h-24 lg:w-36 object-cover object-center">
-        </figure>
-        <div class="flex flex-col justify-between gap-3">
-          <a href="./post.html" class="text-h5 hover:text-primary-100">15 Desa di Luwu Utara Jadi Lokasi Program Perlindungan Anak Sektor Kakao</a>
-          <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
-            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 09 Oktober 2021</li>
-            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
-            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
-          </ul>
-        </div>
-      </div>
-      <div class="bg-white shadow rounded-lg p-5 border flex gap-3 lg:gap-5">
-        <figure class="h-10 w-12 lg:h-24 lg:w-36 overflow-hidden flex-shrink-0">
-          <img src="./assets/img/gallery-1.jpg" alt="Kepala Desa Terpilih Periode 2021-2027 Luwu Utara Resmi Dilantik, Indah: Waktunya Bekerja" class="h-10 w-12 lg:h-24 lg:w-36 object-cover object-center">
-        </figure>
-        <div class="flex flex-col justify-between gap-3">
-          <a href="./post.html" class="text-h5 hover:text-primary-100">Kepala Desa Terpilih Periode 2021-2027 Luwu Utara Resmi Dilantik, Indah: Waktunya Bekerja</a>
-          <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
-            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 20 September 2021</li>
-            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
-            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
-          </ul>
-        </div>
-      </div>
-      <div class="bg-white shadow rounded-lg p-5 border flex gap-3 lg:gap-5">
-        <figure class="h-10 w-12 lg:h-24 lg:w-36 overflow-hidden flex-shrink-0">
-          <img src="./assets/img/post-4.jpg" alt="KPK Rilis Hasil Survei Penilaian Integritas, Luwu Utara Tertinggi di Sulsel" class="h-10 w-12 lg:h-24 lg:w-36 object-cover object-center">
-        </figure>
-        <div class="flex flex-col justify-between gap-3">
-          <a href="./post.html" class="text-h5 hover:text-primary-100">KPK Rilis Hasil Survei Penilaian Integritas, Luwu Utara Tertinggi di Sulsel</a>
-          <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
-            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 16 September 2021</li>
-            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
-            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
-          </ul>
-        </div>
-      </div>
+      </article>
       <p class="text-xs lg:text-sm">Halaman 1 dari 6</p>
       <ol class="flex gap-2 flex-wrap">
         <li class="page-item"><a href="" class="page-link py-1 px-3 rounded-lg shadow inline-block border hover:border-primary-100 bg-primary-100 text-white hover:text-white hover:bg-primary-200" disabled>1</a></li>
@@ -389,207 +430,64 @@
         <li class="page-item"><a href="" class="page-link py-1 px-3 rounded-lg shadow inline-block border hover:border-primary-100 bg-white hover:text-primary-200">5</a></li>
         <li class="page-item"><a href="" class="page-link py-1 px-3 rounded-lg shadow inline-block border hover:border-primary-100 bg-white hover:text-primary-200"><i class="fas fa-chevron-right text-xs"></i></a></li>
       </ol>
-    </main>
-    <div class="lg:w-1/3 w-full">
-      <aside class="space-y-5 sidebar">
-        <form action="" role="form" class="relative">
-          <i class="fas fa-search absolute top-1/2 left-0 transform -translate-y-1/2 z-10 px-3 text-gray-500"></i>
-          <input type="text" class="form-input px-10 w-full h-12 bg-white relative inline-block" placeholder="Cari...">
-        </form>
-        <div class="shadow rounded-lg bg-white overflow-hidden">
-          <style type="text/css">
-            button.btn {
-              margin-left: 0
-            }
-
-            #detail tbody {
-              max-width: 100%;
-            }
-
-            #detail tr {
-              word-break: break-all;
-              word-wrap: break-word;
-            }
-
-            #detail tr td {
-              padding: 5px 6px;
-              /* word-break: break-all; */
-              border: 1px solid #eee;
-            }
-          </style>
-          <!-- widget Peta Lokasi Kantor Desa -->
-          <div class="box box-primary box-solid">
-            <div class="box-header">
-              <h3 class="box-title">
-                <i class="fa fa-map-marker-alt mr-2"></i>Lokasi Kantor Desa
-              </h3>
+      <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="modalLokasi" tabindex="-1" aria-modal="true" role="dialog">
+        <div class="modal-dialog relative w-auto pointer-events-none">
+          <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+            <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+              <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
+                Lokasi
+              </h5>
+              <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Tutup"></button>
             </div>
-            <div class="box-body">
-              <div id="map_canvas" style="height:200px;" class="mb-4"></div>
-              <button class="btn btn-accent">
-                <a href="https://www.openstreetmap.org/#map=15/-8.483832804795249/116.08523368835449" style="color:#fff;" target="_blank">Buka Peta</a></button>
-              <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#detail">
-                Detail
-              </button>
-              <!-- Modal -->
-              <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="detail" tabindex="-1" aria-labelledby="detailLabel" aria-hidden="true">
-                <div class="modal-dialog relative w-auto pointer-events-none">
-                  <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-                    <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-                      <h5 class="text-xl font-medium leading-normal text-gray-800" id="detailLabel">Detail Desa</h5>
-                      <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body relative p-4">
-                      <table class="max-w-full text-xs lg:text-sm table-auto w-full">
-                        <tbody>
-                          <tr>
-                            <td>Alamat</td>
-                            <td>:</td>
-                            <td>Jl. Andi Makassau, No. 12, Dusun Sidodadi</td>
-                          </tr>
-                          <tr>
-                            <td>Desa </td>
-                            <td>:</td>
-                            <td>Sukaraya</td>
-                          </tr>
-                          <tr>
-                            <td>Kecamatan</td>
-                            <td>:</td>
-                            <td>Bone-Bone</td>
-                          </tr>
-                          <tr>
-                            <td>Kabupaten</td>
-                            <td>:</td>
-                            <td>Luwu Utara</td>
-                          </tr>
-                          <tr>
-                            <td>Kodepos</td>
-                            <td>:</td>
-                            <td>92966</td>
-                          </tr>
-                          <tr>
-                            <td>Telepon</td>
-                            <td>:</td>
-                            <td>0471563410</td>
-                          </tr>
-                          <tr>
-                            <td>Email</td>
-                            <td>:</td>
-                            <td>pengaduan@sukaraya.luwuutarakab.go.id</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+            <div class="modal-body p-4">
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        var token = "pk.eyJ1IjoiYXJpYW5kaSIsImEiOiJjazduZDlqaXMwcmc2M2xvMHpsaXlrN202In0.s4nuJQ5BGpnBz8BJkXKV4g";
+
+        $(document).ready(function() {
+          document.querySelector('#modalLokasi').addEventListener('shown.bs.modal', function(event) {
+            const link = $(event.relatedTarget);
+            const title = link.data('title');
+            const modal = $(this);
+            modal.find('.modal-title').text(title);
+            modal.find('.modal-body').html("<div id='map' style='width: 100%; height:350px'></div>");
+
+            const popup = `
+            <div class="card">
+              <div class="text-xs">
+                <div class="py-1 space-y-1/2 text-sm flex flex-col">
+                  ${link.closest('.this-product').find('.detail').html()}
                 </div>
               </div>
-            </div>
-          </div>
-          <script>
-            //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
-            var posisi = [-8.483832804795249, 116.08523368835449];
-            var zoom = 14;
+            </div>`;
 
-            var lokasi_kantor = L.map('map_canvas').setView(posisi, zoom);
+            const posisi = [link.data('lat'), link.data('lng')];
+            const zoom = link.data('zoom') || 10;
+            $("#lat").val(link.data('lat'));
+            $("#lng").val(link.data('lng'));
 
-            //Menampilkan BaseLayers Peta
-            var baseLayers = getBaseLayers(lokasi_kantor, '');
+            // Inisialisasi tampilan peta
+            pelapak = L.map('map').setView(posisi, zoom);
 
-            L.control.layers(baseLayers, null, {
-              position: 'topright',
-              collapsed: true
-            }).addTo(lokasi_kantor);
+            // Menampilkan BaseLayers Peta
+            getBaseLayers(pelapak, token);
 
-            //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
-            var kantor_desa = L.marker(posisi).addTo(lokasi_kantor);
-          </script>
-        </div>
-        <div class="shadow rounded-lg bg-white overflow-hidden">
-          <style type="text/css">
-            .highcharts-xaxis-labels tspan {
-              font-size: 8px
-            }
-          </style>
-          <div class="box box-primary box-solid">
-            <div class="box-header">
-              <h3 class="box-title"><a href="#!"><i class="fas fa-chart-bar"></i>
-                  Statistik Desa Sukaraya</a></h3>
-            </div>
-            <div class="box-body">
-              <script type="text/javascript">
-                $(function() {
-                  var chart_widget;
-                  $(document).ready(function() {
-                    // Build the chart
-                    chart_widget = new Highcharts.Chart({
-                      chart: {
-                        renderTo: 'container_widget',
-                        plotBackgroundColor: null,
-                        plotBorderWidth: null,
-                        plotShadow: false
-                      },
-                      title: {
-                        text: 'Jumlah Penduduk'
-                      },
-                      yAxis: {
-                        title: {
-                          text: 'Jumlah'
-                        }
-                      },
-                      xAxis: {
-                        categories: [
-                          ['46 <br> LAKI-LAKI'],
-                          ['51 <br> PEREMPUAN'],
-                          ['97 <br> TOTAL'],
-                        ]
-                      },
-                      legend: {
-                        enabled: false
-                      },
-                      plotOptions: {
-                        series: {
-                          colorByPoint: true
-                        },
-                        column: {
-                          pointPadding: 0,
-                          borderWidth: 0
-                        }
-                      },
-                      series: [{
-                        type: 'column',
-                        name: 'Populasi',
-                        data: [
-                          ['LAKI-LAKI', 46],
-                          ['PEREMPUAN', 51],
-                          ['TOTAL', 97],
-                        ]
-                      }]
-                    });
-                  });
-                });
-              </script>
-              <div id="container_widget"></div>
-              <a href="./statistic.html" class="text-link">Lihat rincian</a>
-            </div>
-          </div>
-        </div>
-        <div class="shadow rounded-lg bg-white overflow-hidden">
-          <div class="box-header">
-            <h3 class="box-title"><i class="fas fa-external-link-alt mr-2"></i> Tautan Ke Halaman Statis</h3>
-          </div>
-          <div class="px-5 py-4">
-            <ul class="divide-y">
-              <li><a href="./statistic.html" class="hover:text-link block py-2">Data Statistik</a></li>
-              <li><a href="./idm.html" class="hover:text-link block py-2">Status IDM</a></li>
-              <li><a href="./law.html" class="hover:text-link block py-2">Produk Hukum</a></li>
-              <li><a href="./public-release.html" class="hover:text-link block py-2">Informasi Publik</a></li>
-              <li><a href="./lapak.html" class="hover:text-link block py-2">Lapak Desa</a></li>
-              <li><a href="./archive.html" class="hover:text-link block py-2">Arsip Artikel</a></li>
-            </ul>
-          </div>
-        </div>
-      </aside>
-    </div>
+            // Tampilkan Posisi Pelapak
+            marker = new L.Marker(posisi, {
+              draggable: false
+            });
+
+            pelapak.addLayer(marker);
+            L.marker(posisi).addTo(pelapak).bindPopup(popup);
+            L.control.scale().addTo(pelapak);
+            pelapak.invalidateSize();
+          });
+        });
+      </script>
+    </main>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 container px-3 lg:px-5">
 
@@ -599,10 +497,10 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>56%</span>
+          <span>67%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 67%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
@@ -612,10 +510,10 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>46%</span>
+          <span>85%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 46%"></div>
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
@@ -625,10 +523,10 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>90%</span>
+          <span>16%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 90%"></div>
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 16%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
@@ -644,23 +542,10 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>90%</span>
+          <span>78%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 90%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
-          <span>28%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 28%"></div>
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 78%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
@@ -680,6 +565,19 @@
           <span>Rp1,944,356,000</span>
           </span>
         </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>67%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 67%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
       </div>
     </div>
 
@@ -689,10 +587,23 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>56%</span>
+          <span>85%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>78%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 78%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
@@ -706,19 +617,6 @@
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
             <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 28%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
-          <span>67%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 67%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
