@@ -4,11 +4,176 @@
 },{}],2:[function(require,module,exports){
 "use strict";
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 require("tw-elements");
+/* eslint-disable no-restricted-syntax */
+
 /* eslint-disable func-names */
 
 /* eslint-disable no-undef */
 
+
+var setChart = function setChart() {
+  var showStatus = true;
+  var charts;
+
+  function switchType(type, alpha) {
+    charts.update({
+      chart: {
+        options3d: {
+          alpha: alpha
+        }
+      },
+      series: [{
+        type: type
+      }]
+    });
+  }
+
+  function showZeroValue() {
+    var show = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+    if (show) {
+      $('.zero').parent().show();
+    } else {
+      $('.zero').parent().hide();
+    }
+  } // eslint-disable-next-line no-unused-vars
+
+
+  function showHideToggle() {
+    $('#showData').click();
+    showZeroValue(showStatus);
+    showStatus = !showStatus;
+    if (showStatus) $('#showZero').text('Tampilkan Nol');else $('#showZero').text('Sembunyikan Nol');
+  }
+
+  $(document).ready(function () {
+    if ($('#peserta_program').length) {
+      $('#peserta_program').DataTable({
+        processing: true,
+        serverSide: true,
+        pageLength: 10,
+        order: [],
+        ajax: {
+          url: bantuanUrl,
+          type: 'POST',
+          data: {
+            stat: $('#stat').val()
+          }
+        },
+        // Set column definition initialisation properties.
+        columnDefs: [{
+          targets: [0, 3],
+          // first column / numbering column
+          orderable: false // set not orderable
+
+        }],
+        language: {
+          url: "".concat(BASE_URL, "/assets/bootstrap/js/dataTables.indonesian.lang")
+        },
+        drawCallback: function drawCallback() {
+          $('.dataTables_paginate > .pagination').addClass('pagination-sm no-margin');
+        }
+      });
+    }
+
+    if ($('#statistics').length) {
+      showZeroValue(false);
+      var categories = [];
+      var data = [];
+
+      var _iterator = _createForOfIteratorHelper(dataStats),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var stat = _step.value;
+
+          if (stat.nama !== 'TOTAL' && stat.nama !== 'JUMLAH' && stat.nama !== 'PENERIMA') {
+            var filteredData = [stat.nama, parseInt(stat.jumlah, 10)];
+            categories.push(stat.nama);
+            data.push(filteredData);
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      charts = new Highcharts.Chart({
+        chart: {
+          renderTo: 'statistics',
+          options3d: {
+            enabled: enable3d,
+            alpha: 45,
+            beta: 10
+          }
+        },
+        title: 0,
+        yAxis: {
+          showEmpty: false,
+          title: {
+            text: 'Jumlah Populasi'
+          }
+        },
+        xAxis: {
+          categories: categories
+        },
+        plotOptions: {
+          series: {
+            colorByPoint: true
+          },
+          column: {
+            pointPadding: -0.1,
+            borderWidth: 0,
+            showInLegend: false,
+            depth: 50,
+            viewDistance: 25
+          },
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            showInLegend: false,
+            depth: 30,
+            innerSize: 30
+          }
+        },
+        legend: {
+          enabled: true
+        },
+        series: [{
+          type: 'pie',
+          name: 'Jumlah Populasi',
+          shadow: 1,
+          border: 1,
+          data: data
+        }]
+      });
+      $('#showData').click(function () {
+        $('tr.more').show();
+        $('#showData').hide();
+        showZeroValue(false);
+      });
+      $('.button-switch').click(function () {
+        var chartType = $(this).data('type');
+        var alpha = chartType === 'pie' ? 45 : 20;
+        $(this).addClass('is-active');
+        $(this).siblings('.button-switch').removeClass('is-active');
+        switchType(chartType, alpha);
+      });
+      $('#showZero').click(function () {
+        return showHideToggle();
+      });
+    }
+  });
+};
 
 $(document).ready(function () {
   $('.owl-carousel').each(function () {
@@ -34,6 +199,8 @@ $(document).ready(function () {
       owl.trigger('next.owl.carousel');
     });
   }
+
+  setChart();
 });
 
 },{"tw-elements":1}]},{},[2])

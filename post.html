@@ -42,7 +42,7 @@
 <body class="font-primary bg-gray-100">
   <div x-data="{loading: true, onLoading() {setTimeout(() => {this.loading = false}, 1500)}}" x-init="onLoading()">
     <div class="fixed bg-white left-0 top-0 w-screen h-screen z-[9999] flex justify-center items-center" x-show="loading">
-      <div class="spinner-grow inline-block w-8 h-8 bg-primary-100 rounded-full opacity-0" role="status">
+      <div class="spinner-grow inline-block w-8 h-8 bg-primary-100 rounded-full opacity-0 mb-5" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
@@ -225,7 +225,6 @@
       </ul>
     </nav>
   </div>
-  <div class="sharethis-sticky-share-buttons"></div>
   <div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5 gap-3 lg:gap-5 justify-between text-gray-600">
     <main class="lg:w-2/3 space-y-1 bg-white rounded-lg px-4 py-2 lg:py-4 lg:px-5 shadow">
       <div class="breadcrumb">
@@ -590,6 +589,7 @@
                 });
               </script>
               <div id="container_widget"></div>
+              <a href="./statistic.html" class="text-link">Lihat rincian</a>
             </div>
           </div>
         </div>
@@ -604,100 +604,10 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>56%</span>
+          <span>67%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
-          <span>56%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
-          <span>16%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 16%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div class="shadow bg-white rounded-lg overflow-hidden">
-      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 Pendapatan</h3>
-      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
-          <span>56%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
-          <span>56%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
-          <span>46%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 46%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div class="shadow bg-white rounded-lg overflow-hidden">
-      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 Pembiayaan</h3>
-      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
-          <span>85%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 67%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
@@ -720,10 +630,100 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
+          <span>85%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow bg-white rounded-lg overflow-hidden">
+      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 Pendapatan</h3>
+      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>46%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 46%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>85%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>85%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow bg-white rounded-lg overflow-hidden">
+      <h3 class="bg-primary-100 text-white px-5 py-3 text-h5">APBDes 2019 Pembiayaan</h3>
+      <div class="px-5 py-4 text-xs lg:text-sm space-y-3">
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
           <span>78%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
             <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 78%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>46%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 46%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>67%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 67%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>

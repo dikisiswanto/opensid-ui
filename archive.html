@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Halaman Beranda</title>
+  <title>Halaman Arsip Artikel</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -226,102 +226,148 @@
     </nav>
   </div>
   <div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5 gap-3 lg:gap-5 justify-between text-gray-600">
-    <main class="lg:w-2/3 space-y-5">
-      <section class="slider relative group transition-all duration-300">
-        <div class="owl-carousel rounded-lg w-full h-48 lg:h-[400px]">
-
-          <figure class="h-48 lg:h-[400px] w-full bg-gray-300">
-            <img src="assets/img/gallery-2.jpg" alt="Gallery 2" class="w-full h-48 lg:h-[400px] object-cover">
-          </figure>
-
-          <figure class="h-48 lg:h-[400px] w-full bg-gray-300">
-            <img src="assets/img/gallery-3.jpg" alt="Gallery 3" class="w-full h-48 lg:h-[400px] object-cover">
-          </figure>
-
-          <figure class="h-48 lg:h-[400px] w-full bg-gray-300">
-            <img src="assets/img/gallery-1.jpg" alt="Gallery 1" class="w-full h-48 lg:h-[400px] object-cover">
-          </figure>
-
-        </div>
-        <div class="slider-nav">
-          <span class="slider-nav-prev px-1 py-2 cursor-pointer transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:bg-primary-100 shadow absolute top-1/2 left-0 transform -translate-y-1/2 z-[99]" title="Sebelumnya"><i class="fas fa-chevron-left text-lg text-white px-3"></i></span>
-          <span class="slider-nav-next px-1 py-2 cursor-pointer transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:bg-primary-100 shadow absolute top-1/2 right-0 transform -translate-y-1/2 z-[99]" title="Selanjutnya"><i class="fas fa-chevron-right text-lg text-white px-3"></i></span>
-        </div>
-      </section>
-      <div class="owl-carousel space-x-5" data-itemsnumber="2">
-        <div class="flex flex-col gap-3 justify-between">
-          <a href="./statistic.html" class="bg-primary-100 hover:bg-primary-200 font-medium text-white w-full inline-flex gap-x-3 py-3 px-5 rounded-lg items-center"><img src="./assets/img/location.png" alt="" class="flex-shrink-0" style="width: 1.5rem; height: 1.5rem;"> <span>Data Wilayah</span></a>
-          <a href="./statistic.html" class="bg-primary-100 hover:bg-primary-200 font-medium text-white w-full inline-flex gap-x-3 py-3 px-5 rounded-lg items-center"><img src="./assets/img/student.png" alt="" class="flex-shrink-0" style="width: 1.5rem; height: 1.5rem;"> <span>Data Pendidikan</span></a>
-        </div>
-        <div class="flex flex-col gap-3 justify-between">
-          <a href="./statistic.html" class="bg-primary-100 hover:bg-primary-200 font-medium text-white w-full inline-flex gap-x-3 py-3 px-5 rounded-lg items-center"><img src="./assets/img/gender.png" alt="" class="flex-shrink-0" style="width: 1.5rem; height: 1.5rem;"> <span>Data Jenis Kelamin</span></a>
-          <a href="./statistic.html" class="bg-primary-100 hover:bg-primary-200 font-medium text-white w-full inline-flex gap-x-3 py-3 px-5 rounded-lg items-center"><img src="./assets/img/employee.png" alt="" class="flex-shrink-0" style="width: 1.5rem; height: 1.5rem;"> <span>Data Pekerjaan</span></a>
-        </div>
+    <main class="lg:w-2/3 space-y-1 bg-white rounded-lg px-4 py-2 lg:py-4 lg:px-5 shadow">
+      <div class="breadcrumb">
+        <ol>
+          <li><a href="./post.html./home.html">Beranda</a></li>
+          <li>Arsip Berita</li>
+        </ol>
       </div>
-      <div class="flex justify-between items-center">
-        <h3 class="text-h4 text-primary-200">Artikel Terkini</h3>
-        <a href="./archive.html" class="text-sm hover:text-primary-100">Indeks <i class="fas fa-chevron-right ml-1"></i></a>
-      </div>
-      <div class="lg:h-[350px] h-40 overflow-hidden rounded-lg relative">
-        <figure class="lg:h-[350px] h-40">
-          <img src="./assets/img/gallery-3.jpg" alt="Lorem ipsum dolor" class=" lg:h-[350px] h-40 w-full object-cover object-center">
-        </figure>
-        <div class="absolute bg-black bg-opacity-60 bottom-0 left-0 right-0 text-white group">
-          <a href="./post.html" class="font-bold text-h5 block py-4 px-5 group-hover:py-5 transition-all duration-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus?</a>
-        </div>
-      </div>
-      <div class="bg-white shadow rounded-lg p-5 border flex gap-3 lg:gap-5">
-        <figure class="h-10 w-12 lg:h-24 lg:w-36 overflow-hidden flex-shrink-0">
-          <img src="./assets/img/post-1.jpg" alt="Polres Luwu Utara Siapkan 3 Pos Pengamanan Nataru, Ini Lokasinya" class="h-10 w-12 lg:h-24 lg:w-36 object-cover object-center">
-        </figure>
-        <div class="flex flex-col justify-between gap-3">
-          <a href="./post.html" class="text-h5 hover:text-primary-100">Polres Luwu Utara Siapkan 3 Pos Pengamanan Nataru, Ini Lokasinya</a>
-          <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
-            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 20 Desember 2021</li>
-            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
-            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
-          </ul>
-        </div>
-      </div>
-      <div class="bg-white shadow rounded-lg p-5 border flex gap-3 lg:gap-5">
-        <figure class="h-10 w-12 lg:h-24 lg:w-36 overflow-hidden flex-shrink-0">
-          <img src="./assets/img/gallery-3.jpg" alt="15 Desa di Luwu Utara Jadi Lokasi Program Perlindungan Anak Sektor Kakao" class="h-10 w-12 lg:h-24 lg:w-36 object-cover object-center">
-        </figure>
-        <div class="flex flex-col justify-between gap-3">
-          <a href="./post.html" class="text-h5 hover:text-primary-100">15 Desa di Luwu Utara Jadi Lokasi Program Perlindungan Anak Sektor Kakao</a>
-          <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
-            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 09 Oktober 2021</li>
-            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
-            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
-          </ul>
-        </div>
-      </div>
-      <div class="bg-white shadow rounded-lg p-5 border flex gap-3 lg:gap-5">
-        <figure class="h-10 w-12 lg:h-24 lg:w-36 overflow-hidden flex-shrink-0">
-          <img src="./assets/img/gallery-1.jpg" alt="Kepala Desa Terpilih Periode 2021-2027 Luwu Utara Resmi Dilantik, Indah: Waktunya Bekerja" class="h-10 w-12 lg:h-24 lg:w-36 object-cover object-center">
-        </figure>
-        <div class="flex flex-col justify-between gap-3">
-          <a href="./post.html" class="text-h5 hover:text-primary-100">Kepala Desa Terpilih Periode 2021-2027 Luwu Utara Resmi Dilantik, Indah: Waktunya Bekerja</a>
-          <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
-            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 20 September 2021</li>
-            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
-            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
-          </ul>
-        </div>
-      </div>
-      <div class="bg-white shadow rounded-lg p-5 border flex gap-3 lg:gap-5">
-        <figure class="h-10 w-12 lg:h-24 lg:w-36 overflow-hidden flex-shrink-0">
-          <img src="./assets/img/post-4.jpg" alt="KPK Rilis Hasil Survei Penilaian Integritas, Luwu Utara Tertinggi di Sulsel" class="h-10 w-12 lg:h-24 lg:w-36 object-cover object-center">
-        </figure>
-        <div class="flex flex-col justify-between gap-3">
-          <a href="./post.html" class="text-h5 hover:text-primary-100">KPK Rilis Hasil Survei Penilaian Integritas, Luwu Utara Tertinggi di Sulsel</a>
-          <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
-            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 16 September 2021</li>
-            <li><i class="fas fa-user mr-1 text-primary-100"></i> John Doe</li>
-            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> Berita Desa</li>
-          </ul>
-        </div>
-      </div>
+      <h2 class="text-h2">Arsip Situs Web</h2>
+      <ol class="divide-y mb-5">
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Polres
+            Luwu Utara Siapkan 3 Pos Pengamanan Nataru, Ini Lokasinya</a>
+          <p class="text-sm">Diterbitkan pada 26 Desember 2021</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">BMKG
+            Keluarkan Peringatan Dini ‘AWAS’ dan ‘SIAGA’ Curah Hujan Tinggi di Luwu Utara, Ini Sebarannya</a>
+          <p class="text-sm">Diterbitkan pada 26 Desember 2021</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">KPK
+            Rilis Hasil Survei Penilaian Integritas, Luwu Utara Tertinggi di Sulsel</a>
+          <p class="text-sm">Diterbitkan pada 26 Desember 2021</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">15
+            Desa di Luwu Utara Jadi Lokasi Program Perlindungan Anak Sektor Kakao</a>
+          <p class="text-sm">Diterbitkan pada 26 Desember 2021</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Bupati
+            Luwu Utara Serahkan Bantuan untuk Korban Bencana Angin Puting Beliung di Desa Sukaraya</a>
+          <p class="text-sm">Diterbitkan pada 26 Desember 2021</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Personil
+            Polsek Bone-Bone Gelar PPKM Mikro Di Desa Sukaraya</a>
+          <p class="text-sm">Diterbitkan pada 26 Desember 2021</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html]">Pemerintah
+            Desa Sukaraya Lakukan Penyemprotan Disinfektan Rumah Warga Cegah Covid-19</a>
+          <p class="text-sm">Diterbitkan pada 26 Desember 2021</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Kepala
+            Desa Terpilih Periode 2021-2027 Luwu Utara Resmi Dilantik, Indah: Waktunya Bekerja</a>
+          <p class="text-sm">Diterbitkan pada 26 Desember 2021</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Angin
+            Kencang Rusak 25 Rumah di Desa Sukaraya Luwu Utara</a>
+          <p class="text-sm">Diterbitkan pada 26 Desember 2021</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Fasilitas Kesehatan
+            Desa Sukaraya</a>
+          <p class="text-sm">Diterbitkan pada 27 Juni 2020</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Fasilitas Tempat
+            Ibadah Desa Sukaraya</a>
+          <p class="text-sm">Diterbitkan pada 27 Juni 2020</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Fasilitas Pendidikan
+            Desa Sukaraya</a>
+          <p class="text-sm">Diterbitkan pada 27 Juni 2020</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Laporan Keuangan Desa Tahun
+            2019</a>
+          <p class="text-sm">Diterbitkan pada 27 Juni 2020</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Update
+            Corona 25 Juni 2020: Tiga Pelajar Terpapar Covid-19</a>
+          <p class="text-sm">Diterbitkan pada 26 Juni 2020</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">6
+            Alasan Mengapa Anda Harus Berkunjung Ke Luwu Utara</a>
+          <p class="text-sm">Diterbitkan pada 26 Juni 2020</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Visi Misi</a>
+          <p class="text-sm">Diterbitkan pada 26 Juni 2020</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Sejarah
+            Desa</a>
+          <p class="text-sm">Diterbitkan pada 26 Juni 2020</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Dimulai
+            dari Desa, Pemkab Luwu Utara Bangun dan Tumbuhkan Industri Kreatif</a>
+          <p class="text-sm">Diterbitkan pada 08 Juni 2020</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+        <li class="py-5">
+          <span class="fas fa-external-link-alt mr-2"></span>
+          <a class="text-h6 transition-all duration-200 hover:underline hover:underline-offset-2 hover:decoration-secondary-100 hover:decoration-2" href="./post.html">Dinas
+            Kominfo Gelar Bimtek Website untuk Aparat Desa se-Kabupaten Luwu Utara</a>
+          <p class="text-sm">Diterbitkan pada 08 Juni 2020</p>
+          <p class="text-sm">Oleh: Administrator</p>
+        </li>
+      </ol>
       <p class="text-xs lg:text-sm">Halaman 1 dari 6</p>
       <ol class="flex gap-2 flex-wrap">
         <li class="page-item"><a href="" class="page-link py-1 px-3 rounded-lg shadow inline-block border hover:border-primary-100 bg-primary-100 text-white hover:text-white hover:bg-primary-200" disabled>1</a></li>
@@ -526,10 +572,10 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>85%</span>
+          <span>67%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 67%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
@@ -539,10 +585,10 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>28%</span>
+          <span>16%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 28%"></div>
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 16%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
@@ -552,10 +598,10 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>56%</span>
+          <span>78%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 78%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
@@ -571,19 +617,6 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>46%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 46%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
           <span>90%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
@@ -597,10 +630,23 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>16%</span>
+          <span>85%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 16%"></div>
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>56%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
@@ -616,36 +662,36 @@
         <div class="space-y-1">
           <span class="inline-flex justify-between w-full">
             <span class="font-bold">Pendapatan</span>
-          <span>16%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 16%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
-          <span>90%</span>
-          </span>
-          <div class="w-full bg-gray-200 rounded-full h-3">
-            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 90%"></div>
-          </div>
-          <span class="inline-flex justify-between w-full">
-            <span>Rp1,657,327,899</span>
-          <span>Rp1,944,356,000</span>
-          </span>
-        </div>
-        <div class="space-y-1">
-          <span class="inline-flex justify-between w-full">
-            <span class="font-bold">Pendapatan</span>
           <span>56%</span>
           </span>
           <div class="w-full bg-gray-200 rounded-full h-3">
             <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 56%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>85%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
+          </div>
+          <span class="inline-flex justify-between w-full">
+            <span>Rp1,657,327,899</span>
+          <span>Rp1,944,356,000</span>
+          </span>
+        </div>
+        <div class="space-y-1">
+          <span class="inline-flex justify-between w-full">
+            <span class="font-bold">Pendapatan</span>
+          <span>85%</span>
+          </span>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-secondary-100 text-xs font-medium h-3 text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: 85%"></div>
           </div>
           <span class="inline-flex justify-between w-full">
             <span>Rp1,657,327,899</span>
