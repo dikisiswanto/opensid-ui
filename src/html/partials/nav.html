@@ -12,7 +12,7 @@
         {%- endif %}
         class="inline-block relative"
       >
-        <a href="#" 
+        <a href="{{ '#!' if menu.submenu | length else menu.link }}" 
           class="p-3 inline-block hover:bg-primary-200"
           @mouseover="dropdown = true"
           @mouseleave="dropdown = false">
@@ -27,7 +27,7 @@
             @mouseover="dropdown = true"
             @mouseleave="dropdown = false">
             {% for submenu in menu.submenu -%}
-              <li><a href="#" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">{{ submenu }}</a></li>
+              <li><a href="{{ menu.link }}" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white">{{ submenu }}</a></li>
             {%- endfor %}
           </ul>
         {%- endif %}

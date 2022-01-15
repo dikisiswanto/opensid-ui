@@ -1,0 +1,101 @@
+{% set title = 'Halaman Produk Hukum' -%}
+{% extends "templates/master.html" -%}
+
+{% block content -%}
+  <div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5 gap-3 lg:gap-5 justify-between text-gray-600">
+    <main class="lg:w-2/3 w-full space-y-1 bg-white rounded-lg px-4 py-2 lg:py-4 lg:px-5 shadow">
+      <div class="breadcrumb">
+        <ol>
+          <li><a href="./home.html">Beranda</a></li>
+          <li>Laman statis</li>
+        </ol>
+      </div>
+      <article class="content">
+        <div class="box box-danger" style="padding-bottom: 2rem;">
+          <div class="box-header with-border">
+            <h3 class="box-title">Produk Hukum</h3>
+          </div>
+        
+          <div class="box-body">
+            <div class="row">
+              <form id="peraturanForm" onsubmit="formAction(); return false;">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="jenis_dokumen">Jenis</label>
+                    <select class="form-control" name="kategori" id="kategori" onchange="formAction()">
+                      <option value="">Semua</option>
+                      <option value="2">SK Kades</option>
+                      <option value="3">Perdes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="jenis_dokumen">Tahun</label>
+                    <select class="form-control" name="tahun" id="tahun" onchange="formAction()">
+                      <option value="">Semua</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2019">2019</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="jenis_dokumen">Tentang</label>
+                    <input type="text" name="tentang" id="tentang" class="form-control" style="margin-top: 0rem;">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <button type="submit" class="btn btn-info" style="margin-top: 2.5rem;"><i class="fa fa-search"></i>
+                    Cari</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div style="margin-right: 1rem; margin-left: 1rem;">
+            <div id="jdih-table_wrapper" class="dataTables_wrapper no-footer">
+              <table class="table table-striped table-bordered dataTable no-footer" id="jdih-table" role="grid">
+                <thead>
+                  <tr role="row">
+                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 338.667px;">Judul Produk Hukum</th>
+                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 103.333px;">Jenis</th>
+                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 126px;">Tahun</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-dokumen">
+                  <tr>
+                    <td><a href="https://preview.silirdev.com/dokumen_web/unduh_berkas/2">SK TIM Penyusun RPJMDes Tahun 2017</a>
+                    </td>
+                    <td>SK Kades</td>
+                    <td>2017</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://preview.silirdev.com/dokumen_web/unduh_berkas/3">SK Pengangkatan RT dan Pemberentian RT Baru</a></td>
+                    <td>SK Kades</td>
+                    <td>2017</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://preview.silirdev.com/dokumen_web/unduh_berkas/5">RPJMDes Miau Merah Tahun 2016 s/d 2022</a></td>
+                    <td>Perdes</td>
+                    <td>2017</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://preview.silirdev.com/dokumen_web/unduh_berkas/4">Perdes SPJ Tentang Keuang Desa Tahun 2016</a></td>
+                    <td>Perdes</td>
+                    <td>2016</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="bottom"></div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <div class="lg:w-1/3 w-full">
+      {% include "partials/sidebar.html" -%}
+    </div>
+  </div>
+{%- endblock %}

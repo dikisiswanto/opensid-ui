@@ -10,7 +10,7 @@
         {%- endif %}
         class="block relative"
       >
-        <a href="#!" 
+        <a href="{{ '#!' if menu.submenu | length else menu.link }}" 
           class="p-3 block hover:bg-secondary-100"
           @click="dropdown = !dropdown">
           {{ menu.name }}
@@ -23,7 +23,7 @@
             x-transition.opacity
             @click="dropdown = !dropdown">
             {% for submenu in menu.submenu -%}
-              <li><a href="" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">{{ submenu }}</a></li>
+              <li @click="dropdown = false"><a href="{{ menu.link }}" class="block py-3 pl-6 pr-4 hover:bg-secondary-100 hover:text-white">{{ submenu }}</a></li>
             {%- endfor %}
           </ul>
         {%- endif %}

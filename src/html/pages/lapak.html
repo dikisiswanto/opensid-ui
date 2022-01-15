@@ -1,0 +1,116 @@
+{% set title = 'Halaman Lapak' -%}
+{% extends "templates/master.html" -%}
+
+{% block content -%}
+<div class="container mx-auto lg:px-5 px-3 flex flex-col lg:flex-row my-5 gap-3 lg:gap-5 justify-between text-gray-600">
+  <main class="w-full space-y-1 bg-white rounded-lg px-4 py-2 lg:py-4 lg:px-5 shadow">
+    <div class="breadcrumb">
+      <ol>
+        <li><a href="./home.html">Beranda</a></li>
+        <li>Lapak</li>
+      </ol>
+    </div>
+    <article class="content">
+      <h2 class="text-h2"><i class="fa fa-store mr-2 text-primary-100"></i> Lapak Desa</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 py-8">
+        {% for i in range(0, 5) -%}
+        <div class="flex flex-col justify-between space-y-4 this-product">
+          <div class="space-y-3">
+            <div class="owl-carousel">
+              <img
+                src="{{ "https://preview.silirdev.com/desa/themes/silir/assets/products/keripik_melinjo.jpg" if i == 1 else "https://preview.silirdev.com/desa/themes/silir/assets/products/jalkot.jpg" }}"
+                alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+              <img
+                src="{{ "https://preview.silirdev.com/desa/themes/silir/assets/products/keripik_melinjo.jpg" if i == 2 else "https://preview.silirdev.com/desa/themes/silir/assets/products/jalkot.jpg" }}"
+                alt="product" class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600">
+            </div>
+            <div class="space-y-1/2 text-sm flex flex-col detail">
+              <span class="font-heading font-medium">{{"Emping Melinjo" if i === 1 else "Jalangkote"}}</span>
+              <s class="text-xs text-red-500">{{"Rp22,000" if i === 1 else "Rp3,000"}}</s>
+              <span class="text-lg font-bold">{{"Rp20,000" if i === 1 else "Rp2,000"}} <span class="text-xs font-thin">/
+                  {{ 'bungkus' if i === 1 else 'pcs'}}</span></span>
+              <p class="text-xs pt-1">
+                {{ "Emping melinjo yang bisa pilih level pedasnya sesuai selera Anda" if i == 1 else "Lorem ipsum dolor sit amet constecture dot mose" }}
+              </p>
+              <span class="pt-2 text-xs font-bold text-gray-600"><i class="fas fa-award mr-1"></i> Bu Yani Saratoga <i
+                  class="fas fa-check text-xs bg-accent-100 h-4 w-4 inline-flex items-center justify-center rounded-full text-white"></i></span>
+            </div>
+          </div>
+          <div class="group flex items-center space-x-1">
+            <a href="" class="btn btn-primary text-xs text-center"><i class="fa fa-shopping-cart mr-1"></i> Beli
+              Sekarang</a>
+            <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal"
+              data-bs-target="#modalLokasi" title="Lokasi" data-lat="-8.167993260200623" data-lng="113.65026835352185"
+              data-zoom="13" data-title="Lokasi"><i class="fas fa-map-marker-alt mr-1"></i>
+              Lokasi</button>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </article>
+    {% include "partials/pagination.html" -%}
+    <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+      id="modalLokasi" tabindex="-1" aria-modal="true" role="dialog">
+      <div class="modal-dialog relative w-auto pointer-events-none">
+        <div
+          class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+          <div
+            class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+            <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
+              Lokasi
+            </h5>
+            <button type="button"
+              class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+              data-bs-dismiss="modal" aria-label="Tutup"></button>
+          </div>
+          <div class="modal-body p-4">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var token = "pk.eyJ1IjoiYXJpYW5kaSIsImEiOiJjazduZDlqaXMwcmc2M2xvMHpsaXlrN202In0.s4nuJQ5BGpnBz8BJkXKV4g";
+
+      $(document).ready(function () {
+        document.querySelector('#modalLokasi').addEventListener('shown.bs.modal', function (event) {
+          const link = $(event.relatedTarget);
+          const title = link.data('title');
+          const modal = $(this);
+          modal.find('.modal-title').text(title);
+          modal.find('.modal-body').html("<div id='map' style='width: 100%; height:350px'></div>");
+
+          const popup = `
+            <div class="card">
+              <div class="text-xs">
+                <div class="py-1 space-y-1/2 text-sm flex flex-col">
+                  ${link.closest('.this-product').find('.detail').html()}
+                </div>
+              </div>
+            </div>`;
+
+          const posisi = [link.data('lat'), link.data('lng')];
+          const zoom = link.data('zoom') || 10;
+          $("#lat").val(link.data('lat'));
+          $("#lng").val(link.data('lng'));
+
+          // Inisialisasi tampilan peta
+          pelapak = L.map('map').setView(posisi, zoom);
+
+          // Menampilkan BaseLayers Peta
+          getBaseLayers(pelapak, token);
+
+          // Tampilkan Posisi Pelapak
+          marker = new L.Marker(posisi, {
+            draggable: false
+          });
+
+          pelapak.addLayer(marker);
+          L.marker(posisi).addTo(pelapak).bindPopup(popup);
+          L.control.scale().addTo(pelapak);
+          pelapak.invalidateSize();
+        });
+      });
+    </script>
+  </main>
+</div>
+{%- endblock %}

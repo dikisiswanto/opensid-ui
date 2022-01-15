@@ -128,14 +128,14 @@
 
   .form {
     &-input {
-      @apply bg-slate-50 rounded-lg h-10 px-2 block w-full transition duration-200 border border-gray-300 focus:border-primary-100 focus:outline-none;
+      @apply bg-slate-50 rounded-lg h-10 px-2 block w-full transition duration-200 border border-gray-300 focus:border-primary-100 focus:outline-none focus:shadow-none focus:shadow-none;
 
       &[disabled] {
         @apply bg-gray-200 cursor-not-allowed;
       }
     }
     &-textarea {
-      @apply bg-slate-50 rounded-lg h-auto py-2 px-2 block w-full transition-all duration-200 border border-gray-300 focus:border-primary-100 focus:outline-none;
+      @apply bg-slate-50 rounded-lg h-auto py-2 px-2 block w-full transition-all duration-200 border border-gray-300 focus:border-primary-100 focus:outline-none focus:shadow-none;
     }
     &-radio {
       @apply h-3 w-3 ring-2 ring-gray-300 ring-offset-2 appearance-none rounded-full cursor-pointer transition-all;
@@ -195,7 +195,7 @@
   }
 
   .accordion-button:not(.collapsed) {
-    @apply text-primary-100;
+    @apply text-primary-100 after:text-primary-100;
   }
 
   .code {
@@ -203,6 +203,101 @@
   }
 
   .text-link {
-    @apply underline decoration-secondary-200 underline-offset-2 decoration-2;
+    @apply underline decoration-secondary-100 underline-offset-2 decoration-2;
   }
+
+  article {
+    & .box-title {
+      @apply text-h2;
+    }
+
+    & .box-header.with-border {
+      @apply mb-0 !important;
+    }
+
+    & .box > div:nth-child(2), & .box > div:nth-child(3) {
+      @apply mx-0 !important;
+
+      & .table-responsive {
+        @apply max-w-full !important;
+
+        & table {
+          @apply overflow-x-auto w-full max-w-full table-auto !important;
+        }
+      }
+    }
+    
+    & #peraturanForm {
+      @apply grid grid-cols-1 lg:grid-cols-4 py-5 gap-5 items-end;
+
+      & .form-group {
+        @apply flex flex-col gap-y-2;
+
+        & .label {
+          @apply text-xs lg:text-sm;
+        }
+
+        & select, & input {
+          @apply form-input !important;
+        }
+      }
+
+      & button[type=submit] {
+        @apply btn btn-primary mt-0 !important;
+      }
+    }
+
+    & #info_publik_wrapper {
+      @apply py-5;
+
+      & label {
+        @apply inline-flex gap-3 py-3 text-xs lg:text-sm items-center;
+      }
+      & select, & input {
+        @apply form-input w-auto h-8 !important;
+      }
+      & td, & th {
+        @apply text-sm box-border !important;
+      }
+
+      & .dataTables_info, & .dataTables_paginate {
+        @apply text-xs lg:text-sm !important;
+      }
+
+      & .paginate_button {
+        background: #efefef !important;
+        @apply btn rounded-full border-0 !important;
+
+        &.current {
+          background: var(--primary-base-color) !important;
+          @apply rounded-full text-white border-0 !important;
+        }
+      }
+    }
+  }
+
+  .content {
+    & table {
+      @apply border border-collapse;
+
+      & td {
+        @apply border py-1 px-3;
+      }
+
+      & th {
+        @apply font-bold;
+      }
+
+      &.table-striped {
+        & tr:nth-child(even) {
+          @apply bg-gray-100;
+        } 
+      }
+
+    }
+  }
+}
+
+.form-control {
+  @apply form-input;
 }
