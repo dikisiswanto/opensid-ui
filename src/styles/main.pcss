@@ -154,6 +154,22 @@
     }
   }
 
+  .table {
+    @apply w-full border-collapse;
+
+    &-responsive {
+      @apply overflow-x-auto;
+    }
+    &-bordered {
+      @apply border;
+
+      & td,th {
+        @apply border py-1 px-2;
+      }
+
+    }
+  }
+
   .sidebar {
     & .box {
       @apply max-w-full;
@@ -178,7 +194,15 @@
     }
   }
 
+  .accordion-button:not(.collapsed) {
+    @apply text-primary-100;
+  }
+
   .code {
     @apply bg-slate-200 p-3 overflow-auto rounded-lg my-3 max-w-full;
+  }
+
+  .text-link {
+    @apply underline decoration-secondary-200 underline-offset-2 decoration-2;
   }
 }
