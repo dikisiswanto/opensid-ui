@@ -28,9 +28,11 @@
     &-warning {
       @apply bg-orange-100 text-orange-600;
     }
+
     &-error {
       @apply bg-red-100 text-red-600;
     }
+
     &-success {
       @apply bg-green-100 text-green-600;
     }
@@ -42,9 +44,11 @@
     &-primary {
       @apply text-primary-100 border-primary-100;
     }
+
     &-secondary {
       @apply text-secondary-100 border-secondary-100;
     }
+
     &-accent {
       @apply text-accent-100 border-accent-100;
     }
@@ -77,21 +81,27 @@
     &-primary {
       @apply bg-primary-100 text-white hover:bg-primary-200;
     }
+
     &-secondary {
       @apply bg-secondary-100 text-white hover:bg-secondary-200;
     }
+
     &-accent {
       @apply bg-accent-100 text-white hover:bg-accent-200;
     }
+
     &-warning {
       @apply text-white bg-orange-500 hover:bg-orange-600;
     }
+
     &-error {
-      @apply  text-white bg-red-500 hover:bg-red-600;
+      @apply text-white bg-red-500 hover:bg-red-600;
     }
+
     &-success {
       @apply text-white bg-green-500 hover:bg-green-600;
     }
+
     &[disabled] {
       @apply opacity-70 bg-opacity-70 cursor-not-allowed;
     }
@@ -109,18 +119,23 @@
     &-h1 {
       @apply text-3xl lg:text-4xl font-bold;
     }
+
     &-h2 {
       @apply text-2xl lg:text-3xl font-bold;
     }
+
     &-h3 {
       @apply text-xl lg:text-2xl font-bold;
     }
+
     &-h4 {
       @apply text-lg lg:text-xl font-bold;
     }
+
     &-h5 {
       @apply text-base lg:text-lg font-bold;
     }
+
     &-h6 {
       @apply text-sm lg:text-base font-bold;
     }
@@ -128,15 +143,17 @@
 
   .form {
     &-input {
-      @apply bg-slate-50 rounded-lg h-10 px-2 block w-full transition duration-200 border border-gray-300 focus:border-primary-100 focus:outline-none focus:shadow-none focus:shadow-none;
+      @apply bg-slate-50 rounded-lg h-10 px-2 block w-full transition duration-200 border border-gray-300 focus:border-primary-100 focus:outline-none focus:shadow-none;
 
       &[disabled] {
         @apply bg-gray-200 cursor-not-allowed;
       }
     }
+
     &-textarea {
-      @apply bg-slate-50 rounded-lg h-auto py-2 px-2 block w-full transition-all duration-200 border border-gray-300 focus:border-primary-100 focus:outline-none focus:shadow-none;
+      @apply bg-slate-50 rounded-lg h-auto py-2 px-2 block w-full transition-all duration-200 border border-gray-300 focus:border-primary-100 focus:outline-none;
     }
+
     &-radio {
       @apply h-3 w-3 ring-2 ring-gray-300 ring-offset-2 appearance-none rounded-full cursor-pointer transition-all;
 
@@ -160,10 +177,12 @@
     &-responsive {
       @apply overflow-x-auto;
     }
+
     &-bordered {
       @apply border;
 
-      & td,th {
+      & td,
+      th {
         @apply border py-1 px-2;
       }
 
@@ -177,13 +196,15 @@
       &-header {
         @apply bg-sidebar text-secondary-100 bg-opacity-50 px-3 lg:px-5;
       }
+
       &-title {
         @apply text-base lg:text-lg font-bold py-2;
 
-        & .fa {
-          @apply mr-1;
+        & .fas {
+          @apply mr-2;
         }
       }
+
       &-body {
         @apply px-3 lg:px-5 py-4 max-w-full;
 
@@ -196,6 +217,10 @@
 
   .accordion-button:not(.collapsed) {
     @apply text-primary-100 after:text-primary-100;
+
+    &:after {
+      @apply text-primary-100;
+    }
   }
 
   .code {
@@ -215,7 +240,8 @@
       @apply mb-0 !important;
     }
 
-    & .box > div:nth-child(2), & .box > div:nth-child(3) {
+    & .box>div:nth-child(2),
+    & .box>div:nth-child(3) {
       @apply mx-0 !important;
 
       & .table-responsive {
@@ -226,48 +252,196 @@
         }
       }
     }
-    
-    & #peraturanForm {
-      @apply grid grid-cols-1 lg:grid-cols-4 py-5 gap-5 items-end;
+  }
 
-      & .form-group {
-        @apply flex flex-col gap-y-2;
+  .content {
 
-        & .label {
-          @apply text-xs lg:text-sm;
-        }
+    h1,
+    h2,
+    h3 {
+      @apply text-h4;
+    }
 
-        & select, & input {
-          @apply form-input !important;
+    h4,
+    h5,
+    h6 {
+      @apply text-h5;
+    }
+
+    ol,
+    ul {
+      @apply ml-5;
+    }
+
+    ol {
+      @apply list-decimal;
+    }
+
+    ul {
+      @apply list-disc;
+    }
+
+    img {
+      @apply max-w-full shadow;
+    }
+
+    li {
+      @apply py-0.5;
+    }
+
+    p {
+      @apply break-words !important;
+    }
+
+    & table {
+      @apply border border-collapse bg-transparent !important;
+
+      & tr,
+      & td,
+      & th {
+        @apply border border-gray-300 px-2 py-2 !important;
+      }
+
+      & tr.highlighted {
+        @apply bg-accent-100 text-white !important;
+      }
+
+      & tbody {
+        & tr:nth-child(even) {
+          @apply bg-gray-100;
         }
       }
 
+      &.blueTable {
+        @apply text-sm !important;
+
+        & thead {
+          @apply bg-primary-100 !important;
+        }
+
+        .bold {
+          @apply font-semibold;
+        }
+      }
+    }
+
+    & .table-responsive {
+      @apply overflow-auto;
+
+    }
+
+    & .container {
+      @apply bg-transparent text-gray-700 !important;
+    }
+
+    & .progress {
+      @apply w-full bg-gray-200 rounded-full h-3 !important;
+    }
+
+    & .progress-bar {
+      @apply h-full flex items-center bg-secondary-100 !important;
+
+      span {
+        @apply absolute right-0 pr-3 block text-right text-sm transform text-white !important;
+      }
+    }
+
+    & .box-title {
+      @apply text-h2;
+    }
+
+    & .box-header.with-border {
+      @apply mb-0 !important;
+    }
+
+    & .table-responsive {
+      @apply max-w-full w-full overflow-auto;
+  
+      &::-webkit-scrollbar {
+        @apply w-2 h-2;
+      }
+  
+      &::-webkit-scrollbar-track {
+        @apply rounded-full border border-gray-100;
+      }
+  
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        @apply rounded-full bg-gray-200;
+      }
+    }
+  
+    & .content {
+      @apply w-full;
+  
+      &-wrapper {
+        @apply block !important;
+      }
+    }
+  
+    & table {
+      @apply border border-collapse;
+  
+      & td {
+        @apply border py-1 px-3;
+      }
+  
+      & th {
+        @apply font-bold;
+      }
+  
+      &.table-striped {
+        & tr:nth-child(even) {
+          @apply bg-gray-100;
+        }
+      }
+    }
+  
+    & #peraturanForm {
+      @apply grid grid-cols-1 lg:grid-cols-4 py-5 gap-5 items-end;
+  
+      & .form-group {
+        @apply flex flex-col gap-y-2;
+  
+        & .label {
+          @apply text-xs lg:text-sm;
+        }
+  
+        & select,
+        & input {
+          @apply form-input !important;
+        }
+      }
+  
       & button[type=submit] {
         @apply btn btn-primary mt-0 !important;
       }
     }
-
+  
     & #info_publik_wrapper {
       @apply py-5;
-
+    }
+  
+    & .dataTables,
+    & .dataTables_wrapper {
       & label {
         @apply inline-flex gap-3 py-3 text-xs lg:text-sm items-center;
       }
-      & select, & input {
+  
+      & select,
+      & input {
         @apply form-input w-auto h-8 !important;
       }
-      & td, & th {
-        @apply text-sm box-border !important;
-      }
-
-      & .dataTables_info, & .dataTables_paginate {
+  
+      & .dataTables_info,
+      & .dataTables_paginate {
         @apply text-xs lg:text-sm !important;
       }
-
+  
       & .paginate_button {
         background: #efefef !important;
         @apply btn rounded-full border-0 !important;
-
+  
         &.current {
           background: var(--primary-base-color) !important;
           @apply rounded-full text-white border-0 !important;
@@ -276,28 +450,16 @@
     }
   }
 
-  .content {
-    & table {
-      @apply border border-collapse;
-
-      & td {
-        @apply border py-1 px-3;
-      }
-
-      & th {
-        @apply font-bold;
-      }
-
-      &.table-striped {
-        & tr:nth-child(even) {
-          @apply bg-gray-100;
-        } 
-      }
-
-    }
-  }
 }
 
 .form-control {
   @apply form-input;
+}
+
+.owl-carousel .owl-stage-outer {
+  transform: translate3d(0, 0, 0)
+}
+
+.sliderx .owl-item {
+  @apply h-48 lg:h-[400px] mx-0 mt-0 py-0 border-0 !important;
 }

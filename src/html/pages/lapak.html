@@ -12,6 +12,16 @@
     </div>
     <article class="content">
       <h2 class="text-h2"><i class="fa fa-store mr-2 text-primary-100"></i> Lapak Desa</h2>
+      <form method="get" class="w-full block py-4">
+        <div class="flex gap-3 lg:w-7/12 flex-col lg:flex-row">
+          <select class="form-input inline-block select2" id="id_kategori" name="id_kategori" style="min-width: 25%">
+            <option selected="" value="">Semua Kategori</option>
+                    <option value="1">Makanan</option>
+                </select>
+          <input type="text" name="keyword" maxlength="50" class="form-input" value="" placeholder="Cari Produk" style="min-width: 25%">
+          <button type="submit" class="btn btn-primary flex-shrink-0 text-center">Cari</button>
+            </div>
+      </form>
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 py-8">
         {% for i in range(0, 5) -%}
         <div class="flex flex-col justify-between space-y-4 this-product">

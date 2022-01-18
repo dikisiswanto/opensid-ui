@@ -1,125 +1,36 @@
 <aside class="space-y-5 sidebar">
-  <form action="" role="form" class="relative">
+  <form action="http://localhost/opensid-premium/index.php/" role="form" class="relative">
     <i class="fas fa-search absolute top-1/2 left-0 transform -translate-y-1/2 z-10 px-3 text-gray-500"></i>
-    <input type="text" class="form-input px-10 w-full h-12 bg-white relative inline-block" placeholder="Cari...">
+    <input type="text" name="cari" class="form-input px-10 w-full h-12 bg-white relative inline-block"
+      placeholder="Cari...">
   </form>
   <div class="shadow rounded-lg bg-white overflow-hidden">
-    <style type="text/css">
-      button.btn {
-        margin-left: 0
-      }
-      #detail tbody {
-        max-width: 100%;
-      }
-      #detail tr {
-        word-break: break-all;
-        word-wrap: break-word;
-      }
-      #detail tr td {
-        padding: 5px 6px;
-        /* word-break: break-all; */
-        border: 1px solid #eee;
-      }
-    </style>
-    <!-- widget Peta Lokasi Kantor Desa -->
-    <div class="box box-primary box-solid">
+
+    <div class="box">
       <div class="box-header">
-        <h3 class="box-title">
-          <i class="fa fa-map-marker-alt mr-2"></i>Lokasi Kantor Desa </h3>
+        <h3 class="box-title"><i class="fas fa-bars"></i> Kategori</h3>
       </div>
-      <div class="box-body">
-        <div id="map_canvas" style="height:200px;" class="mb-4"></div>
-        <button class="btn btn-accent">
-          <a href="https://www.openstreetmap.org/#map=15/-8.483832804795249/116.08523368835449" style="color:#fff;"
-            target="_blank">Buka Peta</a></button>
-        <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#detail">
-          Detail
-        </button>
-          <!-- Modal -->
-          <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
-          id="detail" tabindex="-1" aria-labelledby="detailLabel" aria-hidden="true">
-          <div class="modal-dialog relative w-auto pointer-events-none">
-          <div
-          class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-          <div
-            class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-            <h5 class="text-xl font-medium leading-normal text-gray-800" id="detailLabel">Detail Desa</h5>
-            <button type="button"
-              class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
-              data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body relative p-4">
-            <table class="max-w-full text-xs lg:text-sm table-auto w-full">
-              <tbody>
-                <tr>
-                  <td>Alamat</td>
-                  <td>:</td>
-                  <td>Jl. Andi Makassau, No. 12, Dusun Sidodadi</td>
-                </tr>
-                <tr>
-                  <td>Desa </td>
-                  <td>:</td>
-                  <td>Sukaraya</td>
-                </tr>
-                <tr>
-                  <td>Kecamatan</td>
-                  <td>:</td>
-                  <td>Bone-Bone</td>
-                </tr>
-                <tr>
-                  <td>Kabupaten</td>
-                  <td>:</td>
-                  <td>Luwu Utara</td>
-                </tr>
-                <tr>
-                  <td>Kodepos</td>
-                  <td>:</td>
-                  <td>92966</td>
-                </tr>
-                <tr>
-                  <td>Telepon</td>
-                  <td>:</td>
-                  <td>0471563410</td>
-                </tr>
-                <tr>
-                  <td>Email</td>
-                  <td>:</td>
-                  <td>pengaduan@sukaraya.luwuutarakab.go.id</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-          </div>
-        </div>
+      <div class="box-body content">
+        <ul class="divide-y">
+          <li><a href="http://localhost/opensid-premium/index.php/artikel/kategori/berita-desa"
+              class="py-2 block">Berita Desa</a>
+          </li>
+          <li><a href="http://localhost/opensid-premium/index.php/artikel/kategori/program-kerja"
+              class="py-2 block">Program Kerja</a>
+          </li>
+          <li><a href="http://localhost/opensid-premium/index.php/artikel/kategori/peraturan-desa"
+              class="py-2 block">Peraturan Desa</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <script>
-    //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
-        var posisi = [-8.483832804795249,116.08523368835449];
-      var zoom = 14;
-    
-    var lokasi_kantor = L.map('map_canvas').setView(posisi, zoom);
-  
-    //Menampilkan BaseLayers Peta
-    var baseLayers = getBaseLayers(lokasi_kantor, '');
-  
-    L.control.layers(baseLayers, null, {position: 'topright', collapsed: true}).addTo(lokasi_kantor);
-  
-    //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
-        var kantor_desa = L.marker(posisi).addTo(lokasi_kantor);
-    </script>
   </div>
   <div class="shadow rounded-lg bg-white overflow-hidden">
-    <style type="text/css">
-      .highcharts-xaxis-labels tspan {
-        font-size: 8px
-      }
-    </style>
+
     <div class="box box-primary box-solid">
       <div class="box-header">
-        <h3 class="box-title"><a href="#!"><i class="fas fa-chart-bar"></i>
-            Statistik Desa Sukaraya</a></h3>
+        <h3 class="box-title"><a href="http://localhost/opensid-premium/index.php/first/statistik/4"><i
+              class="fa fa-chart-pie"></i> Statistik Desa Silo</a></h3>
       </div>
       <div class="box-body">
         <script type="text/javascript">
@@ -174,24 +85,742 @@
             });
           });
         </script>
-        <div id="container_widget"></div>
-        <a href="./statistic.html" class="text-link">Lihat rincian</a>
+        <div id="container_widget" style="width: 100%; height: 300px; margin: 0 auto"></div>
       </div>
     </div>
   </div>
   <div class="shadow rounded-lg bg-white overflow-hidden">
-    <div class="box-header">
-      <h3 class="box-title"><i class="fas fa-external-link-alt mr-2"></i> Tautan Ke Halaman Statis</h3>
-    </div>
-    <div class="px-5 py-4">
-      <ul class="divide-y">
-        <li><a href="./statistic.html" class="hover:text-link block py-2">Data Statistik</a></li>
-        <li><a href="./idm.html" class="hover:text-link block py-2">Status IDM</a></li>
-        <li><a href="./law.html" class="hover:text-link block py-2">Produk Hukum</a></li>
-        <li><a href="./public-release.html" class="hover:text-link block py-2">Informasi Publik</a></li>
-        <li><a href="./lapak.html" class="hover:text-link block py-2">Lapak Desa</a></li>
-        <li><a href="./archive.html" class="hover:text-link block py-2">Arsip Artikel</a></li>
-      </ul>
+
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title"><i class="fas fa-folder-open"></i> Arsip Artikel</h3>
+      </div>
+      <div class="box-body">
+        <ul class="nav nav-tabs nav-justified flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4"
+          id="tab-agenda" role="tablist">
+          <li class="nav-item flex-grow text-center active" role="presentation"><a href="#terkini"
+              class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent active"
+              data-bs-toggle="pill" data-bs-target="#terkini" role="tab" aria-controls="terkini" aria-selected="true"
+              data-toggle="tab" href="#terkini">Hari ini</a></li>
+
+          <li class="nav-item flex-grow text-center" role="presentation"><a href="#populer"
+              class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent active"
+              data-bs-toggle="pill" data-bs-target="#populer" role="tab" aria-controls="populer"
+              aria-selected="false">Yang
+              akan datang</a></li>
+
+          <li class="nav-item flex-grow text-center" role="presentation"><a href="#acak"
+              class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent active"
+              data-bs-toggle="pill" data-bs-target="#acak" role="tab" aria-controls="acak"
+              aria-selected="false">acak</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="terkini" class="tab-pane fade show active" role="tabpanel">
+            <div class="divide-y">
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/26/sejarah-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/26/wilayah-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/desa/upload/artikel/sedang_1549419108_desa.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/data-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a
+                  href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/rapat-membangun-komitmen-antara-karang-taruna-desa-senggigi-dengan-taruna-hotel">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/perayaan-hari-kemerdekaan-2016">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/desa/upload/artikel/sedang_1527540313_kemerdekaan-pantai.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a
+                  href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/membangun-desa-lewat-gotong-royong">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/desa/upload/artikel/sedang_1527544437_gotong-royong-pantai.jpeg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/visi-dan-misi">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/desa/upload/artikel/sedang_1549419057_visi-850x442.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="populer" class="tab-pane fade " role="tabpanel">
+            <div class="divide-y">
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2013/7/29/profil-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/26/sejarah-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/26/wilayah-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/desa/upload/artikel/sedang_1549419108_desa.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/pemerintah-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/visi-dan-misi">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/desa/upload/artikel/sedang_1549419057_visi-850x442.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/perayaan-hari-kemerdekaan-2016">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/desa/upload/artikel/sedang_1527540313_kemerdekaan-pantai.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a
+                  href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/rapat-membangun-komitmen-antara-karang-taruna-desa-senggigi-dengan-taruna-hotel">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="acak" class="tab-pane fade " role="tabpanel">
+            <div class="divide-y">
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2013/7/29/profil-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a
+                  href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/membangun-desa-lewat-gotong-royong">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/desa/upload/artikel/sedang_1527544437_gotong-royong-pantai.jpeg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2014/4/20/peraturan-kepala-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2014/4/30/karang-taruna">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2014/4/30/kelompok-tani">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2014/4/20/keputusan-kepala-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex py-2 gap-3">
+                <a href="http://localhost/opensid-premium/index.php/artikel/2014/4/30/profil-potensi-desa">
+                  <img class="w-1/4 h-auto flex-shrink-0"
+                    src="http://localhost/opensid-premium/assets/images/404-image-not-found.jpg" />
+                </a>
+                <div class="flex flex-col justify-between gap-3">
+                  <a href="" class="text-h6 hover:text-primary-100">Pemerintah Desa</a>
+                  <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+                    <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> 24 Agustus 2016</li>
+                    <li><i class="fas fa-user mr-1 text-primary-100"></i> Administrator</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="shadow rounded-lg bg-white overflow-hidden">
+
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title"><i class="fas fa-calendar-alt"></i> Agenda</h3>
+      </div>
+      <div class="box-body">
+        <ul class="nav nav-tabs nav-justified flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4"
+          id="tab-agenda" role="tablist">
+
+          <li class="nav-item flex-grow text-center active" role="presentation"><a href="#lama"
+              class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent active"
+              data-bs-toggle="pill" data-bs-target="#lama" role="tab" aria-controls="lama"
+              aria-selected="false">Lama</a></li>
+        </ul>
+
+        <div class="tab-content content">
+          <div id="hari-ini" class="tab-pane fade show active" role="tabpanel">
+          </div>
+
+          <div id="yad" class="tab-pane fade show active" role="tabpanel">
+          </div>
+
+          <div id="lama" class="tab-pane fade show active" role="tabpanel">
+            <marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="2" direction="up" width="100%"
+              height="150" align="center">
+              <table class="w-full">
+                <tr>
+                  <td colspan="3"><a
+                      href="http://localhost/opensid-premium/index.php/artikel/2014/11/6/rapat-lagi">Rapat Lagi</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th id="label-meta-agenda" width="40%">Waktu</th>
+                  <td width="5%">:</td>
+                  <td id="isi-meta-agenda" width="55%">08 Januari 2020 05:58:42</td>
+                </tr>
+                <tr>
+                  <th id="label-meta-agenda">Lokasi</th>
+                  <td>:</td>
+                  <td id="isi-meta-agenda">Aula Desa</td>
+                </tr>
+                <tr>
+                  <th id="label-meta-agenda">Koordinator</th>
+                  <td>:</td>
+                  <td id="isi-meta-agenda"></td>
+                </tr>
+              </table>
+              <table class="w-full">
+                <tr>
+                  <td colspan="3"><a href="http://localhost/opensid-premium/index.php/artikel/2013/7/30/agenda">Rapat
+                      bulanan</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th id="label-meta-agenda" width="40%">Waktu</th>
+                  <td width="5%">:</td>
+                  <td id="isi-meta-agenda" width="55%">09 April 2020 05:59:18</td>
+                </tr>
+                <tr>
+                  <th id="label-meta-agenda">Lokasi</th>
+                  <td>:</td>
+                  <td id="isi-meta-agenda">Ruang rapat</td>
+                </tr>
+                <tr>
+                  <th id="label-meta-agenda">Koordinator</th>
+                  <td>:</td>
+                  <td id="isi-meta-agenda"></td>
+                </tr>
+              </table>
+            </marquee>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shadow rounded-lg bg-white overflow-hidden">
+
+    <style>
+      #sinergi_program {
+        text-align: center;
+      }
+
+      #sinergi_program table {
+        margin: auto;
+      }
+
+      #sinergi_program img {
+        max-width: 100%;
+        max-height: 100%;
+        transition: all 0.5s;
+        -o-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+      }
+
+      #sinergi_program img:hover {
+        transition: all 0.3s;
+        -o-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+    <div class="box box-primary box-solid">
+      <div class="box-header">
+        <h3 class="box-title"><i class="fa fa-external-link"></i> Sinergi Program</h3>
+      </div>
+      <div id="sinergi_program" class="box-body">
+        <table>
+
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="shadow rounded-lg bg-white overflow-hidden">
+
+    <div class="box box-primary box-solid">
+      <div class="box-header">
+        <h3 class="box-title"><a href="http://localhost/opensid-premium/index.php/first/gallery"><i
+              class="fas fa-camera"></i> Galeri Foto</a></h3>
+      </div>
+      <div class="box-body">
+      </div>
+    </div>
+  </div>
+  <div class="shadow rounded-lg bg-white overflow-hidden">
+
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title"><i class="fas fa-user"></i> Aparatur Desa</h3>
+      </div>
+      <div class="box-body">
+        <div class="owl-carousel">
+          <div class="relative space-y-2">
+            <img src="http://localhost/opensid-premium/assets/images/pengguna/kuser.png" alt="Mustahiq S.Adm"
+              class="w-full object-cover object-center bg-gray-300">
+          </div>
+          <div class="relative space-y-2">
+            <img src="http://localhost/opensid-premium/assets/images/pengguna/kuser.png" alt="Syafruddin "
+              class="w-full object-cover object-center bg-gray-300">
+          </div>
+          <div class="relative space-y-2">
+            <img src="http://localhost/opensid-premium/assets/images/pengguna/kuser.png" alt="Supardi Rustam "
+              class="w-full object-cover object-center bg-gray-300">
+          </div>
+          <div class="relative space-y-2">
+            <img src="http://localhost/opensid-premium/assets/images/pengguna/kuser.png" alt="Mardiana "
+              class="w-full object-cover object-center bg-gray-300">
+          </div>
+          <div class="relative space-y-2">
+            <img src="http://localhost/opensid-premium/assets/images/pengguna/kuser.png" alt="Syafi-i. SE "
+              class="w-full object-cover object-center bg-gray-300">
+          </div>
+          <div class="relative space-y-2">
+            <img src="http://localhost/opensid-premium/assets/images/pengguna/kuser.png" alt="Mahrup "
+              class="w-full object-cover object-center bg-gray-300">
+          </div>
+          <div class="relative space-y-2">
+            <img src="http://localhost/opensid-premium/assets/images/pengguna/kuser.png" alt="Muhammad Ilham "
+              class="w-full object-cover object-center bg-gray-300">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shadow rounded-lg bg-white overflow-hidden">
+
+    <div class="box box-primary box-solid">
+      <div class="box-header">
+        <h3 class="box-title"><i class="fa fa-comments"></i> Komentar Terbaru</h3>
+      </div>
+      <div class="box-body">
+        <marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="2" direction="up" width="100%"
+          height="150" align="center">
+          <ul class="divide-y">
+            <li class="py-2 space-y-2">
+              <blockquote class="italic"> Selamat atas keberhasilan Senggigi merayakan Hari Kemerdeakaan</blockquote>...
+              <a href="http://localhost/opensid-premium/index.php/artikel/2016/8/24/perayaan-hari-kemerdekaan-2016"
+                class="text-link">selengkapnya</a>
+              <p class="text-xs lg:text-sm"><i class="fas fa-comment"></i> Penduduk Biasa</p>
+              <p class="text-xs lg:text-sm">14 September 2016 06:09:16</p>
+            </li>
+          </ul>
+        </marquee>
+      </div>
+    </div>
+  </div>
+  <div class="shadow rounded-lg bg-white overflow-hidden">
+
+    <div class="box box-primary box-solid">
+      <div class="box-header">
+        <h3 class="box-title"><i class="fas fa-globe"></i> Info Media Sosial</h3>
+      </div>
+      <div class="box-body">
+        <a href="https://web.facebook.com/https://www.facebook.com/groups/OpenSID/" target="_blank">
+          <img src="http://localhost/opensid-premium/assets/front/fb.png" alt="Facebook"
+            style="width:50px;height:50px;" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="shadow rounded-lg bg-white overflow-hidden">
+
+    <div class="box box-primary box-solid">
+      <div class="box-header">
+        <h3 class="box-title">
+          <i class="fas fa-map-marker"></i>
+          Wilayah Desa</h3>
+      </div>
+      <div class="box-body">
+        <div id="map_wilayah" style="height:200px;"></div>
+        <a href="https://www.openstreetmap.org/#map=15/-8.483832804795249/116.08523368835449" class="text-link">Buka
+          peta</a>
+      </div>
+    </div>
+
+    <script>
+      //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
+      var posisi = [-8.483832804795249, 116.08523368835449];
+      var zoom = 14;
+
+      //Style polygon
+      var style_polygon = {
+        stroke: true,
+        color: '#FF0000',
+        opacity: 1,
+        weight: 2,
+        fillColor: '#8888dd',
+        fillOpacity: 0.5
+      };
+      var wilayah_desa = L.map('map_wilayah').setView(posisi, zoom);
+
+      //Menampilkan BaseLayers Peta
+      var baseLayers = getBaseLayers(wilayah_desa, '');
+
+      L.control.layers(baseLayers, null, {
+        position: 'topright',
+        collapsed: true
+      }).addTo(wilayah_desa);
+
+      var polygon_desa = [
+        [
+          [
+            [-8.470247273601585, 116.03699684143068],
+            [-8.470993084228864, 116.03974342346193],
+            [-8.471775371367853, 116.04249000549318],
+            [-8.474831548688417, 116.04557991027833],
+            [-8.47754813036, 116.04334831237793],
+            [-8.478736628804842, 116.0522747039795],
+            [-8.48688623339785, 116.04712486267091],
+            [-8.492319207044495, 116.04626655578615],
+            [-8.492319207044495, 116.04866981506349],
+            [-8.490281850938663, 116.05433464050294],
+            [-8.499110315926593, 116.06446266174318],
+            [-8.507429260374638, 116.06068611145021],
+            [-8.509466525358253, 116.05605125427248],
+            [-8.501656950751967, 116.04969978332521],
+            [-8.501656950751967, 116.046781539917],
+            [-8.503694246430312, 116.04454994201662],
+            [-8.496820982890759, 116.0453224182129],
+            [-8.494953428786745, 116.03931427001955],
+            [-8.48986005320605, 116.0365676879883],
+            [-8.48493639256516, 116.03364944458009],
+            [-8.47975533883251, 116.03768348693849]
+          ]
+        ]
+      ];
+      var kantor_desa = L.polygon(polygon_desa, style_polygon).bindTooltip("Wilayah Desa").addTo(wilayah_desa);
+      wilayah_desa.fitBounds(kantor_desa.getBounds());
+    </script>
+  </div>
+  <div class="shadow rounded-lg bg-white overflow-hidden">
+
+    <div class="box box-primary box-solid">
+      <div class="box-header">
+        <h3 class="box-title">
+          <i class="fas fa-map-marker-alt"></i>Lokasi Kantor Desa </h3>
+      </div>
+      <div class="box-body">
+        <div id="map_canvas" style="height:200px;"></div>
+        <button class="btn btn-accent btn-block mt-5"><a
+            href="https://www.openstreetmap.org/#map=15/-8.483832804795249/116.08523368835449" style="color:#fff;"
+            target="_blank">Buka Peta</a></button>
+        <button class="btn btn-accent btn-block mt-5" data-bs-toggle="modal" data-bs-target="#detail">
+          Detail
+        </button>
+        <!-- Modal -->
+        <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+          id="detail" tabindex="-1" aria-labelledby="detailLabel" aria-hidden="true">
+          <div class="modal-dialog relative w-auto pointer-events-none">
+            <div
+              class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+              <div
+                class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                <h5 class="text-xl font-medium leading-normal text-gray-800" id="detailLabel">Detail
+                  Desa</h5>
+                <button type="button"
+                  class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                  data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body relative p-4 content">
+                <table class="max-w-full text-xs lg:text-sm table-auto w-full">
+                  <tbody>
+                    <tr>
+                      <td>Alamat</td>
+                      <td>:</td>
+                      <td>Jl. Raya Senggigi Km 10 Kerandangan </td>
+                    </tr>
+                    <tr>
+                      <td>Desa </td>
+                      <td>:</td>
+                      <td>Silo</td>
+                    </tr>
+                    <tr>
+                      <td>Kecamatan</td>
+                      <td>:</td>
+                      <td>Silo</td>
+                    </tr>
+                    <tr>
+                      <td>Kabupaten</td>
+                      <td>:</td>
+                      <td>Jember</td>
+                    </tr>
+                    <tr>
+                      <td>Kodepos</td>
+                      <td>:</td>
+                      <td>83355</td>
+                    </tr>
+                    <tr>
+                      <td>Telepon</td>
+                      <td>:</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Email</td>
+                      <td>:</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
+      var posisi = [-8.483832804795249, 116.08523368835449];
+      var zoom = 14;
+
+      var lokasi_kantor = L.map('map_canvas').setView(posisi, zoom);
+
+      //Menampilkan BaseLayers Peta
+      var baseLayers = getBaseLayers(lokasi_kantor, '');
+
+      L.control.layers(baseLayers, null, {
+        position: 'topright',
+        collapsed: true
+      }).addTo(lokasi_kantor);
+
+      //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia
+      var kantor_desa = L.marker(posisi).addTo(lokasi_kantor);
+    </script>
+  </div>
+  <div class="shadow rounded-lg bg-white overflow-hidden">
+    <div class="box box-primary box-solid">
+      <div class="box-header">
+        <h3 class="box-title"><i class="fa fa-bar-chart-o"></i> Statistik Pengunjung</h3>
+      </div>
+      <div class="box-body">
+        <div class="">
+          <table cellpadding="0" cellspacing="0" class="counter w-full border-0 divide-y">
+            <tr class="py-2">
+              <td> Hari ini</td>
+              <td class="inline-flex w-full justify-end text-right"><img
+                  src="http://localhost/opensid-premium//assets/images/counter/0.gif" align="absmiddle" /><img
+                  src="http://localhost/opensid-premium//assets/images/counter/0.gif" align="absmiddle" /><img
+                  src="http://localhost/opensid-premium//assets/images/counter/0.gif" align="absmiddle" /><img
+                  src="http://localhost/opensid-premium//assets/images/counter/animasi/2.gif" align="absmiddle" /></td>
+            </tr>
+            <tr class="py-2">
+              <td valign="middle" height="20">Kemarin </td>
+              <td valign="middle" class="inline-flex w-full justify-end text-right"><img
+                  src="http://localhost/opensid-premium//assets/images/counter/0.gif" align="absmiddle" /><img
+                  src="http://localhost/opensid-premium//assets/images/counter/0.gif" align="absmiddle" /><img
+                  src="http://localhost/opensid-premium//assets/images/counter/0.gif" align="absmiddle" /><img
+                  src="http://localhost/opensid-premium//assets/images/counter/animasi/2.gif" align="absmiddle" /></td>
+            </tr>
+            <tr class="py-2">
+              <td valign="middle" height="20">Jumlah pengunjung</td>
+              <td valign="middle" class="inline-flex w-full justify-end text-right"><img
+                  src="http://localhost/opensid-premium//assets/images/counter/5.gif" align="absmiddle" /><img
+                  src="http://localhost/opensid-premium//assets/images/counter/4.gif" align="absmiddle" /><img
+                  src="http://localhost/opensid-premium//assets/images/counter/0.gif" align="absmiddle" /><img
+                  src="http://localhost/opensid-premium//assets/images/counter/animasi/9.gif" align="absmiddle" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shadow rounded-lg bg-white overflow-hidden">
+
+  </div>
 </aside>
+</div>

@@ -157,10 +157,12 @@ $(document).ready(() => {
       animateOut: 'fadeOutLeft',
       animateIn: 'fadeInRight',
       autoplayHoverPause: true,
+      stagePadding: 0,
     });
+    $(this).trigger('refresh.owl.carousel');
   });
   if ($('.slider-nav').length) {
-    const owl = $('.slider .owl-carousel');
+    const owl = $('.sliderx .owl-carousel');
     $('.slider-nav-prev').click(() => {
       owl.trigger('prev.owl.carousel');
     });
