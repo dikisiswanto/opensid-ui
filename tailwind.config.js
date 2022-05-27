@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 module.exports = {
   // mode: 'jit',
   content: ['./build/*.html', './build/**/**/*.js'],
@@ -27,7 +28,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    // eslint-disable-next-line global-require
     require('tw-elements/dist/plugin'),
+    require('@tailwindcss/line-clamp'),
   ],
 };

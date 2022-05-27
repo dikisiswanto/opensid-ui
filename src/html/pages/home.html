@@ -58,18 +58,19 @@
         }
         ] -%}
       {% for post in posts -%}   
-        <div class="bg-white shadow rounded-lg p-5 border flex gap-3 lg:gap-5">
-          <figure class="h-10 w-12 lg:h-24 lg:w-36 overflow-hidden flex-shrink-0">
-            <img src="./assets/img/{{post.image}}" alt="{{ post.title }}" class="h-10 w-12 lg:h-24 lg:w-36 object-cover object-center">
+        <div class="bg-white shadow rounded-lg p-5 border lg:h-auto">
+          <figure class="h-auto lg:h-32 w-1/3 float-left pr-3 pb-3">
+            <img src="./assets/img/{{post.image}}" alt="{{ post.title }}" class="h-auto lg:h-32 w-full object-cover object-center">
           </figure>
-          <div class="flex flex-col justify-between gap-3">
-            <a href="./post.html" class="text-h5 hover:text-primary-100">{{ post.title }}</a>
-            <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
-              <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> {{ post.date }}</li>
-              <li><i class="fas fa-user mr-1 text-primary-100"></i> {{ post.author }}</li>
-              <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> {{ post.tag }}</li>
-            </ul>
-          </div>
+          <a href="./post.html" class="mb-3">
+            <h4 class="text-h5 hover:text-primary-100">{{ post.title }}</h4>
+          </a>
+          <p class="line-clamp-4 mb-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit sint id ad ipsa corporis iste expedita obcaecati, magnam consequuntur fugiat eaque ab dolorem doloribus pariatur excepturi quisquam magni, vitae explicabo voluptate in provident! Repudiandae, quisquam ex enim dolorum ratione quaerat.</p>
+          <ul class="inline-flex gap-x-5 gap-y-3 text-xs lg:text-sm text-gray-500 flex-wrap">
+            <li><i class="fas fa-calendar-alt mr-1 text-primary-100"></i> {{ post.date }}</li>
+            <li><i class="fas fa-user mr-1 text-primary-100"></i> {{ post.author }}</li>
+            <li><i class="fas fa-bookmark mr-1 text-primary-100"></i> {{ post.tag }}</li>
+          </ul>
         </div> 
       {%- endfor %}
       {% include "partials/pagination.html" -%}

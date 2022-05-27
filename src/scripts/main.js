@@ -154,8 +154,8 @@ $(document).ready(() => {
       autoplay: true,
       dots: true,
       margin: (slideItems > 1 ? 12 : 0),
-      animateOut: 'fadeOutLeft',
-      animateIn: 'fadeInRight',
+      animateOut: 'fadeOut',
+      animateIn: 'fadeIn',
       autoplayHoverPause: true,
       stagePadding: 0,
     });

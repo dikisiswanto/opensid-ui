@@ -1,3 +1,4 @@
+/*! Tema esensi | GPL-3.0 License | Diki Siswanto <dickyachmady@gmail.com> & OpenDesa (https://opendesa.id) */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -335,14 +336,19 @@
     }
 
     & .progress {
-      @apply w-full bg-gray-200 rounded-full h-3 !important;
+      @apply w-full bg-gray-200 rounded-full h-3 text-left overflow-hidden !important;
+
+      &-group {
+        @apply relative py-2 text-base space-y-1;
+      }
+
     }
 
     & .progress-bar {
-      @apply h-full flex items-center bg-secondary-100 !important;
+      @apply h-full max-w-full flex items-center bg-secondary-100 !important;
 
       span {
-        @apply absolute right-0 pr-3 block text-right text-sm transform text-white !important;
+        @apply absolute pl-3 block text-xs transform text-white !important;
       }
     }
 
